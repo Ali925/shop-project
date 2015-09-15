@@ -4,7 +4,7 @@ class Controller_Products extends Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->model = new Model_Products();
+        $this->model = new Model_shop();
     }
 //выводим все товары
     function action_index(){
