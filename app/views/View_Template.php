@@ -6,15 +6,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><? $title; ?> | e-commerce</title>
+    <title><? $title ?> | e-commerce</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
     <meta name="viewport" content="width=1000">
 
     <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css" media="screen, projection, print">
     <link rel="stylesheet" type="text/css" href="../../css/jquery.bxslider.css" media="screen, projection, print">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" media="screen, projection, print">
+
     <script src="../../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
@@ -26,6 +27,19 @@
 <div class = "wrapper">
     <div class = "maincontent">
         <div class="container">
+
+            <?php if(!isset($_SESSION["authorized"])): ?>
+                <div class="auth">
+                    <a href="/Authorization">Войти</a> /
+                    <a href="/Registration">Зарегистрироваться</a>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($_SESSION["authorized"])): ?>
+                <form method="post" action="/Authorization/out">
+                <div class="login">Здравствуйте, <a href='#'><?php echo $_SESSION["name"]; ?></a>
+                    <button>Выйти</button></div>
+                </form>
+            <?php endif; ?>
 
             <?php require_once '_chunks/header.php'; ?>
 
@@ -48,7 +62,7 @@
                 <div class="content_area_left">
                     <div class="features">
 
-                        <?php include 'user/View_About.php'; ?>
+                        <?php include "app/views/".$content_view; ?>
 
                         <?php if($is_right_sidebar): ?>
                             <?php require_once '_chunks/right_sidebar.php'; ?>

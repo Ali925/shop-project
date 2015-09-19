@@ -6,6 +6,6 @@ class View{
             // преобразуем элементы массива в переменные
             extract($data);
         }
-        include "../views/".$View_Template;
+        include "app/views/".$View_Template;
     }
 }

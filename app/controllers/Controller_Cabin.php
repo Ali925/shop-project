@@ -1,18 +1,18 @@
 <?php
 //Контроллер для работы с каталогом
-class Controller_Products extends Controller
+class Controller_Cabin extends Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->model = new Shop\Model\Products();
-
+        $this->model = new Shop\Model\User();
     }
 
     function action_index(){
-        $this->view->generate('View_Products.php', 'View_Template.php',
+        $data = $this->model->get_auth_data($_SESSION["name"]);
+        $this->view->generate('View_Cabin.php', 'View_Template.php',
             array(
-                'title' => 'Список товаров',
-                'products' => $this->model->get_all()
+                'title' => 'Личный кабинет',
+                "username" => $data['name']
             )
         );
     }
