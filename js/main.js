@@ -12,6 +12,41 @@ $(document).ready(function(){
 
     }
 
+
+    zeroCount();
+
+    $("#quantity").change(function(){
+        
+        var item_price = document.getElementById("item_price").innerHTML;
+        var item_count = document.getElementById("quantity").value;
+        var min_c = document.getElementById("quantity").getAttribute("min");
+        var max_c = document.getElementById("quantity").getAttribute("max");
+        min_c = parseInt(min_c);
+        max_c = parseInt(max_c);
+
+       if(item_count<min_c) {
+            document.getElementById("quantity").value = min_c;
+            item_count = min_c;
+       }
+       else if(item_count>max_c) {
+            document.getElementById("quantity").value = max_c;
+            item_count = max_c;
+       }
+
+        var payment = item_count * item_price;
+
+        payment = payment.toFixed(2);
+
+        $("#payment").text(payment);
+    });
+
+    $(".payment-input").click(function(){
+        if ($(this).is(':checked')) {
+            $(".payment-input").not(this).parent().next().attr("hidden", "1"); 
+            $(this).parent().next().removeAttr("hidden");
+        }
+    });
+
     Cufon.replace(".banner_title, " +
         ".slideshow_text_sale, nav ul li a," +
         ".feautures_descr_title div," +
@@ -580,6 +615,19 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+<<<<<<< HEAD
 
+=======
+function zeroCount () {
+
+        var item_count =  $("#quantity").attr("max");
+
+        if (item_count==0) 
+            {$("#quantity").attr("min", 0);
+            $("#quantity").attr("value", 0);
+            $("#payment").text(0);
+            };
+}
+>>>>>>> 82f9c2941c0555e8479e677d84fdfcd4383a6861
 
 
