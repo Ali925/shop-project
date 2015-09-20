@@ -1050,7 +1050,7 @@ div.search_submit {
   width: 855px;
   top: 0px;
   left: 22px;
-  position: absolute;
+  position: relative;
 }
 .carousel_wrap ul {
   *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
@@ -2328,7 +2328,7 @@ footer {
   overflow: visible !important;
 }
 .ez-radio {
-  background: transparent url('../images/radio-black.png') 0 1px no-repeat;
+  background: transparent url('../img/radio-black.png') 0 1px no-repeat;
   display: inline-block;
 }
 .ez-checked {
@@ -2338,7 +2338,7 @@ footer {
   background-position: 0 -19px;
 }
 .ez-checkbox-green {
-  background: transparent url('../images/checkbox-green.png') 0 1px no-repeat;
+  background: transparent url('image/checkbox-green.png') 0 1px no-repeat;
   display: inline-block;
   *display: inline;
 }
@@ -3327,4 +3327,55 @@ footer {
 }
 .authorize_popup {
   display: inline-block;
+}
+
+.auth, .login {
+    margin: -20px;
+    float: right;
+}
+
+.authorize, .registrate{
+    text-align: center;
+    width: 350px;
+    height: auto;
+}
+.authorize input, .registrate input {
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.authorize button, .registrate button{
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    text-align: center;
+}
+.login button{
+    font-size: smaller;
+    width: 60px;
+    height: 20px;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+.info {
+    width: 600px;
+    word-wrap: break-word;
+}
+.alarm{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+.alarm a button{
+    width: 350px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #eee;
+    border-radius: 5px;
 }

@@ -1,5 +1,5 @@
 {
-    "name": "shop-project",
+    "name": "sh-pro",
     "authors": [
         {
             "name": "c0d3Rr",
@@ -8,7 +8,8 @@
     ],
     "require": {
         "phpmailer/phpmailer": "^5.2",
-        "j4mie/idiorm": "^1.5"
+        "j4mie/idiorm": "^1.5",
+        "klein/klein": "v2.1.0"
     },
     "config": {
         "vendor-dir": "php-library"

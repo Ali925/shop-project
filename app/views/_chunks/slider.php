@@ -5,12 +5,12 @@
         <ul class="slideshow_list">
             <li>
                 <div class="slideshow_background">
-                    <img src="/images/content/ss_bg.png" alt="">
+                    <img src="../../../img/content/ss_bg.png" alt="">
                 </div>
                 <div class="slideshow_list_item">
                     <div class="slideshow_item_text">
                         <div class="slideshow_text_title">
-                            <img src="/images/decor/slogan.png" alt="">
+                            <img src="../../../img/decor/slogan.png" alt="">
                         </div>
                         <div class="slideshow_text_area">
                             <div class="slideshow_text_sale">
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="slideshow_item_images">
-                        <img src="/images/content/teapot.png" alt="">
+                        <img src="../../../img/content/teapot.png" alt="">
                     </div>
                 </div>
                 <div class="slideshow_descript">
@@ -39,12 +39,12 @@
             </li>
             <li>
                 <div class="slideshow_background">
-                    <img src="/images/content/ss_bg.png" alt="">
+                    <img src="../../../img/content/ss_bg.png" alt="">
                 </div>
                 <div class="slideshow_list_item">
                     <div class="slideshow_item_text">
                         <div class="slideshow_text_title">
-                            <img src="/images/decor/slogan.png" alt="">
+                            <img src="../../../img/decor/slogan.png" alt="">
                         </div>
                         <div class="slideshow_text_area">
                             <div class="slideshow_text_sale">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="slideshow_item_images">
-                        <img src="/images/content/teapot2.png" alt="">
+                        <img src="../../../img/content/teapot2.png" alt="">
                     </div>
                 </div>
                 <div class="slideshow_descript">
@@ -73,12 +73,12 @@
             </li>
             <li>
                 <div class="slideshow_background">
-                    <img src="/images/content/ss_bg.png" alt="">
+                    <img src="../../../img/content/ss_bg.png" alt="">
                 </div>
                 <div class="slideshow_list_item">
                     <div class="slideshow_item_text">
                         <div class="slideshow_text_title">
-                            <img src="/images/decor/slogan.png" alt="">
+                            <img src="../../../img/decor/slogan.png" alt="">
                         </div>
                         <div class="slideshow_text_area">
                             <div class="slideshow_text_sale">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="slideshow_item_images">
-                        <img src="/images/content/teapot3.png" alt="">
+                        <img src="../../../img/content/teapot3.png" alt="">
                     </div>
                 </div>
                 <div class="slideshow_descript">
@@ -107,12 +107,12 @@
             </li>
             <li>
                 <div class="slideshow_background">
-                    <img src="/images/content/ss_bg.png" alt="">
+                    <img src="../../../img/content/ss_bg.png" alt="">
                 </div>
                 <div class="slideshow_list_item">
                     <div class="slideshow_item_text">
                         <div class="slideshow_text_title">
-                            <img src="/images/decor/slogan.png" alt="">
+                            <img src="../../../img/decor/slogan.png" alt="">
                         </div>
                         <div class="slideshow_text_area">
                             <div class="slideshow_text_sale">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="slideshow_item_images">
-                        <img src="/images/content/teapot4.png" alt="">
+                        <img src="../../../img/content/teapot4.png" alt="">
                     </div>
                 </div>
                 <div class="slideshow_descript">

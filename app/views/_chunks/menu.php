@@ -2,40 +2,29 @@
     <nav>
         <ul>
             <li>
-                <a href="/about" class="nav_link_wrap">
+                <a href="/Main" class="nav_link_wrap">
                     <div class="nav_link_triangle">
                         <div class="nav_link_outer">
                             <div class="nav_link_inner">
-                                <span>о компании</span>
+                                <span>Главная</span>
                             </div>
                         </div>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="/news" class="nav_link_wrap">
+                <a href="/HowToPay" class="nav_link_wrap">
                     <div class="nav_link_triangle">
                         <div class="nav_link_outer">
                             <div class="nav_link_inner">
-                                <span>новости</span>
+                                <span>Как купить</span>
                             </div>
                         </div>
                     </div>
                 </a>
             </li>
             <li>
-                <a href="/clients" class="nav_link_wrap">
-                    <div class="nav_link_triangle">
-                        <div class="nav_link_outer">
-                            <div class="nav_link_inner">
-                                <span>клиентам</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/products" class="nav_link_wrap">
+                <a href="/Products" class="nav_link_wrap">
                     <div class="nav_link_triangle">
                         <div class="nav_link_outer">
                             <div class="nav_link_inner">
@@ -46,11 +35,33 @@
                 </a>
             </li>
             <li>
-                <a href="/contacts" class="nav_link_wrap">
+                <a href="/Contacts" class="nav_link_wrap">
                     <div class="nav_link_triangle">
                         <div class="nav_link_outer">
                             <div class="nav_link_inner">
                                 <span>Контакты</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/Managers" class="nav_link_wrap">
+                    <div class="nav_link_triangle">
+                        <div class="nav_link_outer">
+                            <div class="nav_link_inner">
+                                <span>Менеджеры</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/About" class="nav_link_wrap">
+                    <div class="nav_link_triangle">
+                        <div class="nav_link_outer">
+                            <div class="nav_link_inner">
+                                <span>О нас</span>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <header class="banner">
     <div class="banner_logo">
         <a href="/">
-            <img src="/images/logo/main.png" alt="">
+            <img src="../../../img/logo/main.png" alt="">
         </a>
         <span class="banner_seo_text">Оптовый магазин бытовой техники elDelta</span>
     </div>
