@@ -1,0 +1,16 @@
+{
+    "name": "shop-project",
+    "authors": [
+        {
+            "name": "c0d3Rr",
+            "email": "comb@mail.ru"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^5.2",
+        "j4mie/idiorm": "^1.5"
+    },
+    "config": {
+        "vendor-dir": "php-library"
+    }
+}
