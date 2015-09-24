@@ -2,8 +2,8 @@
 <form action="" method="POST" class="payment-form">
 	<div class="bank_card">
 		<label for="bank_card" class="payment-label">Карта оплаты</label>
-		<input type="radio" class="payment-input" name="payment" id="bank_card" value="bank_kard">Банковской картой онлайн (Visa, MasterCard)
-		<img src="/images/icons/visa.png" alt="visa" width="48" height="48" class="payment-img">
+		<input type="radio" class="payment-input" name="payment" id="bank_card" value="bank_kard">  Банковской картой онлайн (Visa, MasterCard)
+		<img src="/img/icons/visa.png" alt="visa" width="48" height="48" class="payment-img">
 	</div>
 	<div class="bank_card-form" hidden>
 	<ul>
@@ -28,19 +28,19 @@
 	<hr>
 	<div class="cash">
 		<label for="cash" class="payment-label">Наличные</label>
-		<input type="radio" name="payment" value="elecsnet" class="payment-input">Терминалы Элекснет
-		<img src="/images/icons/pay-elecsnet.png" alt="elecsnet" width="40" height="40" class="payment-img">
+		<input type="radio" name="payment" value="elecsnet" class="payment-input">  Терминалы Элекснет
+		<img src="/img/icons/pay-elecsnet.png" alt="elecsnet" width="40" height="40" class="payment-img">
 	</div>
 	<div></div>
 	<hr>
 	<div class="e-money">
 		<label for="e-money" class="payment-label">Электронные деньги</label>
-		<input type="radio" name="payment" value="paypal" class="payment-input">PayPal
-		<img src="/images/icons/Paypal-icon.png" alt="paypal" width="48" height="48" class="payment-img">
-		<input type="radio" name="payment" value="yandex" class="payment-input">Яндекс.Деньги
-		<img src="/images/icons/Yandex-Money.png" alt="yandex" width="48" height="48" class="payment-img">
-		<input type="radio" name="payment" value="webmoney" class="payment-input">WebMoney
-		<img src="/images/icons/wmlogo_128.png" alt="webmoney" width="44" height="44" class="payment-img">
+		<input type="radio" name="payment" value="paypal" class="payment-input">  PayPal
+		<img src="/img/icons/Paypal-icon.png" alt="paypal" width="48" height="48" class="payment-img">
+		<input type="radio" name="payment" value="yandex" class="payment-input">  Яндекс.Деньги
+		<img src="/img/icons/Yandex-Money.png" alt="yandex" width="48" height="48" class="payment-img">
+		<input type="radio" name="payment" value="webmoney" class="payment-input">  WebMoney
+		<img src="/img/icons/wmlogo_128.png" alt="webmoney" width="44" height="44" class="payment-img">
 	</div>
 	<div class="e-money-form" hidden>
 	<ul>
@@ -57,8 +57,8 @@
 	<hr>
 	<div class="transfer">
 		<label for="transfer" class="payment-label">Переводы</label>
-		<input type="radio" name="payment" value="bank_transfer" class="payment-input"><span class="payment-method">Банковский перевод</span>
-		<input type="radio" name="payment" value="post_transfer" class="payment-input"><span class="payment-method">Почтовый перевод</span>
+		<input type="radio" name="payment" value="bank_transfer" class="payment-input"><span class="payment-method">  Банковский перевод</span>
+		<input type="radio" name="payment" value="post_transfer" class="payment-input"><span class="payment-method">  Почтовый перевод</span>
 	</div>
 	<div></div>
 	<div class="payment-info">

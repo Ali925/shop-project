@@ -1,36 +1,56 @@
 <?php
-//Контроллер для работы с каталогом
+
 class Controller_Products extends Controller
 {
+
     public function __construct(){
         parent::__construct();
-        $this->model = new Shop\Model\Products();
-
+        $this->model = new Model_Products;
     }
 
-    function action_index(){
-        $this->view->generate('View_Products.php', 'View_Template.php',
+    function action_index()
+    {
+
+
+        $this->view->generate('products/list_view.php', 'template_view.php',
             array(
                 'title' => 'Список товаров',
-                'products' => $this->model->get_all()
+                'products' => $this->model->get_data(),
+                 'is_photo_slider' => false,
+                'is_slider' => false,
+                'is_right_sidebar' => false
             )
         );
     }
 
-    function action_item($id){
-        $this->view->generate('View_One.php', 'View_Template.php',
+    function action_view($id){
+
+        $id = (int)$id[0];
+        $data = $this->model->get_product($id);
+        $this->view->generate('products/item_view.php', 'template_view.php',
             array(
-                'title' => 'Список товаров',
-                'products' => $this->model->get_one($id)
+                'title' => $data['title'],
+                'product' => $data,
+                'is_photo_slider' => false,
+                'is_slider' => false,
+                'is_right_sidebar' => false
             )
         );
+
+
     }
 
-    function action_category($category){
-        $this->view->generate('View_Category.php', 'View_Template.php',
+    function action_payment($id) {
+
+        $id = (int)$id[0];
+        $data = $this->model->get_product($id);
+        $this->view->generate('products/payment.php', 'template_view.php',
             array(
-                'title' => 'Список товаров',
-                'products' => $this->model->get_category($category)
+                'title' => 'Способ оплаты',
+                'product' => $data,
+                 'is_photo_slider' => false,
+                'is_slider' => false,
+                'is_right_sidebar' => false
             )
         );
     }

@@ -745,15 +745,62 @@ div.search_submit {
   border-radius: 8px;
   background: #A2BC4F;
   margin-left: 500px;
-  margin-top: -30px;
   color: white;
   box-shadow: none;
   font: 24px Arial, Helvetica, sans-serif;
 }
 
+.buy-btn_active {
+  background: #006600;
+}
+
+.buy-btn_disable {
+  background: red;
+  height: 63px;
+}
+
+.buy-btn_disable:hover {
+  box-shadow: none;
+}
+
 .buy-link{
   text-decoration: none;
 }
+
+.list_buy-btn:hover {
+  box-shadow: 0.5px 1px 2px #888888;
+}
+
+.list_buy-btn {
+  position: relative;
+  width: 80px;
+  height: 23px;
+  border-radius: 8px;
+  background: #A2BC4F;
+  margin-left: 120px;
+  margin-top: 5px;
+  color: white;
+  box-shadow: none;
+  font: 14px Arial, Helvetica, sans-serif;
+}
+
+.list_buy-active{
+  background: #006600;
+}
+
+.list_buy-disable{
+  background: red;
+  height: 40px;
+}
+
+.list_buy-disable:hover {
+  box-shadow: none;
+}
+
+.list_buy-link{
+  text-decoration: none;
+}
+
 
 .about-buyer__item {
   margin-bottom: 10px;
@@ -783,21 +830,35 @@ div.search_submit {
 .form__header{
   display: block;
   width: 450px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   text-align: center;
+}
+
+.address-list{
+
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.cart-main{
+  border: 3px solid #ADC565;
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 80px;
+  border-radius: 8px;
 }
 
 .about-item{
   height: 100px;
-  width: 450px;
+  width: 600px;
   border: 1px solid #004A8F;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 1px;
+  
 }
 
 .about-item__text{
-  float: right;
-  margin-right: 50px;
+  float: left;
+  margin-left: 10px;
   margin-top: 5px;
 }
 
@@ -810,8 +871,21 @@ div.search_submit {
   margin-bottom: 5px;
 }
 
+.about-item__button{
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 500px;
+}
+
+.about-item__summary{
+  position: absolute;
+  margin-top: 57px;
+  margin-left: 450px;
+}
+
 .payment{
-  margin-bottom: 15px;
+  position: absolute;
+  margin-top: 43px;
 }
 
 .submit-btn:hover {
@@ -824,13 +898,18 @@ div.search_submit {
   height: 35px;
   border-radius: 8px;
   background: red;
-  margin-left: 290px;
-  
+  margin-left: 440px;
+  margin-top: 30px;
   color: white;
   box-shadow: none;
   font: 18px Arial, Helvetica, sans-serif;
 }
 
+.order-form{
+
+  margin-bottom: 70px;
+  margin-top: 60px;
+}
 
 .payment-btn{
   width:180px;
@@ -851,7 +930,7 @@ div.search_submit {
 
 .payment-img{
   margin-right: 6px;
-  margin-left: 5px;
+  margin-left: 1px;
 }
 
 .payment-method{
@@ -3334,6 +3413,14 @@ footer {
     float: right;
 }
 
+.login__text{
+  margin-right: 10px;
+}
+
+.login__cart{
+  margin-right: 20px;
+}
+
 .authorize, .registrate{
     text-align: center;
     width: 350px;
@@ -3368,14 +3455,8 @@ footer {
 .alarm{
     width: 100%;
     height: auto;
-    margin: 0 auto;
+    margin-top: 450px;
+    margin-left: 50px;
     text-align: center;
-}
-.alarm a button{
-    width: 350px;
-    height: 30px;
-    padding: 5px;
-    margin: 10px;
-    background-color: #eee;
-    border-radius: 5px;
+    position: absolute;
 }

@@ -1,9 +1,11 @@
 <?php
+
+
 class Route
 {
     static function start()
     {
-        session_start();
+            session_start();
 
         // контроллер и действие по умолчанию
         $controller_name = 'Main';
@@ -22,28 +24,24 @@ class Route
             $action_name = $routes[2];
         }
 
-        if(isset($_REQUEST)){
-            $params = $_REQUEST;
+        if(!empty(array_slice($routes, 3))){
+            $params = array_slice($routes, 3);
         }
 
         // добавляем префиксы
-        if($controller_name == "Registration"){
-            $model_name = 'Model_Authorization';
-        }else{
-            $model_name = 'Model_' . $controller_name;
-        }
-        $controller_name = "Controller_" . $controller_name;
-        $action_name = "action_" . $action_name;
+        $model_name = 'Model_' . $controller_name;
+        $controller_name = 'Controller_' . $controller_name;
+        $action_name = 'action_' . $action_name;
 
         // подцепляем файл с классом модели (файла модели может и не быть)
-        $model_file = $model_name . '.php';
+        $model_file = strtolower($model_name) . '.php';
         $model_path = "app/models/" . $model_file;
         if (file_exists($model_path)) {
             include "app/models/" . $model_file;
         }
 
         // подцепляем файл с классом контроллера
-        $controller_file = $controller_name . '.php';
+        $controller_file = strtolower($controller_name) . '.php';
         $controller_path = "app/controllers/" . $controller_file;
         if (file_exists($controller_path)) {
             include "app/controllers/" . $controller_file;
@@ -53,13 +51,12 @@ class Route
             но для упрощения сразу сделаем редирект на страницу 404
             */
 
-            Route::ErrorPage();
+            Route::ErrorPage404();
         }
 
         // если контроллер в файле не определен, то выбрасываем 404
         if(!class_exists($controller_name)){
-
-            Route::ErrorPage();
+            Route::ErrorPage404();
         } else {
             $controller = new $controller_name;
             $action = $action_name;
@@ -75,29 +72,21 @@ class Route
 
             } else {
                 // здесь также разумнее было бы кинуть исключение
-
-                Route::ErrorPage();
+                Route::ErrorPage404();
             }
         }
+
+
+
+
     }
-    
-    function ErrorPage()
-    
+
+
+    static function ErrorPage404()
     {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
         header('HTTP/1.1 404 Not Found');
         header("Status: 404 Not Found");
-        header('Location:' . $host . 'Error');
+        header('Location:' . $host . '404');
     }
-
-    function Error($message)
-
-    {
-        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
-        header('HTTP/1.1 404 Not Found');
-        header("Status: 404 Not Found");
-
-        header('Location:' . $host . 'Error/message');
-    }
-
 }

@@ -27,6 +27,21 @@
     <div class = "maincontent">
         <div class="container">
 
+        <?php if(!isset($_SESSION["authorized"])): ?>
+                <div class="auth">
+                    <a href="/user/auth">Войти</a> /
+                    <a href="/user">Зарегистрироваться</a>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($_SESSION["authorized"])): ?>
+
+                <form method="post" action="/user/out">
+                <div class="login"><span class="login__text">Здравствуйте, <a href='#'><?php echo $_SESSION["name"]; ?></a></span>
+                <a href="/cabin" class="login__cart"><img src="/img/icons/cart-header.png" alt="cart" width="24" height="24">Корзина <span class="cart-count" id="cart_count"><?php echo $_SESSION['item_count'];?></span></a>
+                    <button>Выйти</button></div>
+                </form>
+            <?php endif; ?>
+
             <?php require_once '_chunks/header.php'; ?>
 
             <?php if($is_slider): ?>
@@ -48,7 +63,7 @@
                 <div class="content_area_left">
                     <div class="features">
 
-                        <?php include 'application/views/'.$content_view; ?>
+                        <?php include 'app/views/'.$content_view; ?>
 
                         <?php if($is_right_sidebar): ?>
                             <?php require_once '_chunks/right_sidebar.php'; ?>
@@ -64,47 +79,47 @@
                     <ul>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo1.jpg" alt=""/>
+                                <img src="/img/content/logo1.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo2.jpg" alt=""/>
+                                <img src="/img/content/logo2.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo3.jpg" alt=""/>
+                                <img src="/img/content/logo3.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo1.jpg" alt=""/>
+                                <img src="/img/content/logo1.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo2.jpg" alt=""/>
+                                <img src="/img/content/logo2.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo3.jpg" alt=""/>
+                                <img src="/img/content/logo3.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo1.jpg" alt=""/>
+                                <img src="/img/content/logo1.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo2.jpg" alt=""/>
+                                <img src="/img/content/logo2.jpg" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="carousel_img_wrap">
-                                <img src="/images/content/logo3.jpg" alt=""/>
+                                <img src="/img/content/logo3.jpg" alt=""/>
                             </a>
                         </li>
                     </ul>

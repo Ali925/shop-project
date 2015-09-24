@@ -12,24 +12,28 @@ $(document).ready(function(){
 
     }
 
-
     zeroCount();
 
-    $("#quantity").change(function(){
+    $(".about-item__input").change(function(){
         
-        var item_price = document.getElementById("item_price").innerHTML;
-        var item_count = document.getElementById("quantity").value;
-        var min_c = document.getElementById("quantity").getAttribute("min");
-        var max_c = document.getElementById("quantity").getAttribute("max");
+        var item_price = $(this).parent().next().children('span').text();
+        var item_count = $(this).val();
+        var old_price = $(this).parent().parent().next().children('span').text();
+        var min_c = $(this).attr('min');
+        var max_c = $(this).attr("max");
+        var summary = $('#payment').text();
         min_c = parseInt(min_c);
         max_c = parseInt(max_c);
+        summary = parseFloat(summary);
+        item_price = parseFloat(item_price);
+        old_price = parseFloat(old_price);
 
        if(item_count<min_c) {
-            document.getElementById("quantity").value = min_c;
+            $(this).val() = min_c;
             item_count = min_c;
        }
        else if(item_count>max_c) {
-            document.getElementById("quantity").value = max_c;
+            $(this).val() = max_c;
             item_count = max_c;
        }
 
@@ -37,13 +41,82 @@ $(document).ready(function(){
 
         payment = payment.toFixed(2);
 
-        $("#payment").text(payment);
+        var diff = payment - old_price;
+
+        $(this).parent().parent().next().children('span').text(payment);
+        $(this).parent().parent().next().next().next().next().val(payment);
+
+        summary = summary + diff;
+
+        summary = summary.toFixed(2);
+
+        $('#payment').text(summary);
+        $('#hidden_payment').val(summary);
+
     });
 
     $(".payment-input").click(function(){
         if ($(this).is(':checked')) {
             $(".payment-input").not(this).parent().next().attr("hidden", "1"); 
             $(this).parent().next().removeAttr("hidden");
+        }
+    });
+
+    $(".list_buy-link").click(function(e){
+
+        e.preventDefault();
+
+        if ($(this).children().hasClass('list_buy-active')) {
+
+            var id = $(this).attr('id');
+            var numb = id.match(/\d/g);
+            numb = numb.join("");
+
+            var url = "/cabin/delete/" + numb;
+            var count = $("#cart_count").text();
+            count = parseInt(count) - 1;
+
+            $.ajax({
+           type: "GET",
+           url: url,
+           context: this,
+           success: function()
+           {
+               $(this).children().removeClass("list_buy-active");
+               $(this).children().text("В корзину");
+               $("#cart_count").text(count);
+           }
+         });
+
+        }
+
+        
+        else {
+
+        var url = $(this).attr('href');
+        var count = $("#cart_count").text();
+        count = parseInt(count) + 1;
+            
+         $.ajax({
+           type: "GET",
+           url: url,
+           context: this,
+           success: function()
+           {
+               $(this).children().addClass("list_buy-active");
+               $(this).children().text("В корзине");
+               $("#cart_count").text(count);
+           }
+         });
+     }
+        
+    });
+
+    $(".buy-link").click(function(e){
+
+        if ($(this).children().hasClass('buy-btn_active')) {
+            e.preventDefault();
+            window.location.href = '/cabin';
         }
     });
 
@@ -615,9 +688,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-<<<<<<< HEAD
 
-=======
 function zeroCount () {
 
         var item_count =  $("#quantity").attr("max");
@@ -628,6 +699,6 @@ function zeroCount () {
             $("#payment").text(0);
             };
 }
->>>>>>> 82f9c2941c0555e8479e677d84fdfcd4383a6861
+
 
 

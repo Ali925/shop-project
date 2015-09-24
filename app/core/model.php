@@ -2,21 +2,16 @@
 
 abstract class Model
 {
-    /**
-     * @var PDO
-     */
-    protected $_pdo;
+
+    protected $table;
 
     public function __construct(){
-        $this->_pdo = new PDO('mysql:dbname=shop;host=localhost', 'ali', 'men8deoxu');
-        $query = "SET NAMES UTF8";
-        $p = $this->_pdo->prepare($query);
-        $p->execute();
-    }
 
-
-    public function get_data()
-    {
+        \ORM::configure("mysql:host=localhost;dbname=shop");
+        \ORM::configure("username", "ali");
+        \ORM::configure("password", "men8deoxu");
+        \ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
         
     }
+
 }
