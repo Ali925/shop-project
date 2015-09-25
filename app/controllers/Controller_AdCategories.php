@@ -30,17 +30,13 @@ class Controller_AdCategories extends Controller{
         $title = htmlentities($array['title']);
         $title = htmlspecialchars($title);
         $this->model->add_Category($title);
-        $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
-            array(
-                'title' => 'Категории',
-                'form' => false,
 
-                'data' => $this->model->get_all()
-            )
-        );
+        header("location: /AdCategories");
     }
 
     public function action_editCat($id){
+
+
         $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
             array(
                 'title' => 'Категории',
@@ -51,12 +47,8 @@ class Controller_AdCategories extends Controller{
     }
 
     public function action_delCat($id){
-        $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
-            array(
-                'title' => 'Категории',
-                'form' => false,
-                'data' => $this->model->delete_Category($id)
-            )
-        );
+        $this->model->delete_Category($id);
+
+        header("location: /AdCategories");
     }
 } 

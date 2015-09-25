@@ -30,7 +30,7 @@ HERE;
                 <td>{$value['id']}</td>
                 <td>{$value['title']}</td>
                 <td><a href="#"><button>Изменить</button></a></td>
-                <td><a href="#"><button>Удалить</button></a></td>
+                <td><a href="/AdCategories/delCat/{$value['id']}"><button>Удалить</button></a></td>
             </tr>
 HERE;
             }
