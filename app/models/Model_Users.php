@@ -1,6 +1,6 @@
 <?php
 namespace Shop\Model;
 
-class User extends Model {
+class Users extends Model{
     protected $table = "users";
 } 

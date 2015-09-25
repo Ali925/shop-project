@@ -774,6 +774,10 @@ div.search_submit {
 }
 .features_list_wrap {
   padding-bottom: 10px;
+    width: 660px;
+}
+.features_list_wrap button{
+    font-size: x-small;
 }
 .features_descr_list {
   padding-right: 4px;
@@ -3159,7 +3163,7 @@ footer {
 
 .authorize, .registrate{
     text-align: center;
-    width: 350px;
+    width: 700px;
     height: auto;
 }
 .authorize input, .registrate input {
@@ -3188,17 +3192,153 @@ footer {
     width: 600px;
     word-wrap: break-word;
 }
-.alarm{
-    width: 100%;
+/*стили для блока с ошибками/предупреждениями*/
+/*.alarm{*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
+/*}*/
+/*.alarm a button{*/
+    /*width: 350px;*/
+    /*height: 30px;*/
+    /*padding: 5px;*/
+    /*margin: 10px;*/
+    /*background-color: #eee;*/
+    /*border-radius: 5px;*/
+/*}*/
+.product_wrap{
+    width: 660px;
     height: auto;
-    margin: 0 auto;
-    text-align: center;
 }
-.alarm a button{
-    width: 350px;
+.product_wrap:before, .product_wrap:after{
+    content: "";
+    display: table;
+}
+.product_wrap:after{
+    clear: both;
+}
+.product_img{
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    position: relative;
+    float: left;
+}
+.product_img img{
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px 0;
+}
+.product_info{
+    width: 500px;
+    height: auto;
+    float: right;
+}
+.product_header{
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.product_button{
+    float:right;
+    width: 250px;
+    margin: 20px;
+}
+.product_buy button, .product_more button{
+    margin-right: 20px;
+    width: 100px;
     height: 30px;
-    padding: 5px;
-    margin: 10px;
-    background-color: #eee;
+    font-size: larger;
+    color: #ffffff;
+    background-color: #6BA30C;
+    border: none;
     border-radius: 5px;
+    box-shadow: 0 0 5px #333333;
+}
+.product_more button{
+    background-color: #0070aa;
+}
+.product_price{
+    display: block;
+    float:left;
+    width: 150px;
+}
+hr{
+    border-style: dashed;
+    opacity: 0.3;
+}
+.btnBack button{
+    width: 200px;
+    height: 30px;
+    margin: 0 0 20px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    border-color: #333333;
+    font-size: large;
+    outline: none;
+}
+.is_active{
+    color: limegreen;
+    font: bold;
+}
+.is_not_active{
+    color: #ff0000;
+    font: bold;
+}
+.user_info_span{
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+}
+.user_info_span span, .user_info span{
+    display: block;
+    margin: 10px;
+    height: 34px;
+}
+.user_info {
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+}
+.admin{
+    text-decoration: none;
+    cursor: default;
+    color: transparent;
+}
+.new_user_data{
+    width: 200px;
+    display: inline-block;
+}
+.new_user_data a{
+    width: 200px;
+    display: block;
+    height: 20px;
+    margin: 10px;
+}
+.secoo{
+    background-color: transparent;
+    border: 1px solid;
+    border-color: #0055ff;
+}
+.simple{
+    text-align: left;
+}
+.simple input{
+    margin: 3px;
+    outline: none;
+}
+.tableContent{
+    font-size: x-small;
+}
+.tableContent td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 2px;
+}
+table img{
+    max-height: 70px;
+    max-width: 70px;
 }

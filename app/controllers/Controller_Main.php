@@ -5,6 +5,7 @@ class Controller_Main extends Controller{
         $this->view->generate("View_Main.php", "View_Template.php",
             array(
                 "title" => "Главная",
+                "is_slider" => false
             )
         );
     }

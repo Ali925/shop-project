@@ -4,7 +4,7 @@ class Controller_Authorization extends Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->model = new Shop\Model\User();
+        $this->model = new Shop\Model\Users();
     }
     function action_index(){
         $this->view->generate("View_Authorization.php", "View_Template.php",
@@ -19,7 +19,7 @@ class Controller_Authorization extends Controller
         $salt2 = "8r#h";
         $email = htmlentities($array["email"]);
         $password = md5($salt1.$array["pass"].$salt2);
-        $data = $this->model->get_auth_data($email);
+        $data = $this->model->get_auth_user($email);
         $true_login = $data["email"];
         $true_password = $data["password"];
         if(!$true_login){
@@ -39,18 +39,20 @@ HERE;
             </div>
 HERE;
         }else{
-            $_SESSION["authorized"] = true;
             $_SESSION["name"] = $data["name"];
+            $_SESSION["id"] = $data["id"];
+            $_SESSION["type"] = "user";
 
-            header("location: /Main");
+            header("location: /");
         }
     }
 
     public function action_out(){
         unset($_SESSION["name"]);
-        unset($_SESSION["authorized"]);
+        unset($_SESSION["id"]);
+        unset($_SESSION["type"]);
 
         session_destroy();
-        header("location: /Main");
+        header("location: /");
     }
 }

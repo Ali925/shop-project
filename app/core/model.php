@@ -10,29 +10,53 @@ abstract class Model
         \ORM::configure("username", "root");
         \ORM::configure("password", "");
     }
-
+//получаем все содержимое из таблицы
     public function get_all(){
         return \ORM::for_table($this->table)->find_many();
     }
-
+//получаем одну запись из таблицы
     public function get_one($id){
         return \ORM::for_table($this->table)->find_one($id);
     }
-
-    public function get_category($category){
+//получаем список категорий товаров
+    public function get_categories(){
+        return \ORM::for_table("categories")->find_many();
+    }
+//получаем список товаров конкретной категории
+    public function get_one_category($category){
         return \ORM::for_table("products")
-            ->select_many("products.id", "products.title", "products.mark", "products.description", "products.price")
-            ->join("categories", array("products.id_catalog","=", "categories.id"))
-            ->where("categories.title", "=", $category)
+            ->where("products.id_catalog", $category)
             ->find_many();
     }
 
-    public function get_auth_data($email){
+//получаем подробности заказов
+    public function get_order_property(){
+        return \ORM::for_table("order_property")
+            ->find_many();
+    }
+
+//получаем подробности конкретного заказа
+    public function get_one_order_property($id){
+        return \ORM::for_table("order_property")
+            ->where("order_property.id", $id)
+            ->find_one();
+    }
+
+//получаем данные пользователя из БД для сравнения с введенными данными для авторизации
+    public function get_auth_user($email){
         return \ORM::for_table("users")
             ->where("email", $email)
             ->find_one();
     }
 
+//получаем данные админа из БД для сравнения с введенными данными для авторизации
+    public function get_auth_ad($name){
+        return \ORM::for_table("admins")
+            ->where("name", $name)
+            ->find_one();
+    }
+
+//добавляем в БД нового пользователя
     public function reg_user($name, $lastname, $birthday, $email, $password, $is_active, $reg_date, $last_update){
         $person = \ORM::for_table("users")->create();
         $person->name = $name;
@@ -45,20 +69,26 @@ abstract class Model
         $person->last_update = $last_update;
         $person->save();
     }
-
-    public function update_user($name=null, $lastname=null, $birthday=null, $email=null, $password=null, $is_active=null, $date_reg=null, $last_update=null){
-        $last_update = (string)date_format(new \DateTime(), 'Y-m-d');
-        $login = $_SESSION["login"];
-        $parameters = func_get_args();
-        $person = \ORM::for_table("users")->find_one($login);
-        foreach($parameters as $parameter){
-            if(isset($parameter)){
-               $person->set(substr($parameter[0], 1), $parameter[1]);
-            }
+//редактируем данные пользователя
+    public function update_user($name=null, $lastname=null, $birthday=null, $email=null, $last_update){
+        $id = $_SESSION["id"];
+        $person = \ORM::for_table("users")->find_one($id);
+        if(isset($name)){
+            $person->set('name', $name);
+            $person->set('last_update', $last_update);
+        }
+        if(isset($lastname)){
+            $person->set('lastname', $lastname);
+            $person->set('last_update', $last_update);
+        }
+        if(isset($birthday)){
+            $person->set('birthday', $birthday);
+            $person->set('last_update', $last_update);
+        }
+        if(isset($email)){
+            $person->set('email', $email);
+            $person->set('last_update', $last_update);
         }
         $person->save();
-
-
-
     }
 }

@@ -28,15 +28,15 @@
     <div class = "maincontent">
         <div class="container">
 
-            <?php if(!isset($_SESSION["authorized"])): ?>
+            <?php if(!isset($_SESSION["name"])): ?>
                 <div class="auth">
                     <a href="/Authorization">Войти</a> /
                     <a href="/Registration">Зарегистрироваться</a>
                 </div>
             <?php endif; ?>
-            <?php if(isset($_SESSION["authorized"])): ?>
+            <?php if(isset($_SESSION["name"])): ?>
                 <form method="post" action="/Authorization/out">
-                <div class="login">Здравствуйте, <a href='#'><?php echo $_SESSION["name"]; ?></a>
+                <div class="login">Здравствуйте, <a href='/Users'><?php echo $_SESSION["name"]; ?></a>
                     <button>Выйти</button></div>
                 </form>
             <?php endif; ?>
@@ -56,8 +56,8 @@
             <div class="content_area main_page">
                 <div class="content_area_right">
                     <?php require_once '_chunks/left_navbar.php'; ?>
+<!--                    --><?php //require_once '_chunks/search.php'; ?>
                 </div>
-
 
                 <div class="content_area_left">
                     <div class="features">
@@ -140,7 +140,7 @@
         <div class="footer_main_logo">
             <p>
                 <span>
-                    &copy; 2015 ООО «Лофтскулл». Все права защищены
+                    <a class="admin" href="/Admin">&copy;</a> 2015 ООО «Лофтскулл». Все права защищены
                 </span>
             </p>
         </div>

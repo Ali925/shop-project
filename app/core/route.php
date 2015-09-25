@@ -22,16 +22,58 @@ class Route
             $action_name = $routes[2];
         }
 
-        if(isset($_REQUEST)){
-            $params = $_REQUEST;
+        if(!empty($routes[3])){
+            $params = $routes[3];
+        }
+        else{
+            if(isset($_REQUEST)){
+                $params = $_REQUEST;
+            }
         }
 
         // добавляем префиксы
-        if($controller_name == "Registration"){
-            $model_name = 'Model_Authorization';
-        }else{
-            $model_name = 'Model_' . $controller_name;
+        switch ($controller_name){
+            case "Registration":
+                $model_name = 'Model_Users';
+                break;
+            case "Authorization":
+                $model_name = 'Model_Users';
+                break;
+            case "Edit":
+                $model_name = 'Model_Users';
+                break;
+            case "AdAuth":
+                $model_name = "Model_Users";
+                break;
+            case "AdUsers":
+                $model_name = "Model_Users";
+                break;
+            case "AdUserInfo":
+                $model_name = "Model_Users";
+                break;
+            case "AdProductInfo":
+                $model_name = "Model_Products";
+                break;
+            case "AdProducts":
+                $model_name = "Model_Products";
+                break;
+            case "AdOrders":
+                $model_name = "Model_Orders";
+                break;
+            case "AdminCategories":
+                $model_name = "Model_Categories";
+                break;
+            case "AdminProducts":
+                $model_name = "Model_Products";
+                break;
+            case "AdminOrders":
+                $model_name = "Model_Orders";
+                break;
+            default:
+                $model_name = 'Model_' . $controller_name;
+                break;
         }
+
         $controller_name = "Controller_" . $controller_name;
         $action_name = "action_" . $action_name;
 
@@ -84,13 +126,4 @@ class Route
         header("Status: 404 Not Found");
         header('Location:' . $host . 'Error');
     }
-
-    function Error($message)
-    {
-        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
-        header('HTTP/1.1 404 Not Found');
-        header("Status: 404 Not Found");
-        header('Location:' . $host . 'Error/message');
-    }
-
 }
