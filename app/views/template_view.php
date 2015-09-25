@@ -56,7 +56,9 @@
 
             <div class="content_area main_page">
                 <div class="content_area_right">
-                    <?php require_once '_chunks/left_navbar.php'; ?>
+                    <?php if($is_left_navbar): ?>
+                            <?php require_once '_chunks/left_navbar.php'; ?>
+                        <?php endif; ?>
                 </div>
 
 

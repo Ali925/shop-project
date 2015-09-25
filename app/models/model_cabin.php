@@ -36,7 +36,7 @@ class Model_Cabin extends Model
         public function get_all($user) {
 
             return \ORM::for_table('cart')
-                ->select_many(array('cart_id' => 'cart.id'), 'cart.id_user', "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
+                ->select_many(array('cart_id' => 'cart.id'), 'cart.id_user', "products.link", "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
                 ->join('products', array('cart.id_product', '=', 'products.id'))
                 ->where('cart.id_user', $user)
                 ->find_many();

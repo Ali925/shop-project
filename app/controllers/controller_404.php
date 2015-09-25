@@ -10,7 +10,8 @@ class Controller_404 extends Controller{
                     'title' => 'Ошибка 404',
                     'is_photo_slider' => false,
                   	'is_slider' => false,
-                	'is_right_sidebar' => false
+                	'is_right_sidebar' => false,
+                    'is_left_navbar' => false
                 )
             );
         }

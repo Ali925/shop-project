@@ -9,7 +9,8 @@ class Controller_Main extends Controller
                 'title' => 'Главная страница',
                 'is_photo_slider' => true,
                 'is_slider' => true,
-                'is_right_sidebar' => true
+                'is_right_sidebar' => true,
+                'is_left_navbar' => true
             )
         );
     }

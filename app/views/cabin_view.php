@@ -5,7 +5,7 @@
 			<?php foreach($products as $product): ?>
 				<li class="cart-main__item">
 					<div class="about-item">
-						<div class="about-item__img"><img src="/img/content/prod_1.png" alt="" style="float: left; margin-right: 10px;"></div>
+						<div class="about-item__img"><img src="<?php echo $product['link'];?>" alt="" style="float: left; margin-right: 10px;height: 90px"></div>
 						<div class="about-item__text"><div class="about-item__title"><?php echo $product['title']; ?></div>
 						<div class="about-item__count"><label for="quantity" class="about-item__label">Кол-во: </label>
 						<input type="number" name="quantity_<?php echo $product['id'];?>" class="about-item__input" min="1" max="<?php echo $product['count'];?>" value = "1">

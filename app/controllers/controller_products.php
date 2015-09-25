@@ -18,7 +18,25 @@ class Controller_Products extends Controller
                 'products' => $this->model->get_data(),
                  'is_photo_slider' => false,
                 'is_slider' => false,
-                'is_right_sidebar' => false
+                'is_right_sidebar' => false,
+                'is_left_navbar' => true
+            )
+        );
+    }
+
+    function action_category($category) {
+
+        $data = $this->model->get_category($category);
+        $title = $data[0]['category'];
+
+        $this->view->generate('products/list_view.php', 'template_view.php',
+            array(
+                'title' => $title,
+                'products' => $data,
+                 'is_photo_slider' => false,
+                'is_slider' => false,
+                'is_right_sidebar' => false,
+                'is_left_navbar' => true
             )
         );
     }
@@ -33,25 +51,12 @@ class Controller_Products extends Controller
                 'product' => $data,
                 'is_photo_slider' => false,
                 'is_slider' => false,
-                'is_right_sidebar' => false
+                'is_right_sidebar' => false,
+                'is_left_navbar' => true
             )
         );
 
 
     }
 
-    function action_payment($id) {
-
-        $id = (int)$id[0];
-        $data = $this->model->get_product($id);
-        $this->view->generate('products/payment.php', 'template_view.php',
-            array(
-                'title' => 'Способ оплаты',
-                'product' => $data,
-                 'is_photo_slider' => false,
-                'is_slider' => false,
-                'is_right_sidebar' => false
-            )
-        );
-    }
 }

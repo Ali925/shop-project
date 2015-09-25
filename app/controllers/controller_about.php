@@ -7,7 +7,8 @@ class Controller_About extends Controller{
                 "title" => "О нас",
                 'is_photo_slider' => false,
                 'is_slider' => false,
-                'is_right_sidebar' => false
+                'is_right_sidebar' => false,
+                'is_left_navbar' => false
             )
         );
     }

@@ -15,7 +15,8 @@ class Controller_Cabin extends Controller
                 'products' => $products,
                 'is_photo_slider' => false,
                 'is_slider' => false,
-                'is_right_sidebar' => false
+                'is_right_sidebar' => false,
+                'is_left_navbar' => false
             )
         );
     }
@@ -46,7 +47,8 @@ class Controller_Cabin extends Controller
                 'title' => 'Оформление заказа',
                 'is_photo_slider' => false,
                 'is_slider' => false,
-                'is_right_sidebar' => false
+                'is_right_sidebar' => false,
+                'is_left_navbar' => false
             )
         );
     }
@@ -93,7 +95,8 @@ class Controller_Cabin extends Controller
                 'm1' => $messageToAdmin,
                 'm2' => $messageToUser,
                 'is_slider' => false,
-                'is_right_sidebar' => false
+                'is_right_sidebar' => false,
+                'is_left_navbar' => false
             )
         );
 

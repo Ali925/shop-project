@@ -120,6 +120,28 @@ $(document).ready(function(){
         }
     });
 
+    $("#item_categories").change(function(e){
+
+        e.preventDefault;
+
+        var url = "/search/ajax/" + $(this).val();
+
+        $.ajax({
+           type: "GET",
+           url: url,
+           context: this,
+           success: function(data)
+           {    var marks = '<option value=" " selected> </option>';
+               $.each(data, function(i){
+                  marks = marks + "<option value=" + data[i] + ">" + data[i] +"</option>";
+               });
+
+               $(this).parent().next().children('select').html(marks);
+           }
+         });
+
+    });
+
     Cufon.replace(".banner_title, " +
         ".slideshow_text_sale, nav ul li a," +
         ".feautures_descr_title div," +
@@ -306,23 +328,23 @@ $(document).ready(function(){
     });
 
 
-    $('.categories_item_title a').on('click', function(){
-        $('.just_clicked').removeClass('just_clicked');
-        $('.categories_sublist_popup').hide();
+    // $('.categories_item_title a').on('click', function(){
+    //     $('.just_clicked').removeClass('just_clicked');
+    //     $('.categories_sublist_popup').hide();
 
-        accordeon($(this));
+    //     accordeon($(this));
 
-        if (!$(this).parent().hasClass('opened')) {
-            $(this).closest('ul').find('.categories_item_title.opened').removeClass('opened');
-            $(this).parent().addClass('opened');
+    //     if (!$(this).parent().hasClass('opened')) {
+    //         $(this).closest('ul').find('.categories_item_title.opened').removeClass('opened');
+    //         $(this).parent().addClass('opened');
 
-        } else {
-            $(this).parent().removeClass('opened');
+    //     } else {
+    //         $(this).parent().removeClass('opened');
 
-        }
+    //     }
 
-        return false;
-    });
+    //     return false;
+    // });
 
     $('.accordeon_list > li.open_as_default').addClass('active')
         .find('.accordeon_content').show()
@@ -510,33 +532,33 @@ $(document).ready(function(){
 
     $('.categories_sublist_popup').hide();
 
-    $('.categories_item_sublist > li > .categories_sublist_inner > .categories_inner_title').on('click', function(){
-        var popUp = $(this).closest('li').find('.categories_sublist_popup');
+    // $('.categories_item_sublist > li > .categories_sublist_inner > .categories_inner_title').on('click', function(){
+    //     var popUp = $(this).closest('li').find('.categories_sublist_popup');
 
-        if(!$(this).hasClass('just_clicked')) {
+    //     if(!$(this).hasClass('just_clicked')) {
 
-            if (window.navigator.userAgent.indexOf('MSIE 8.0') < 0) {
-                $('.categories_sublist_popup').stop(true, true).fadeOut();
-                popUp.stop(true, true).fadeIn();
-            } else {
-                // для ИЕ8, баги со всплывашкой
-                $('.categories_sublist_popup').stop(true, true).hide();
-                popUp.stop(true, true).show();
-            }
+    //         if (window.navigator.userAgent.indexOf('MSIE 8.0') < 0) {
+    //             $('.categories_sublist_popup').stop(true, true).fadeOut();
+    //             popUp.stop(true, true).fadeIn();
+    //         } else {
+    //             // для ИЕ8, баги со всплывашкой
+    //             $('.categories_sublist_popup').stop(true, true).hide();
+    //             popUp.stop(true, true).show();
+    //         }
 
-            $(this).addClass('just_clicked');
-        } else {
+    //         $(this).addClass('just_clicked');
+    //     } else {
 
-            if (window.navigator.userAgent.indexOf('MSIE 8.0') < 0) {
-                popUp.stop(true, true).fadeOut();
-            } else {
-                popUp.stop(true, true).hide();
-            }
-            $(this).removeClass('just_clicked');
-        }
+    //         if (window.navigator.userAgent.indexOf('MSIE 8.0') < 0) {
+    //             popUp.stop(true, true).fadeOut();
+    //         } else {
+    //             popUp.stop(true, true).hide();
+    //         }
+    //         $(this).removeClass('just_clicked');
+    //     }
 
-        return false;
-    });
+    //     return false;
+    // });
 
 
     $('.categories_popup_close').on('click', function(){

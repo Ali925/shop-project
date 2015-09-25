@@ -69,14 +69,14 @@
             </li>
         </ul>
         <div class="search">
-            <form action="">
+            <form action="/search" method="POST">
                 <div class="search_input_wrap">
                     <div class="input_text">
                         <div class="input_text_wrap">
-                            <input type="text" placeholder="Поиск по каталогу">
+                            <input id="search" name="search" type="text" placeholder="Поиск по каталогу">
                         </div>
                     </div>
-                    <input class="search_ico" value="" type="submit">
+                    <a href="/search/wide" class="search_ico"></a>
                 </div>
                 <input class="search_submit" type="submit" value="">
             </form>
