@@ -5,7 +5,19 @@
             echo "<h3>В таблице нет записей о категориях[<h3>";
         }else {
 
+
+            echo "<a href='/AdCategories/viewForm'><button>Добавить новую категорию</button></a>";
+
+            if($form){
+                echo <<<HERE
+                    <form action='/AdCategories/addCat' method='post'>
+                        <input id='title' name='title' type='text'></input></br>
+                        <button type='submit'>Добавить</button>
+                    </form>
+HERE;
+            }
             echo <<<HERE
+
             <table class='tableContent'>
                 <tr>
                     <th>ID</th>

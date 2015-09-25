@@ -91,4 +91,10 @@ abstract class Model
         }
         $person->save();
     }
+//админ добавляет категорию
+    public function add_Category($title){
+        $category = \ORM::for_table("categories")->create();
+        $category->set('title', $title);
+        $category->save();
+    }
 }
