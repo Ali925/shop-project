@@ -34,13 +34,10 @@ class Route
         // добавляем префиксы
         switch ($controller_name){
             case "Registration":
-                $model_name = 'Model_Users';
+                $model_name = "Model_Users";
                 break;
             case "Authorization":
-                $model_name = 'Model_Users';
-                break;
-            case "Edit":
-                $model_name = 'Model_Users';
+                $model_name = "Model_Users";
                 break;
             case "AdAuth":
                 $model_name = "Model_Users";
@@ -51,22 +48,19 @@ class Route
             case "AdUserInfo":
                 $model_name = "Model_Users";
                 break;
-            case "AdProductInfo":
-                $model_name = "Model_Products";
+            case "Edit":
+                $model_name = "Model_Users";
                 break;
             case "AdProducts":
                 $model_name = "Model_Products";
                 break;
-            case "AdOrders":
-                $model_name = "Model_Orders";
-                break;
-            case "AdminCategories":
-                $model_name = "Model_Categories";
-                break;
-            case "AdminProducts":
+            case "AdProductInfo":
                 $model_name = "Model_Products";
                 break;
-            case "AdminOrders":
+            case "AdCategories":
+                $model_name = "Model_Categories";
+                break;
+            case "AdOrders":
                 $model_name = "Model_Orders";
                 break;
             default:

@@ -36,6 +36,7 @@
                         <a href='/'><button>Главная</button></a>
                         <ul class='admin_list'>
                             <a href='/AdUsers'><li>Пользователи</li></a>
+                            <a href='/AdCategories'><li>Категории</li></a>
                             <a href='/AdProducts'><li>Товары</li></a>
                             <a href='/AdOrders'><li>Заказы</li></a>
                         </ul>
