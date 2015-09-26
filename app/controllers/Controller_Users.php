@@ -1,5 +1,5 @@
 <?php
-//Контроллер для работы с каталогом
+//Контроллер для личного кабинета
 class Controller_Users extends Controller{
     public function __construct(){
         parent::__construct();

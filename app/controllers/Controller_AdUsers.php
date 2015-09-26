@@ -1,5 +1,5 @@
 <?php
-
+//Контроллер для работы администратора с пользователями
 class Controller_AdUsers extends Controller{
     public function __construct(){
         parent::__construct();

@@ -45,16 +45,10 @@ class Route
             case "AdUsers":
                 $model_name = "Model_Users";
                 break;
-            case "AdUserInfo":
-                $model_name = "Model_Users";
-                break;
             case "Edit":
                 $model_name = "Model_Users";
                 break;
             case "AdProducts":
-                $model_name = "Model_Products";
-                break;
-            case "AdProductInfo":
                 $model_name = "Model_Products";
                 break;
             case "AdCategories":

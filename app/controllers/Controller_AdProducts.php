@@ -1,5 +1,5 @@
 <?php
-
+//Контроллер для работы администратора с товарами
 class Controller_AdProducts extends Controller{
     public function __construct(){
         parent::__construct();

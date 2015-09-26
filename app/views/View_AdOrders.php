@@ -26,8 +26,8 @@ HERE;
                 <td>{$value['id']}</td>
                 <td>{$date}</td>
                 <td>{$value['status']}</td>
-                <td><a href="/AdUserInfo/user/{$value['id_user']}">{$value['id_user']}</a></td>
-                <td><a href="/AdProductInfo/item/{$property["{$value['id']}"]['id_product']}">{$property["{$value['id']}"]['id_product']}</a></td>
+                <td><a href="/AdOrders/user/{$value['id_user']}">{$value['id_user']}</a></td>
+                <td><a href="/AdOrders/product/{$property["{$value['id']}"]['id_product']}">{$property["{$value['id']}"]['id_product']}</a></td>
                 <td>{$property["{$value['id']}"]['price']}</td>
                 <td>{$property["{$value['id']}"]['count']}</td>
                 <td>{$amount}</td>

@@ -1,5 +1,5 @@
 <?php
-
+//Контроллер для авторизации администратора
 class Controller_AdAuth extends Controller{
     public function __construct(){
         parent::__construct();

@@ -10,10 +10,27 @@ Target Server Type    : MYSQL
 Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-09-21 21:34:57
+Date: 2015-09-26 15:34:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for admins
+-- ----------------------------
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE `admins` (
+  `name` varchar(30) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  PRIMARY KEY (`name`),
+  UNIQUE KEY `name` (`name`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of admins
+-- ----------------------------
+INSERT INTO `admins` VALUES ('Maksim', 'bf1d97f08f27bc40e5736c5d70a7f5ce');
+INSERT INTO `admins` VALUES ('Tural', '39b51f8a63e345a74109222fd6a5ea98');
 
 -- ----------------------------
 -- Table structure for categories
@@ -290,4 +307,3 @@ INSERT INTO `users` VALUES ('28', 'Сергей', 'Егоров', '1991-10-12', 
 INSERT INTO `users` VALUES ('29', 'Владислав', 'Николаев', '1992-10-05', 'vladislav_nikolayev@mail.ru', 'c7a8d374cf93af8824ff8a55b562ca1c', '0', '2015-08-18 14:46:43', '2015-08-18 14:46:43');
 INSERT INTO `users` VALUES ('30', 'Артём', 'Курзяков', '1985-02-28', 'artyom_kurzyakov@list.ru', '17fc658145ddf7e88c22f403d12dd329', '1', '2015-08-25 04:15:34', '2015-08-25 04:15:34');
 INSERT INTO `users` VALUES ('35', 'Jason', 'Statham', '2015-09-01', 'statham@jason.ru', 'f691cfd62d4075e532fe17630f9e65b4', '0', '2015-09-19 00:00:00', '2015-09-19 00:00:00');
-shopproducts

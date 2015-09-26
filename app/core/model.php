@@ -22,6 +22,14 @@ abstract class Model
     public function get_categories(){
         return \ORM::for_table("categories")->find_many();
     }
+//получаем информацияю о пользователе
+    public function get_user($id){
+        return \ORM::for_table("users")->find_one($id);
+    }
+//получаем информацияю о товаре
+    public function get_product($id){
+        return \ORM::for_table("products")->find_one($id);
+    }
 //получаем список товаров конкретной категории
     public function get_one_category($category){
         return \ORM::for_table("products")
@@ -31,8 +39,7 @@ abstract class Model
 
 //получаем подробности заказов
     public function get_order_property(){
-        return \ORM::for_table("order_property")
-            ->find_many();
+        return \ORM::for_table("order_property")->find_many();
     }
 
 //получаем подробности конкретного заказа
