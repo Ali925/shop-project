@@ -99,8 +99,13 @@ abstract class Model
     }
 //админ удаляет категорию
     public function delete_Category($id){
-
         $category = \ORM::for_table("categories")->find_one($id);
         $category->delete();
     }
+//админ изменяет категорию
+public function edit_Category($id, $title){
+    $category = \ORM::for_table("categories")->find_one($id);
+    $category->set('title', $title);
+    $category->save();
+}
 }

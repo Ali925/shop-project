@@ -29,12 +29,23 @@ HERE;
             <tr>
                 <td>{$value['id']}</td>
                 <td>{$value['title']}</td>
-                <td><a href="#"><button>Изменить</button></a></td>
+
+                <td><a href="/AdCategories/viewFormEdit/{$value['id']}"><button>Изменить</button></a></td>
                 <td><a href="/AdCategories/delCat/{$value['id']}"><button>Удалить</button></a></td>
-            </tr>
+                </tr>
 HERE;
             }
             echo "</table>";
+
+            if($formEdit) {
+                echo <<<HERE
+                    <form action = '/AdCategories/editCat' method = 'post' >
+                        <input id = 'title' name = 'title' type = 'text' value = '{$category['title']}' ></input ></br >
+                        <input id = 'id' name = 'id' style='visibility:hidden' type = 'text' value = '{$category['id']}' ></input ></br >
+                        <button type = 'submit' > Применить</button >
+                    </form >
+HERE;
+            }
         }
         ?>
     </div>
