@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-09-26 15:34:17
+Date: 2015-09-26 22:09:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -268,42 +268,44 @@ CREATE TABLE `users` (
   `password` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `is_active` tinyint(1) NOT NULL DEFAULT '0',
   `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_update` timestamp NULL DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) KEY_BLOCK_SIZE=20
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Мария', 'Таманаева', '1956-02-24', 'mariya_tamaneva@list.ru', 'bb440d1516bfdcbaa9291150b26821a3', '0', '2015-01-06 02:07:07', '2015-01-06 02:07:07');
-INSERT INTO `users` VALUES ('2', 'Юрий', 'Никитин', '1948-07-26', 'yuri_nikitin@bk.ru', '5fe28415cd9a25edf7edf195d22c201b', '1', '2015-01-19 23:17:03', '2015-01-19 23:17:03');
-INSERT INTO `users` VALUES ('3', 'Ирина', 'Жигульская', '1965-08-17', 'irina_jigulskaya@inbox.ru', '443a3ae86d6e84100cef795990348fa8', '0', '2015-01-21 16:03:04', '2015-01-21 16:03:04');
-INSERT INTO `users` VALUES ('4', 'Виктор', 'Журавлев', '1965-03-24', 'viktor_juravlev@mail.ru', 'b9f69b2e5d53364785dd67483589b263', '0', '2015-02-21 18:08:03', '2015-02-21 18:08:03');
-INSERT INTO `users` VALUES ('5', 'Максим', 'Липовик', '1978-12-15', 'maksim_lipovik@bk.ru', '764cc32b989d49c0d12cade13311e1d0', '1', '2015-02-26 20:03:44', '2015-02-26 20:03:44');
-INSERT INTO `users` VALUES ('6', 'Роман', 'Костюченко', '1989-12-15', 'roman_kostyuchenko@list.ru', 'd26f87b30e2600724f63fd3f4569c022', '0', '2015-02-28 19:17:43', '2015-02-28 19:17:43');
-INSERT INTO `users` VALUES ('7', 'Евгений', 'Скрыпников', '1954-09-30', 'evgeniy_skripnikov@mail.ru', '386fb3dd746bb7cbfab2e9c04ebf79bf', '0', '2015-03-13 07:19:37', '2015-03-13 07:19:37');
-INSERT INTO `users` VALUES ('8', 'Дмитрий', 'Сокольцов', '1975-01-13', 'dmitri_sokolcov@inbox.ru', '1cd67667b4f0aba3218acd70fe175476', '1', '2015-03-18 21:35:29', '2015-03-18 21:35:29');
-INSERT INTO `users` VALUES ('9', 'Дмитрий', 'Гололобов', '1986-08-23', 'dmitri_qolobov@bk.ru', '4c24990c0615c80d403e60dbbb52bf2e', '1', '2015-03-23 10:06:45', '2015-03-23 10:06:45');
-INSERT INTO `users` VALUES ('10', 'Владимир', 'Киселев', '1990-08-05', 'vladimir_kiselev@mail.ru', 'f605c15a4e289ceec990e9ef82dfbe98', '0', '2015-04-22 02:46:36', '2015-04-22 02:46:36');
-INSERT INTO `users` VALUES ('11', 'Константин', 'Добецкий', '1988-09-12', 'konstantin_dobeckiy@bk.ru', '7a7b1c49a304253571924e798ff70786', '1', '2015-04-30 12:09:23', '2015-04-30 12:09:23');
-INSERT INTO `users` VALUES ('12', 'Сергей', 'Терешков', '1993-05-15', 'sergey_tereshkov@bk.ru', '6155e99add2a568458c7df84972421a7', '1', '2015-05-15 18:03:24', '2015-05-15 18:03:24');
-INSERT INTO `users` VALUES ('13', 'Андрей', 'Бобрышов', '1975-10-23', 'andrey_bobrishov@mail.ru', 'a3c7c47ece6bac9b1219054f1b888521', '1', '2015-05-22 17:04:29', '2015-05-22 17:04:29');
-INSERT INTO `users` VALUES ('14', 'Александр', 'Бондаренко', '1981-12-17', 'aleksandr_bondarenko@list.ru', 'd793546dc638d3fb356df9535e3b67ca', '1', '2015-05-22 22:07:38', '2015-05-22 22:07:38');
-INSERT INTO `users` VALUES ('15', 'Роман', 'Карпов', '1968-10-29', 'roman_karpov@mail.ru', 'b3a376ec376573f8a8b8a080443803f9', '0', '2015-05-24 14:19:17', '2015-05-24 14:19:17');
-INSERT INTO `users` VALUES ('16', 'Денис', 'Назаров', '1989-10-10', 'denis_nazarov@inbox.ru', '8c52ff1adaf1fdeacef3c58172743a2e', '1', '2015-05-25 04:10:52', '2015-05-25 04:10:52');
-INSERT INTO `users` VALUES ('17', 'Алексей', 'Буквин', '1992-05-17', 'aleksey_bukvin@mail.ru', '84f004e2de46b05d147cd853fa5c1e88', '1', '2015-05-25 18:22:41', '2015-05-25 18:22:41');
-INSERT INTO `users` VALUES ('18', 'Александр', 'Хрюков', '1980-06-23', 'aleksandr_xrukov@bk.ru', 'de85fc8b0cd0f78da93dcf684ba8fea6', '1', '2015-06-01 13:25:06', '2015-06-01 13:25:06');
-INSERT INTO `users` VALUES ('19', 'Алексей', 'Минжуков', '1951-10-05', 'aleksey_minjukov@inbox.ru', 'a46da4a5a0b193fcdf5d7a6fa4817c49', '1', '2015-06-14 19:35:35', '2015-06-14 19:35:35');
-INSERT INTO `users` VALUES ('20', 'Полина', 'Данилина', '1990-11-15', 'polina_danilina@mail.ru', '815a2e988dbbdcba6c5dad45d70bb82f', '1', '2015-06-26 12:02:04', '2015-06-26 12:02:04');
-INSERT INTO `users` VALUES ('21', 'Антон', 'Мясников', '1970-04-01', 'anton_myasnikov@bk.ru', '1b5fab1d1b205d192d575ee5326d5e0b', '1', '2015-07-02 23:10:34', '2015-07-02 23:10:34');
-INSERT INTO `users` VALUES ('22', 'Ярослав', 'Чуйков', '1989-04-02', 'yaroslav_chuykov@list.ru', '72c95aee2b2ccd7e9bf694764ecace84', '0', '2015-07-04 22:08:12', '2015-07-04 22:08:12');
-INSERT INTO `users` VALUES ('23', 'Фанис', 'Ганиев', '1985-07-18', 'fanis_qaniyev@mail.ru', 'dc129da84eabe536db59912dee0a8f21', '0', '2015-07-16 11:39:51', '2015-07-16 11:39:51');
-INSERT INTO `users` VALUES ('24', 'Вадим', 'Черемисин', '1991-05-25', 'vadim_cheremisin@list.ru', '414d1aeb3684f4b36a04fd7f31b3072c', '1', '2015-07-19 12:58:12', '2015-07-19 12:58:12');
-INSERT INTO `users` VALUES ('25', 'Константин', 'Сальников', '1966-03-21', 'konstantin_salnikov@bk.ru', 'a2ba4b83f9458cb8882bae5ee4a686fe', '0', '2015-07-27 19:25:03', '2015-07-27 19:25:03');
-INSERT INTO `users` VALUES ('26', 'Анна', 'Колмакова', '1954-05-25', 'anna_kolmakova@list.ru', 'f7b17dc0f47d1e8ba075e8fdeb300960', '1', '2015-08-05 15:02:29', '2015-08-05 15:02:29');
-INSERT INTO `users` VALUES ('27', 'Александр', 'Танаев', '1982-11-04', 'aleksandr_tanaev@mail.ru', 'e8e32e350fe9af4c96f6d8b61edb0543', '0', '2015-08-09 15:14:50', '2015-08-09 15:14:50');
-INSERT INTO `users` VALUES ('28', 'Сергей', 'Егоров', '1991-10-12', 'sergey_eqorov@inbox.ru', '79942ef5f99a251a2222cff2b27e7714', '1', '2015-08-12 11:23:11', '2015-08-12 11:23:11');
-INSERT INTO `users` VALUES ('29', 'Владислав', 'Николаев', '1992-10-05', 'vladislav_nikolayev@mail.ru', 'c7a8d374cf93af8824ff8a55b562ca1c', '0', '2015-08-18 14:46:43', '2015-08-18 14:46:43');
-INSERT INTO `users` VALUES ('30', 'Артём', 'Курзяков', '1985-02-28', 'artyom_kurzyakov@list.ru', '17fc658145ddf7e88c22f403d12dd329', '1', '2015-08-25 04:15:34', '2015-08-25 04:15:34');
-INSERT INTO `users` VALUES ('35', 'Jason', 'Statham', '2015-09-01', 'statham@jason.ru', 'f691cfd62d4075e532fe17630f9e65b4', '0', '2015-09-19 00:00:00', '2015-09-19 00:00:00');
+INSERT INTO `users` VALUES ('1', 'Мария', 'Таманаева', '1956-02-24', 'mariya_tamaneva@list.ru', 'bb440d1516bfdcbaa9291150b26821a3', '0', '2015-01-06 02:07:07', '2015-09-26 00:00:00', '0');
+INSERT INTO `users` VALUES ('2', 'Юрий', 'Никитин', '1948-07-26', 'yuri_nikitin@bk.ru', '5fe28415cd9a25edf7edf195d22c201b', '1', '2015-01-19 23:17:03', '2015-01-19 23:17:03', '0');
+INSERT INTO `users` VALUES ('3', 'Ирина', 'Жигульская', '1965-08-17', 'irina_jigulskaya@inbox.ru', '443a3ae86d6e84100cef795990348fa8', '0', '2015-01-21 16:03:04', '2015-01-21 16:03:04', '0');
+INSERT INTO `users` VALUES ('4', 'Виктор', 'Журавлев', '1965-03-24', 'viktor_juravlev@mail.ru', 'b9f69b2e5d53364785dd67483589b263', '0', '2015-02-21 18:08:03', '2015-02-21 18:08:03', '0');
+INSERT INTO `users` VALUES ('5', 'Максим', 'Липовик', '1978-12-15', 'maksim_lipovik@bk.ru', '764cc32b989d49c0d12cade13311e1d0', '1', '2015-02-26 20:03:44', '2015-02-26 20:03:44', '0');
+INSERT INTO `users` VALUES ('6', 'Роман', 'Костюченко', '1989-12-15', 'roman_kostyuchenko@list.ru', 'd26f87b30e2600724f63fd3f4569c022', '0', '2015-02-28 19:17:43', '2015-02-28 19:17:43', '0');
+INSERT INTO `users` VALUES ('7', 'Евгений', 'Скрыпников', '1954-09-30', 'evgeniy_skripnikov@mail.ru', '386fb3dd746bb7cbfab2e9c04ebf79bf', '0', '2015-03-13 07:19:37', '2015-03-13 07:19:37', '0');
+INSERT INTO `users` VALUES ('8', 'Дмитрий', 'Сокольцов', '1975-01-13', 'dmitri_sokolcov@inbox.ru', '1cd67667b4f0aba3218acd70fe175476', '1', '2015-03-18 21:35:29', '2015-03-18 21:35:29', '0');
+INSERT INTO `users` VALUES ('9', 'Дмитрий', 'Гололобов', '1986-08-23', 'dmitri_qolobov@bk.ru', '4c24990c0615c80d403e60dbbb52bf2e', '1', '2015-03-23 10:06:45', '2015-03-23 10:06:45', '0');
+INSERT INTO `users` VALUES ('10', 'Владимир', 'Киселев', '1990-08-05', 'vladimir_kiselev@mail.ru', 'f605c15a4e289ceec990e9ef82dfbe98', '0', '2015-04-22 02:46:36', '2015-04-22 02:46:36', '0');
+INSERT INTO `users` VALUES ('11', 'Константин', 'Добецкий', '1988-09-12', 'konstantin_dobeckiy@bk.ru', '7a7b1c49a304253571924e798ff70786', '1', '2015-04-30 12:09:23', '2015-04-30 12:09:23', '0');
+INSERT INTO `users` VALUES ('12', 'Сергей', 'Терешков', '1993-05-15', 'sergey_tereshkov@bk.ru', '6155e99add2a568458c7df84972421a7', '1', '2015-05-15 18:03:24', '2015-05-15 18:03:24', '0');
+INSERT INTO `users` VALUES ('13', 'Андрей', 'Бобрышов', '1975-10-23', 'andrey_bobrishov@mail.ru', 'a3c7c47ece6bac9b1219054f1b888521', '1', '2015-05-22 17:04:29', '2015-05-22 17:04:29', '0');
+INSERT INTO `users` VALUES ('14', 'Александр', 'Бондаренко', '1981-12-17', 'aleksandr_bondarenko@list.ru', 'd793546dc638d3fb356df9535e3b67ca', '1', '2015-05-22 22:07:38', '2015-05-22 22:07:38', '0');
+INSERT INTO `users` VALUES ('15', 'Роман', 'Карпов', '1968-10-29', 'roman_karpov@mail.ru', 'b3a376ec376573f8a8b8a080443803f9', '0', '2015-05-24 14:19:17', '2015-05-24 14:19:17', '0');
+INSERT INTO `users` VALUES ('16', 'Денис', 'Назаров', '1989-10-10', 'denis_nazarov@inbox.ru', '8c52ff1adaf1fdeacef3c58172743a2e', '1', '2015-05-25 04:10:52', '2015-05-25 04:10:52', '0');
+INSERT INTO `users` VALUES ('17', 'Алексей', 'Буквин', '1992-05-17', 'aleksey_bukvin@mail.ru', '84f004e2de46b05d147cd853fa5c1e88', '1', '2015-05-25 18:22:41', '2015-05-25 18:22:41', '0');
+INSERT INTO `users` VALUES ('18', 'Александр', 'Хрюков', '1980-06-23', 'aleksandr_xrukov@bk.ru', 'de85fc8b0cd0f78da93dcf684ba8fea6', '1', '2015-06-01 13:25:06', '2015-06-01 13:25:06', '0');
+INSERT INTO `users` VALUES ('19', 'Алексей', 'Минжуков', '1951-10-05', 'aleksey_minjukov@inbox.ru', 'a46da4a5a0b193fcdf5d7a6fa4817c49', '1', '2015-06-14 19:35:35', '2015-06-14 19:35:35', '0');
+INSERT INTO `users` VALUES ('20', 'Полина', 'Данилина', '1990-11-15', 'polina_danilina@mail.ru', '815a2e988dbbdcba6c5dad45d70bb82f', '1', '2015-06-26 12:02:04', '2015-06-26 12:02:04', '0');
+INSERT INTO `users` VALUES ('21', 'Антон', 'Мясников', '1970-04-01', 'anton_myasnikov@bk.ru', '1b5fab1d1b205d192d575ee5326d5e0b', '1', '2015-07-02 23:10:34', '2015-07-02 23:10:34', '0');
+INSERT INTO `users` VALUES ('22', 'Ярослав', 'Чуйков', '1989-04-02', 'yaroslav_chuykov@list.ru', '72c95aee2b2ccd7e9bf694764ecace84', '0', '2015-07-04 22:08:12', '2015-07-04 22:08:12', '0');
+INSERT INTO `users` VALUES ('23', 'Фанис', 'Ганиев', '1985-07-18', 'fanis_qaniyev@mail.ru', 'dc129da84eabe536db59912dee0a8f21', '0', '2015-07-16 11:39:51', '2015-07-16 11:39:51', '0');
+INSERT INTO `users` VALUES ('24', 'Вадим', 'Черемисин', '1991-05-25', 'vadim_cheremisin@list.ru', '414d1aeb3684f4b36a04fd7f31b3072c', '1', '2015-07-19 12:58:12', '2015-07-19 12:58:12', '0');
+INSERT INTO `users` VALUES ('25', 'Константин', 'Сальников', '1966-03-21', 'konstantin_salnikov@bk.ru', 'a2ba4b83f9458cb8882bae5ee4a686fe', '0', '2015-07-27 19:25:03', '2015-07-27 19:25:03', '0');
+INSERT INTO `users` VALUES ('26', 'Анна', 'Колмакова', '1954-05-25', 'anna_kolmakova@list.ru', 'f7b17dc0f47d1e8ba075e8fdeb300960', '1', '2015-08-05 15:02:29', '2015-08-05 15:02:29', '0');
+INSERT INTO `users` VALUES ('27', 'Александр', 'Танаев', '1982-11-04', 'aleksandr_tanaev@mail.ru', 'e8e32e350fe9af4c96f6d8b61edb0543', '0', '2015-08-09 15:14:50', '2015-08-09 15:14:50', '0');
+INSERT INTO `users` VALUES ('28', 'Сергей', 'Егоров', '1991-10-12', 'sergey_eqorov@inbox.ru', '79942ef5f99a251a2222cff2b27e7714', '1', '2015-08-12 11:23:11', '2015-08-12 11:23:11', '0');
+INSERT INTO `users` VALUES ('29', 'Владислав', 'Николаев', '1992-10-05', 'vladislav_nikolayev@mail.ru', 'c7a8d374cf93af8824ff8a55b562ca1c', '0', '2015-08-18 14:46:43', '2015-08-18 14:46:43', '0');
+INSERT INTO `users` VALUES ('30', 'Артём', 'Курзяков', '1985-02-28', 'artyom_kurzyakov@list.ru', '17fc658145ddf7e88c22f403d12dd329', '1', '2015-08-25 04:15:34', '2015-08-25 04:15:34', '0');
+INSERT INTO `users` VALUES ('35', 'Jason', 'Statham', '2015-09-01', 'statham@jason.ru', 'f691cfd62d4075e532fe17630f9e65b4', '0', '2015-09-19 00:00:00', '2015-09-19 00:00:00', '0');
+INSERT INTO `users` VALUES ('36', 'Vincent', 'Disel', '1970-06-17', 'disel@gmail.com', '884a148d11f0d27765de5dc5d661f1cf', '0', '2015-09-26 00:00:00', '2015-09-26 00:00:00', '0');

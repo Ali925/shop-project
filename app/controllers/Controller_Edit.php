@@ -16,20 +16,9 @@ class Controller_Edit extends Controller{
         );
     }
 //Получаем новые значения пользовательских данных
-    function action_changeData($array){
-        $name = strip_tags($array["name"]);
-        if(!$name) $name = null;
-        $lastname = strip_tags($array["lastname"]);
-        if(!$lastname) $lastname = null;
-        $birthday = $array["birthday"];
-        $date1 = strtotime($birthday);
-        $date2 = (strtotime("0000-00-00"));
-        if($date1 == $date2) $birthday = null;
-        $email = strip_tags($array["mail"]);
-        if(!$email) $email = null;
-        $last_update = (string)date_format(new DateTime(), 'Y-m-d');
+    function action_editUser($array){
+        $this->model->update_user($array);
 
-        $this->model->update_user($name, $lastname, $birthday, $email, $last_update);
         header("location: /Users");
     }
 }

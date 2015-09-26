@@ -6,7 +6,7 @@
 
         <div class="registrate">
             <h3><?= $title ?></h3>
-            <form action="/Edit/changeData" method="post">
+            <form action="/Edit/editUser" method="post">
             <div class="user_info_span">
                 <span>Имя: <br/></span>
                 <span>Фамилия: <br/></span>
@@ -34,10 +34,8 @@
                 <input id="birthday" name="birthday" type="date" ><br/>
                 <input id="email" name="email" type="email"><br/>
                 <a href="#">Активировать Email</a>
-
-<!--                <input id="pass1" name="pass1" type="password"><br/>-->
-<!--                <input id="pass2" name="pass2" type="password"><br/>-->
             </div>
+                <input id="id" name="id" style="visibility: hidden" type="text" value="<?php echo $user['id'];?>"><br/>
                 <button type="submit">Изменить данные</button>
             </form>
 
