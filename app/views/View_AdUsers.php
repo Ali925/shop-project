@@ -1,9 +1,6 @@
 <div class="features_descript" style="border: none">
     <div class="feautures_descr_title">
     <?php
-    if(!$data){
-        echo "<h3>В таблице нет записей о пользователях<h3>";
-
 
         echo "<a href='/AdUsers/viewFormAdd'><button>Добавить пользователя</button></a>";
 
@@ -53,21 +50,22 @@ HERE;
                     </form>
 HERE;
         }
-
-    }else {
-        echo <<<HERE
-            <table class='tableContent'>
-                <tr>
-                    <th>ID</th>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Дата Рождения</th>
-                    <th>Email</th>
-                    <th>Статус email</th>
-                    <th>Дата регистрации</th>
-                    <th>Дата последнего изменения</th>
-                    <th>Статус пользователя</th>
-                </tr>
+        if(!$data){
+            echo "<h3>В таблице нет записей о пользователях<h3>";
+        }else {
+            echo <<<HERE
+                <table class='tableContent'>
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Дата Рождения</th>
+                        <th>Email</th>
+                        <th>Статус email</th>
+                        <th>Дата регистрации</th>
+                        <th>Дата последнего изменения</th>
+                        <th>Статус пользователя</th>
+                    </tr>
 HERE;
 
         foreach ($data as $value) {

@@ -17,7 +17,7 @@ class Controller_AdCategories extends Controller{
         );
     }
 
-    public function action_viewForm(){
+    public function action_viewFormAdd(){
         $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
             array(
                 'title' => 'Категории',
@@ -40,16 +40,16 @@ class Controller_AdCategories extends Controller{
     }
 
     public function action_addCat($array){
-        $title = htmlentities($array['title']);
-        $title = htmlspecialchars($title);
+        $title = strip_tags($array['title']);
+        $title = strip_tags($title);
         $this->model->add_Category($title);
 
         header("location: /AdCategories");
     }
 
     public function action_editCat($array){
-        $id = htmlentities($array['id']);
-        $title = htmlentities($array['title']);
+        $id = strip_tags($array['id']);
+        $title = strip_tags($array['title']);
         $this->model->edit_Category($id, $title);
         header("location: /AdCategories");
     }

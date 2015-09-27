@@ -160,9 +160,66 @@ HERE;
         $category->delete();
     }
 //админ изменяет категорию
-public function edit_Category($id, $title){
-    $category = \ORM::for_table("categories")->find_one($id);
-    $category->set('title', $title);
-    $category->save();
-}
+    public function edit_Category($id, $title){
+        $category = \ORM::for_table("categories")->find_one($id);
+        $category->set('title', $title);
+        $category->save();
+    }
+//админ редактирует товар
+    public function edit_Product($product, $categories){
+        $mark = strip_tags($product["mark"]);
+        $title = strip_tags($product["title"]);
+        $description = htmlentities($product["description"]);
+        $count = (int)$product["count"];
+        $price = (int)$product['price'];
+
+        $id_catalog = 1;
+        foreach($categories as $category){
+            if($category['title'] === $product['id_catalog']){
+                $id_catalog = $category['id'];
+                break;
+            }
+        }
+        $link = htmlentities($product['link']);
+
+        $product = \ORM::for_table("products")->find_one($product['id']);
+        $product->set('title', $title);
+        $product->set('mark', $mark);
+        $product->set('count', $count);
+        $product->set('price', $price);
+        $product->set('description', $description);
+        $product->set('id_catalog', $id_catalog);
+        $product->set('link', $link);
+        $product->save();
+    }
+//админ удаляет товар
+    public function delete_Product($id){
+        $product = \ORM::for_table("products")->find_one($id);
+        $product->delete();
+    }
+//админ добавляет товар
+    public function add_Product($product, $categories){
+        $mark = strip_tags($product['mark']);
+        $title = strip_tags($product['title']);
+        $description = htmlentities($product['description']);
+        $count = (int)$product['count'];
+        $price = doubleval($product['price']);
+
+        $id_catalog = 1;
+        foreach($categories as $category){
+            if($category['title'] === $product['id_catalog']){
+                $id_catalog = $category['id'];
+                break;
+            }
+        }
+
+        $product = \ORM::for_table("products")->create();
+        $product->title = $title;
+        $product->mark = $mark;
+        $product->description = $description;
+        $product->count = $count;
+        $product->price = $price;
+        $product->id_catalog = $id_catalog;
+        $product->save();
+    }
 }

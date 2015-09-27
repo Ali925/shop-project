@@ -1,12 +1,8 @@
 <div class="features_descript" style="border: none">
     <div class="feautures_descr_title">
         <?php
-        if(!$data){
-            echo "<h3>В таблице нет записей о категориях[<h3>";
-        }else {
 
-
-            echo "<a href='/AdCategories/viewForm'><button>Добавить новую категорию</button></a>";
+            echo "<a href='/AdCategories/viewFormAdd'><button>Добавить новую категорию</button></a>";
 
             if($form){
                 echo <<<HERE
@@ -16,6 +12,10 @@
                     </form>
 HERE;
             }
+
+        if(!$data){
+            echo "<h3>В таблице нет записей о категориях[<h3>";
+        }else {
             echo <<<HERE
 
             <table class='tableContent'>
@@ -24,6 +24,7 @@ HERE;
                     <th>Категория</th>
                 </tr>
 HERE;
+
             foreach ($data as $value) {
                 echo <<<HERE
             <tr>
