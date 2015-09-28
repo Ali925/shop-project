@@ -4,7 +4,7 @@ class Controller_Users extends Controller{
     public function __construct(){
         parent::__construct();
         $this->model = new Shop\Model\Users();
-        
+
         if($_SESSION["type"] !== "user" && $_SESSION["type"] !== "admin") {
             header("location: /");
         }
