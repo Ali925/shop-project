@@ -6,19 +6,18 @@ class Model_Cabin extends Model
         protected $table= "users";
 
 		public function add($user, $id) {
-
             $product = \ORM::for_table('cart')->create();
             $product->id_user = $user;
             $product->id_product = $id;
             $product->save();
 
-            $added = \ORM::for_table('products')->find_one($id);
-            $added->set('is_added', '1');
-            $added->save();
+            $count = \ORM::for_table('products')->find_one($id);
+            $c = $count['count']-1;
+            $count->set('count', $c);
+            $count->save();
         }
 
         public function delete($id, $user) {
-
             $product = \ORM::for_table('cart')
                     ->where(array(
                         'id_user' => $user,
@@ -28,9 +27,10 @@ class Model_Cabin extends Model
 
             $product->delete();
 
-            $added = \ORM::for_table('products')->find_one($id);
-            $added->set('is_added', '0');
-            $added->save();
+            $count = \ORM::for_table('products')->find_one($id);
+            $c = $count['count']+1;
+            $count->set('count', $c);
+            $count->save();
         }
 
         public function get_all($user) {
@@ -70,16 +70,6 @@ class Model_Cabin extends Model
        }
 
        public function empty_cart($user){
-
-            $all = \ORM::for_table('cart')
-                ->where('id_user', $user)
-                ->find_many();
-
-             foreach ($all as $row) {
-                 $item = \ORM::for_table('products')->find_one($row['id_product']);
-                 $item->set('is_added', '0');
-                 $item->save();
-                }   
 
              return \ORM::for_table('cart')
                 ->where_equal('id_user', $user)

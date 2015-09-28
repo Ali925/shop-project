@@ -8,4 +8,4 @@
         <li><b>Марка</b>: - <?php echo $product['mark']; ?></li>
         <li><b>Категория</b>: <?php echo $product['category']; ?></li>
     </ul>
-    <a href="/cabin/add/<?php echo $product['id']; ?>" class="buy-link"><button class="buy-btn <?php if($product['is_added']) {echo 'buy-btn_active';} elseif(!$product['count']) {echo "buy-btn_disable";}?>" <?php if(!$product['count']) echo "disabled";?>><?php if(!$product['count']) {echo "Нет в наличии";} elseif($product['is_added']) {echo 'В корзине';} else {echo "В корзину";}?></button></a>
+    <a href="<?php if(isset($_SESSION['authorized'])) echo '/cabin/add/'.$product['id']; else echo '/user';?>" class="buy-link"><button class="buy-btn <?php $key=0; foreach($incart as $cart) {if($cart['id_product']==$product['id']) {echo 'buy-btn_active'; $key=1; break;}} if($key==0 && !$product['count']) {echo "buy-btn_disable";}?>" <?php if($key==0 && !$product['count']) echo "disabled";?>><?php $key=0; foreach($incart as $cart) {if($cart['id_product']==$product['id']) {echo 'В корзине'; $key=1; break;}} if($key==0 && !$product['count']) {echo "Нет в наличии";} elseif($key==0) {echo "В корзину";}?></button></a>

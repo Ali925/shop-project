@@ -1,4 +1,7 @@
 <section class="h1"><?php echo $title; $sum = 0; $i=1;?></section>
+<?php if(empty($products)): ?>
+<h3>В корзине пусто.</h3>
+<?php else: ?>
 <div class="cart-main">
 	<form action="/cabin/order" method="POST" class="cart-main__form">
 		<ul class="cart-main__list">
@@ -24,3 +27,4 @@
 		<input type="submit" id="submit-btn" class="submit-btn" value="Оформить заказ">
 	</form>
 </div>
+<?php endif; ?>

@@ -434,10 +434,23 @@ header .container {
   max-height: 75px;
   overflow: hidden;
 }
-.slideshow_item_images {
+.slideshow_item_images{
   left: 344px;
   position: absolute;
   top: -7px;
+}
+
+.slideshow_item_images img{
+  max-width: 550px;
+  max-height: 350px;
+}
+
+.imac_4 img{
+  margin-left: 100px;
+}
+
+.imac_2 img{
+  margin-left: 100px;
 }
 /* --------- nav ---------*/
 nav {
@@ -784,13 +797,15 @@ div.search_submit {
   font: 14px Arial, Helvetica, sans-serif;
 }
 
-.list_buy-active{
-  background: #006600;
-}
-
 .list_buy-disable{
   background: red;
   height: 40px;
+}
+
+.list_buy-active{
+  background: #006600;
+  width: 83px;
+  height: 25px;
 }
 
 .list_buy-disable:hover {
@@ -989,6 +1004,28 @@ div.search_submit {
 .e-money-item{
   margin-bottom: 10px;
 }
+
+.howbuy-item{
+  list-style-type: disc;
+}
+
+.howbuy-list{
+  margin-top: 25px;
+  margin-bottom: 40px
+}
+
+.g-recaptcha{
+  margin-bottom: 15px;
+}
+
+.search_list li{
+  margin-bottom: 25px; 
+}
+
+.item_price input{
+  width: 80px;
+  margin-right: 10px;
+}
 /* --------- features ---------*/
 .content_area_left {
   width: 645px;
@@ -1030,7 +1067,7 @@ div.search_submit {
 }
 .features_list_wrap {
   padding-bottom: 10px;
-  width: 660px;
+  width: 450px;
 }
 
 .features_list_wrap button{
@@ -1042,8 +1079,8 @@ div.search_submit {
   margin-bottom: 16px;
 }
 .features_descr_list li {
-  padding: 0 50px 0 11px;
-  background: url("../img/decor/list_dash.png") left 9px no-repeat;
+  padding: 8px 50px 0 11px;
+  background: url("../img/decor/list_dash.png") left 18px no-repeat;
   font-size: 12px;
   line-height: 18px;
   color: #666666;
@@ -1078,12 +1115,12 @@ div.search_submit {
 }
 .feautures_sale_product {
   position: absolute;
-  bottom: -15px;
-  right: -5px;
+  bottom: -20px;
+  right: -25px;
 }
 .feautures_sale_product img {
-  max-height: 250px;
-  max-width: 220px;
+  max-height: 280px;
+  max-width: 280px;
 }
 .feautures_sale_mask {
   position: absolute;
@@ -1165,6 +1202,8 @@ div.search_submit {
   vertical-align: middle;
 }
 .carousel_img_wrap img {
+  max-width: 120px;
+  max-height: 75px;
   display: inline-block;
   vertical-align: top;
   zoom: 1 !ie;

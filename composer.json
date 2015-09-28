@@ -9,7 +9,8 @@
     "require": {
         "phpmailer/phpmailer": "^5.2",
         "j4mie/idiorm": "^1.5",
-        "klein/klein": "v2.1.0"
+        "klein/klein": "v2.1.0",
+        "google/recaptcha": "~1.1"
     },
     "config": {
         "vendor-dir": "php-library"

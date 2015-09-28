@@ -12,6 +12,6 @@
 <script src="/js/jquery.ezmark.js"></script>
 <script src="/js/jquery.bxslider.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/search.js"></script>>
+<script src="/js/search.js"></script>
 </body>
 </html>

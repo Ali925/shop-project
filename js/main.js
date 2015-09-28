@@ -4,15 +4,15 @@ $(document).ready(function(){
     if ($('.wrap__slider').length) {
 
         $('.wrap__slider').bxSlider({
-            speed           : 1500,
-            onSliderLoad    : function(){
-
-            }
-        });
+            speed : 1500,
+            pause : 8000
+        }).startAuto();
 
     }
 
     zeroCount();
+
+    
 
     $(".about-item__input").change(function(){
         
@@ -63,53 +63,55 @@ $(document).ready(function(){
     });
 
     $(".list_buy-link").click(function(e){
-
-        e.preventDefault();
-
-        if ($(this).children().hasClass('list_buy-active')) {
-
-            var id = $(this).attr('id');
-            var numb = id.match(/\d/g);
-            numb = numb.join("");
-
-            var url = "/cabin/delete/" + numb;
-            var count = $("#cart_count").text();
-            count = parseInt(count) - 1;
-
-            $.ajax({
-           type: "GET",
-           url: url,
-           context: this,
-           success: function()
-           {
-               $(this).children().removeClass("list_buy-active");
-               $(this).children().text("В корзину");
-               $("#cart_count").text(count);
-           }
-         });
-
+        if($(this).attr('href')!='/user'){
+                e.preventDefault();
+        
+                if ($(this).children().hasClass('list_buy-active')) {
+        
+                    var id = $(this).attr('id');
+                    var numb = id.match(/\d/g);
+                    numb = numb.join("");
+        
+                    var url = "/cabin/delete/" + numb;
+                    var count = $("#cart_count").text();
+                    count = parseInt(count) - 1;
+        
+                    $.ajax({
+                   type: "POST",
+                   url: url,
+                   context: this,
+                   success: function(data)
+                   {    if(data!=''){
+                       $(this).children().removeClass("list_buy-active");
+                       $(this).children().text("В корзину");
+                       $("#cart_count").text(count);}
+                   }
+                 });
+        
+                }
+        
+                
+                else {
+        
+                var url = $(this).attr('href');
+                var count = $("#cart_count").text();
+                count = parseInt(count) + 1;
+                    
+                 $.ajax({
+                   type: "POST",
+                   url: url,
+                   context: this,
+                   success: function(data)
+                   {    if(data!=''){
+                       $(this).children().addClass("list_buy-active");
+                       $(this).children().text("В корзине");
+                       $("#cart_count").text(count);}
+                   }
+        
+                 });
+             }
+                
         }
-
-        
-        else {
-
-        var url = $(this).attr('href');
-        var count = $("#cart_count").text();
-        count = parseInt(count) + 1;
-            
-         $.ajax({
-           type: "GET",
-           url: url,
-           context: this,
-           success: function()
-           {
-               $(this).children().addClass("list_buy-active");
-               $(this).children().text("В корзине");
-               $("#cart_count").text(count);
-           }
-         });
-     }
-        
     });
 
     $(".buy-link").click(function(e){
@@ -127,7 +129,7 @@ $(document).ready(function(){
         var url = "/search/ajax/" + $(this).val();
 
         $.ajax({
-           type: "GET",
+           type: "POST",
            url: url,
            context: this,
            success: function(data)
@@ -722,5 +724,7 @@ function zeroCount () {
             };
 }
 
-
+function recaptchaCallback() {
+    $('#feedback_submit').removeAttr('disabled');
+};
 

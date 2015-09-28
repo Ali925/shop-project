@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="/HowToPay" class="nav_link_wrap">
+                <a href="howtobuy" class="nav_link_wrap">
                     <div class="nav_link_triangle">
                         <div class="nav_link_outer">
                             <div class="nav_link_inner">
@@ -40,17 +40,6 @@
                         <div class="nav_link_outer">
                             <div class="nav_link_inner">
                                 <span>Контакты</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/Managers" class="nav_link_wrap">
-                    <div class="nav_link_triangle">
-                        <div class="nav_link_outer">
-                            <div class="nav_link_inner">
-                                <span>Менеджеры</span>
                             </div>
                         </div>
                     </div>

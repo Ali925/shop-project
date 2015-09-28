@@ -1,18 +1,18 @@
-<section>
+    <section>
     <div class="wrap">
 
         <ul class="wrap__slider">
             <li class="wrap__slider-item">
-                <img class="wrap__slider-img" src="http://lorempixel.com/600/300/sports/1" alt=""/>
+                <img class="wrap__slider-img" src="img/content/slide1.png" alt=""/>
             </li>
             <li class="wrap__slider-item">
-                <img class="wrap__slider-img" src="http://lorempixel.com/600/300/sports/2" alt=""/>
+                <img class="wrap__slider-img" src="img/content/slide2.jpg" alt=""/>
             </li>
             <li class="wrap__slider-item">
-                <img class="wrap__slider-img" src="http://lorempixel.com/600/300/sports/3" alt=""/>
+                <img class="wrap__slider-img" src="img/content/slide3.jpg" alt=""/>
             </li>
             <li class="wrap__slider-item">
-                <img class="wrap__slider-img" src="http://lorempixel.com/600/300/sports/4" alt=""/>
+                <img class="wrap__slider-img" src="img/content/slide4.jpg" alt=""/>
             </li>
         </ul>
 

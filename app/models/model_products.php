@@ -9,17 +9,21 @@ class Model_Products extends Model{
         return \ORM::for_table($this->table)->find_many();
     }
 
+    public function get_incart($user) {
+        return \ORM::for_table('cart')->where("id_user", $user)->find_many();
+    }
+
     public function get_product($id){
 
         return \ORM::for_table($this->table)
-            ->select_many(array('category' => 'categories.title'), "products.link", "products.is_added", "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
+            ->select_many(array('category' => 'categories.title'), "products.link", "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
             ->join('categories', array('products.id_catalog', '=', 'categories.id'))
             ->find_one($id);
     }
 
     public function get_category($category){
         return \ORM::for_table("products")
-            ->select_many(array('category' => 'categories.title'),"products.is_added", "products.link", "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
+            ->select_many(array('category' => 'categories.title'), "products.link", "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
             ->join("categories", array("products.id_catalog","=", "categories.id"))
             ->where("products.id_catalog", $category)
             ->find_many();

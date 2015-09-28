@@ -11,7 +11,7 @@ class Controller_404 extends Controller{
                     'is_photo_slider' => false,
                   	'is_slider' => false,
                 	'is_right_sidebar' => false,
-                    'is_left_navbar' => false
+                    'is_left_navbar' => true
                 )
             );
         }

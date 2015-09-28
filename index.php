@@ -1,7 +1,7 @@
 <?php
 
 # Включаем показ ошибок
-ini_set('display_errors', 1);
+ // ini_set('display_errors', 1);
 
 # Подключаем bootstrap файл
 

@@ -13,7 +13,7 @@ class Controller_Search extends Controller {
     }	
 
     public function action_index() {
-
+        $user = $_SESSION['user_id'];
     	$data = $this->model->get_data();
     	$titles = array();
     	$items_id = array();
@@ -38,6 +38,7 @@ class Controller_Search extends Controller {
             array(
                 'title' => 'Результаты поиска',
                 'products' => $found_data,
+                'incart' => $this->model->get_incart($user),
                 'is_search' => true,
                  'is_photo_slider' => false,
                 'is_slider' => false,
@@ -66,6 +67,7 @@ class Controller_Search extends Controller {
     	
 
       public function action_result() {
+            $user = $_SESSION['user_id'];
 
     		if($_POST['min'] && !$_POST['max']){
     			$data = $this->model->get_wide_found($_POST['category'], $_POST['mark'], $_POST['min'], NULL);
@@ -83,17 +85,60 @@ class Controller_Search extends Controller {
     			$data = $this->model->get_wide_found($_POST['category'], $_POST['mark'], NULL, NULL);
     		}
 
-    		$this->view->generate('products/list_view.php', 'template_view.php',
-            array(
-                'title' => 'Результаты поиска',
-                'products' => $data,
-                'is_search' => true,
-                 'is_photo_slider' => false,
-                'is_slider' => false,
-                'is_right_sidebar' => false,
-                'is_left_navbar' => true
-            )
-        );
+            if($_POST['key_word']){
+
+                    $titles = array();
+                    $items_id = array();
+                    $found_id = array();
+                    $found_data = '';
+                    foreach ($data as $item) {
+                        array_push($titles, strtolower($item['title']));
+                        array_push($items_id, $item['id']);
+                    }
+
+                    $query = strtolower(trim($_POST['key_word']));
+                    
+                    for($i=0, $count = count($titles);$i<$count;$i++){
+                        if(strpos($titles[$i], $query)){
+                            array_push($found_id, $items_id[$i]);
+                        }
+                    }
+                    if(!empty($found_id)){
+                    $found_data = $this->model->get_found($found_id); 
+                }
+
+                    $this->view->generate('products/list_view.php', 'template_view.php',
+                    array(
+                        'title' => 'Результаты поиска',
+                        'products' => $found_data,
+                        'incart' => $this->model->get_incart($user),
+                        'is_search' => true,
+                         'is_photo_slider' => false,
+                        'is_slider' => false,
+                        'is_right_sidebar' => false,
+                        'is_left_navbar' => true
+                    )
+                );
+
+            }
+
+            else {
+                    
+                    $this->view->generate('products/list_view.php', 'template_view.php',
+                    array(
+                        'title' => 'Результаты поиска',
+                        'products' => $data,
+                        'incart' => $this->model->get_incart($user),
+                        'is_search' => true,
+                         'is_photo_slider' => false,
+                        'is_slider' => false,
+                        'is_right_sidebar' => false,
+                        'is_left_navbar' => true
+                    )
+                );
+
+            }
+    		
     }
 
 

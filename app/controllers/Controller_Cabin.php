@@ -96,7 +96,7 @@ class Controller_Cabin extends Controller
                 'm2' => $messageToUser,
                 'is_slider' => false,
                 'is_right_sidebar' => false,
-                'is_left_navbar' => false
+                'is_left_navbar' => true
             )
         );
 

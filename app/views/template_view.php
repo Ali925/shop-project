@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css" media="screen, projection, print">
     <link rel="stylesheet" type="text/css" href="/css/jquery.bxslider.css" media="screen, projection, print">
     <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 
@@ -80,48 +81,48 @@
                 <div class="carousel_wrap">
                     <ul>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo1.jpg" alt=""/>
+                            <a href="http://www.apple.com/ru/" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo1.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo2.jpg" alt=""/>
+                            <a href="http://www.sony.ru/" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo2.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo3.jpg" alt=""/>
+                            <a href="http://www.samsung.com/ru/home/" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo3.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo1.jpg" alt=""/>
+                            <a href="http://www.dell.ru/" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo4.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo2.jpg" alt=""/>
+                            <a href="http://www.lg.com/ru" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo5.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo3.jpg" alt=""/>
+                            <a href="http://www8.hp.com/ru/ru/home.html" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo6.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo1.jpg" alt=""/>
+                            <a href="http://www.nokia.com/ru_int" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo7.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo2.jpg" alt=""/>
+                            <a href="http://www.lenovo.com/ru/ru/" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo8.png" alt=""/>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="carousel_img_wrap">
-                                <img src="/img/content/logo3.jpg" alt=""/>
+                            <a href="https://www.asus.com/ru/" class="carousel_img_wrap" target="_blank">
+                                <img src="/img/content/logo9.png" alt=""/>  
                             </a>
                         </li>
                     </ul>

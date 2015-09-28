@@ -25,19 +25,19 @@
         <li>
             <div class="mangers_pic">
                 <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
+                    <img src="/img/content/manager.png" alt="">
                 </div>
                 <div class="managers_pic_frame"></div>
             </div>
             <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
+                <div class="managers_title_name">Бобров</div>
+                <div class="managers_title_surname">Юрий Сергеевич</div>
                 <div class="managers_title_state">Санкт-Петербург</div>
             </div>
             <ul class="managers_contacts">
                 <li>
                     <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
+                        Тел.: <span>8 (499) 988-99-88</span>
                     </div>
                     <div class="managers_contacts_icq">
                         ICQ: <span>12345677</span>
@@ -48,22 +48,22 @@
         <li>
             <div class="mangers_pic">
                 <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
+                    <img src="/img/content/manager.png" alt="">
                 </div>
                 <div class="managers_pic_frame"></div>
             </div>
             <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
+                <div class="managers_title_name">Щембелев</div>
+                <div class="managers_title_surname">Андрей Львович</div>
+                <div class="managers_title_state">Москва</div>
             </div>
             <ul class="managers_contacts">
                 <li>
                     <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
+                        Тел.: <span>8 (499) 564-46-64</span>
                     </div>
                     <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
+                        ICQ: <span>54687984</span>
                     </div>
                 </li>
             </ul>
@@ -71,22 +71,22 @@
         <li>
             <div class="mangers_pic">
                 <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
+                    <img src="/img/content/manager.png" alt="">
                 </div>
                 <div class="managers_pic_frame"></div>
             </div>
             <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
+                <div class="managers_title_name">Азанов</div>
+                <div class="managers_title_surname">Игорь Андреевич</div>
+                <div class="managers_title_state">Екатеринбург</div>
             </div>
             <ul class="managers_contacts">
                 <li>
                     <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
+                        Тел.: <span>8 (499) 879-89-98</span>
                     </div>
                     <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
+                        ICQ: <span>42335468</span>
                     </div>
                 </li>
             </ul>
@@ -94,114 +94,22 @@
         <li>
             <div class="mangers_pic">
                 <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
+                    <img src="/img/content/manager.png" alt="">
                 </div>
                 <div class="managers_pic_frame"></div>
             </div>
             <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
+                <div class="managers_title_name">Балянов</div>
+                <div class="managers_title_surname">Сергей Александрович</div>
+                <div class="managers_title_state">Пермь</div>
             </div>
             <ul class="managers_contacts">
                 <li>
                     <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
+                        Тел.: <span>8 (499) 784-87-47</span>
                     </div>
                     <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <div class="mangers_pic">
-                <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
-                </div>
-                <div class="managers_pic_frame"></div>
-            </div>
-            <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
-            </div>
-            <ul class="managers_contacts">
-                <li>
-                    <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
-                    </div>
-                    <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <div class="mangers_pic">
-                <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
-                </div>
-                <div class="managers_pic_frame"></div>
-            </div>
-            <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
-            </div>
-            <ul class="managers_contacts">
-                <li>
-                    <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
-                    </div>
-                    <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <div class="mangers_pic">
-                <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
-                </div>
-                <div class="managers_pic_frame"></div>
-            </div>
-            <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
-            </div>
-            <ul class="managers_contacts">
-                <li>
-                    <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
-                    </div>
-                    <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <div class="mangers_pic">
-                <div class="managers_pic_wrap">
-                    <img src="/images/content/manager.png" alt="">
-                </div>
-                <div class="managers_pic_frame"></div>
-            </div>
-            <div class="managers_title">
-                <div class="managers_title_name">Иванов</div>
-                <div class="managers_title_surname">Иван Петрович</div>
-                <div class="managers_title_state">Санкт-Петербург</div>
-            </div>
-            <ul class="managers_contacts">
-                <li>
-                    <div class="managers_contacts_phone">
-                        Тел.: <span>8 (499) 123-45-67</span>
-                    </div>
-                    <div class="managers_contacts_icq">
-                        ICQ: <span>12345677</span>
+                        ICQ: <span>46489875</span>
                     </div>
                 </li>
             </ul>
@@ -210,11 +118,11 @@
 </section>
 <section class="feedback">
     <div class="contacts_title">Свяжитесь с нами</div>
-    <form action="" method="post">
+    <form action="/Contacts/mail" method="post">
         <div class="feedback_form_field">
             <div class="text_input">
                 <div class="text_input_wrap">
-                    <input type="text" placeholder="ФИО" class="feedback_input">
+                    <input type="text" name="name" placeholder="ФИО" class="feedback_input" required>
                 </div>
             </div>
             <div class="feedback_require_star"></div>
@@ -222,25 +130,26 @@
         <div class="feedback_form_field">
             <div class="text_input">
                 <div class="text_input_wrap">
-                    <input type="text" placeholder="Телефон" class="feedback_input">
+                    <input type="text" name="phone" placeholder="Телефон" class="feedback_input">
                 </div>
             </div>
         </div>
         <div class="feedback_form_field">
             <div class="text_input">
                 <div class="text_input_wrap">
-                    <input type="text" placeholder="E-MAIL" class="feedback_input">
+                    <input type="email" name="email" placeholder="E-MAIL" class="feedback_input" required>
                 </div>
             </div>
             <div class="feedback_require_star"></div>
         </div>
         <div class="feedback_form_field">
-            <textarea class="feedback_massage" placeholder="Текст сообщения"></textarea>
+            <textarea class="feedback_massage" name="text" placeholder="Текст сообщения" required></textarea>
             <div class="feedback_require_star"></div>
         </div>
+        <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcInw0TAAAAAPcgWb0RB5uLp0cbthksO9YUQdy3"></div>
         <div class="feedback_submit_block">
             <a href="#" class="feedback_submit_btn">Отправить</a>
-            <input type="submit">
+            <input id="feedback_submit" type="submit" disabled>
         </div>
     </form>
 </section>
