@@ -8,23 +8,23 @@
             echo <<<HERE
                     <form action='/AdUsers/addUser' method='post'>
                     <table class='tableContent'>
-                <tr>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Дата Рождения</th>
-                    <th>Email</th>
-                    <th>Пароль</th>
-                    <th>Повторите пароль</th>
-                </tr>
-                <tr>
-                       <td><input id="name" name="name" type="text"></td>
-                       <td><input id="lastname" name="lastname" type="text"></td>
-                       <td><input id="birthday" name="birthday" type="date"></td>
-                       <td><input id="email" name="email" type="email"></td>
-                       <td><input id="pass1" name="pass1" type="password"></td>
-                       <td><input id="pass2" name="pass2" type="password"></td>
-                       <td><button type='submit'>Добавить</button></td>
-                </tr>
+                         <tr>
+                             <th>Имя</th>
+                             <th>Фамилия</th>
+                             <th>Дата Рождения</th>
+                             <th>Email</th>
+                             <th>Пароль</th>
+                             <th>Повторите пароль</th>
+                         </tr>
+                         <tr>
+                                <td><input id="name" name="name" type="text"></td>
+                                <td><input id="lastname" name="lastname" type="text"></td>
+                                <td><input id="birthday" name="birthday" type="date"></td>
+                                <td><input id="email" name="email" type="email"></td>
+                                <td><input id="pass1" name="pass1" type="password"></td>
+                                <td><input id="pass2" name="pass2" type="password"></td>
+                                <td><button type='submit'>Добавить</button></td>
+                         </tr>
                     </form>
 HERE;
         }
