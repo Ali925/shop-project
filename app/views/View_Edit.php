@@ -4,7 +4,7 @@
     </div>
     <div class="features_list_wrap">
 
-        <div class="registrate">
+        <div class="change_user_data">
             <h3><?= $title ?></h3>
             <form action="/Edit/editUser" method="post">
             <div class="user_info_span">

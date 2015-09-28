@@ -3163,10 +3163,10 @@ footer {
 
 .authorize, .registrate{
     text-align: center;
-    width: 700px;
+    width: 500px;
     height: auto;
 }
-.authorize input, .registrate input {
+.authorize input, .registrate input, .change_user_data input {
     width: 200px;
     height: 20px;
     padding: 5px;
@@ -3174,11 +3174,16 @@ footer {
     border-radius: 5px;
     text-align: center;
 }
-.authorize button, .registrate button{
+.authorize button, .registrate button, .change_user_data button{
     width: 150px;
     height: 30px;
     margin: 5px;
     text-align: center;
+}
+.change_user_data{
+    text-align: center;
+    width: 610px;
+    height: auto;
 }
 .login button{
     font-size: smaller;
