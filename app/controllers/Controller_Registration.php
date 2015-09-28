@@ -4,7 +4,7 @@ class Controller_Registration extends Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->model = new Shop\Model\User();
+        $this->model = new Shop\Model\Users();
     }
 
     function action_index(){
