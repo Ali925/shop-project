@@ -3251,6 +3251,9 @@ footer {
     width: 250px;
     margin: 20px;
 }
+.product_buy, .product_more{
+    text-decoration: none;
+}
 .product_buy button, .product_more button{
     margin-right: 20px;
     width: 100px;
@@ -3346,4 +3349,7 @@ hr{
 table img{
     max-height: 70px;
     max-width: 70px;
+}
+.foget_pass{
+    font-size: x-small;
 }

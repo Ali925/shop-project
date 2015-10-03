@@ -1,4 +1,5 @@
 <?php
+
 namespace Shop\Model;
 
 abstract class Model
@@ -265,5 +266,105 @@ HERE;
         $order = \ORM::for_table("orders")->find_one($array['id']);
         $order->set('status', $array['status']);
         $order->save();
+    }
+
+//создаем новый пароль для пользователя
+    public function create_new_pass($array){
+        require_once $_SERVER['DOCUMENT_ROOT']."/php-library/phpmailer/phpmailer/class.phpmailer.php";
+
+        $user = \ORM::for_table('users')
+            ->where(
+                array(  "email" => $array['email'],
+                        "lastname" => $array['lastname']))
+            ->find_one();
+
+        if(!$user){
+            echo <<<HERE
+                <h3>Пользователь с указанными Вами данными не зарегистрирован</h3>
+                <a href='/Authorization/createNewPassword'><button>Попробовать ещё раз</button></a>
+                <a href='/Contacts'><button>Связаться с нами</button></a>
+HERE;
+            exit;
+        }
+        if(!$user['is_active']){
+            echo <<<HERE
+                <h3>К сожалению, ваш email не подтверждён. Свяжитесь с нами для восстановления доступа к Личному Кабинету</h3>
+                <a href='/'><button>Отмена</button></a>
+                <a href='/Contacts'><button>Связаться с нами</button></a>
+HERE;
+            exit;
+        }
+
+        $mail = new \PHPMailer();
+        $mail->IsSendmail();
+
+        $salt1 = "q0r@m";
+        $salt2 = "8r#h";
+        $newPass = self::generate_pass();
+        $hashNewPass = md5($salt1.$newPass.$salt2);
+
+        \ORM::for_table('users')->find_one($user['id'])
+            ->set("password", $hashNewPass)
+            ->save();
+
+        $body = "<br/>Ваш новый пароль: <b>$newPass</b><br/><h3>Запомните Ваш новый пароль и удалите это письмо!</h3>";
+
+        $mail->AddReplyTo("support@commercetech.tk","First Last");
+        $mail->SetFrom('support@commercetech.tk', 'First Last');
+
+        $address = $array['email'];
+        $username = $array['name']." ".$array['lastname'];
+
+        $mail->AddAddress($address, $username);
+        $mail->Subject    = "Восстановление пароля на Commercetech.tk";
+        $mail->MsgHTML($body);
+
+        if(!$mail->Send()) {
+            echo "Произошла ошибка: " . $mail->ErrorInfo;
+        }
+    }
+//
+    public function email_activate($array){
+        $name = strip_tags($array["name"]);
+        $lastname = strip_tags($array["lastname"]);
+        $email = strip_tags($array["email"]);
+        $date = new \DateTime();
+        $date = (string)$date;
+        $hash = md5($email.$date);
+
+        $body = "<br/>Здравствуйте, $name $lastname!<br/><br/>Вы успешно зарегистрировались на сайте www.commercetech.tk.<br/>
+                Вам пришло это письмо для того, чтобы вы смогли подтвердить свой почтовый адрес (он необходим для
+                восстановления доступа к Личному Кабинету в случае утраты пароля).<br/>
+                 Для поддтверждения адреса Вам необходимо пройти по ссылке ниже<br/><br/>
+                 <a href='/Registration/activateEmail/$hash'>/Registration/activateEmail/$hash</a>";
+
+        require_once $_SERVER['DOCUMENT_ROOT']."/php-library/phpmailer/phpmailer/class.phpmailer.php";
+
+        $mail = new \PHPMailer();
+        $mail->IsSendmail();
+
+        $mail->AddReplyTo("support@commercetech.tk","First Last");
+        $mail->SetFrom('support@commercetech.tk', 'First Last');
+
+        $address = $email;
+        $username = $name." ".$lastname;
+
+        $mail->AddAddress($address, $username);
+        $mail->Subject = "Пожалуйста, подтвердите свой email";
+        $mail->MsgHTML($body);
+
+        if(!$mail->Send()) {
+            echo "Произошла ошибка: " . $mail->ErrorInfo;
+        }
+    }
+//генерация случайного пароля
+    static function generate_pass () {
+        $length = 8;
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $result = '';
+        for ($i = 0; $i <= $length; $i++) {
+            $result .= $characters[mt_rand (0, strlen ($characters) - 1)];
+        }
+        return $result;
     }
 }

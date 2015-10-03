@@ -9,7 +9,10 @@ class Controller_Authorization extends Controller
     function action_index(){
         $this->view->generate("View_Authorization.php", "View_Template.php",
             array(
-                "title" => "Авторизация пользователя"
+                "title" => "Авторизация пользователя",
+                "formAuth" => true,
+                "formNewPass" => false,
+                "success" => false
             )
         );
     }
@@ -55,4 +58,34 @@ HERE;
         session_destroy();
         header("location: /");
     }
+
+    public function action_fogetPass(){
+        $this->view->generate("View_Authorization.php", "View_Template.php",
+            array(
+                "title" => "Восстановление пароля",
+                "formAuth" => false,
+                "formNewPass" => true,
+                "success" => false
+            )
+        );
+    }
+
+    public function action_createNewPassword($array){
+        $this->model->create_new_pass($array);
+
+        header("location: /Authorization/success");
+    }
+
+    public function action_success(){
+        $this->view->generate("View_Authorization.php", "View_Template.php",
+            array(
+                "formAuth" => false,
+                "formNewPass" => false,
+                "success" => true
+            )
+        );
+    }
+
+
+
 }
