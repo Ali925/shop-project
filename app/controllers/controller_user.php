@@ -23,31 +23,9 @@ class Controller_User extends Controller {
 
     public function action_registration(){
 
-        $salt1= "q0r@m";
-        $salt2 = "8r#h";
-        $name = htmlentities($_POST["name"]);
-        $lastname = htmlentities($_POST["lastname"]);
-        $birthday = $_POST["birthday"];
-        $email = htmlentities($_POST["mail"]);
-        $password1 = htmlentities($_POST["pass1"]);
-        $password2 = htmlentities($_POST["pass2"]);
-        $is_active = 0;
+        $this->model->reg_user($array);
 
-        $reg_date = (string)date_format(new DateTime(), 'Y-m-d');
-        $last_update = (string)date_format(new DateTime(), 'Y-m-d');
-        if($password1 !== $password2){
-            echo <<<HERE
-            <div class='alarm'>
-                <h3>Пароли не совпадают</h3>
-                <a href='/user'><button>Попробовать ещё раз</button></a>
-                <a href='/Main'><button>Вернуться на главную</button></a>
-            </div>
-HERE;
-        }else{
-            $password = md5($salt1.$password1.$salt2);
-            $this->model->reg_user($name, $lastname, $birthday, $email, $password, $is_active, $reg_date, $last_update);
-            header("location: /user/auth");
-        }
+        header("location: /Authorization");
    }
 
    	public function action_auth(){		
@@ -77,11 +55,13 @@ HERE;
             $_SESSION["authorized"] = true;
             $_SESSION["name"] = $data["name"];
             $_SESSION["login"] = $data["email"];
+            $_SESSION["id"] = $data["id"];
+            $_SESSION["type"] = "user";
             $email = $_SESSION['login'];
             $row = \ORM::for_table('users')->where("email", $email)->find_one();
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['item_count'] = $this->model->get_count($_SESSION['user_id']);
-            header("location: /Main");
+            header("location: /");
         }
     }
 
@@ -102,9 +82,11 @@ HERE;
         unset($_SESSION["login"]);
         unset($_SESSION["user_id"]);
         unset($_SESSION["item_count"]);
+        unset($_SESSION["id"]);
+        unset($_SESSION["type"]);
 
         session_destroy();
-        header("location: /Main");
+        header("location: /");
     }
 
 

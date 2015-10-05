@@ -1026,6 +1026,10 @@ div.search_submit {
   width: 80px;
   margin-right: 10px;
 }
+
+.upload-form{
+  margin-top: 30px;
+}
 /* --------- features ---------*/
 .content_area_left {
   width: 645px;
@@ -3477,10 +3481,10 @@ footer {
 
 .authorize, .registrate{
     text-align: center;
-    width: 350px;
+    width: 500px;
     height: auto;
 }
-.authorize input, .registrate input {
+.authorize input, .registrate input, .change_user_data input {
     width: 200px;
     height: 20px;
     padding: 5px;
@@ -3488,11 +3492,25 @@ footer {
     border-radius: 5px;
     text-align: center;
 }
-.authorize button, .registrate button{
-    width: 150px;
+.registrate button, .change_user_data button{
+    width: 180px;
     height: 30px;
     margin: 5px;
     text-align: center;
+    position: absolute;
+  left: 720px;
+  top: 540px;
+}
+.authorize button{
+  width: 100px;
+    height: 30px;
+    margin: 5px;
+    text-align: center;
+}
+.change_user_data{
+    text-align: center;
+    width: 610px;
+    height: auto;
 }
 .login button{
     font-size: smaller;
@@ -3506,7 +3524,21 @@ footer {
     width: 600px;
     word-wrap: break-word;
 }
-
+/*стили для блока с ошибками/предупреждениями*/
+/*.alarm{*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
+/*}*/
+/*.alarm a button{*/
+    /*width: 350px;*/
+    /*height: 30px;*/
+    /*padding: 5px;*/
+    /*margin: 10px;*/
+    /*background-color: #eee;*/
+    /*border-radius: 5px;*/
+/*}*/
 .product_wrap{
     width: 660px;
     height: auto;
@@ -3579,4 +3611,75 @@ hr{
     border-color: #333333;
     font-size: large;
     outline: none;
+}
+.is_active{
+    color: limegreen;
+    font: bold;
+}
+.is_not_active{
+    color: #ff0000;
+    font: bold;
+}
+.user_info_span{
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+}
+.user_info_span span, .user_info span{
+    display: block;
+    margin: 10px;
+    height: 34px;
+}
+.user_info {
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+}
+.admin{
+    text-decoration: none;
+    cursor: default;
+    color: transparent;
+}
+.new_user_data{
+    width: 200px;
+    display: inline-block;
+}
+.new_user_data a{
+    width: 200px;
+    display: block;
+    height: 20px;
+    margin: 10px;
+}
+.secoo{
+    background-color: transparent;
+    border: 1px solid;
+    border-color: #0055ff;
+}
+.simple{
+    text-align: left;
+}
+.simple input{
+    margin: 3px;
+    outline: none;
+}
+.tableContent{
+    margin-left: -77px;
+    font-size: 13px;
+}
+.tableContent td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.tableContent td input{
+    max-width: 120px;
+}
+
+.register-form{
+  margin-left: -120px;
+}
+table img{
+    max-height: 70px;
+    max-width: 70px;
 }

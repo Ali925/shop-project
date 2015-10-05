@@ -37,7 +37,7 @@
             <?php if(isset($_SESSION["authorized"])): ?>
 
                 <form method="post" action="/user/out">
-                <div class="login"><span class="login__text">Здравствуйте, <a href='#'><?php echo $_SESSION["name"]; ?></a></span>
+                <div class="login"><span class="login__text">Здравствуйте, <a href='/users'><?php echo $_SESSION["name"]; ?></a></span>
                 <a href="/cabin" class="login__cart"><img src="/img/icons/cart-header.png" alt="cart" width="24" height="24">Корзина <span class="cart-count" id="cart_count"><?php echo $_SESSION['item_count'];?></span></a>
                     <button>Выйти</button></div>
                 </form>
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-
+            <?php if($is_carousel): ?>
             <section class="carousel">
                 <div class="carousel_wrap">
                     <ul>
@@ -132,6 +132,7 @@
                     <a href="#" class="carousel_control_right"></a>
                 </div>
             </section>
+            <?php endif; ?>
         </div> <!-- container -->
     </div> <!-- maincontent -->
     <div class = "empty"></div>
@@ -144,7 +145,7 @@
         <div class="footer_main_logo">
             <p>
                 <span>
-                    &copy; 2015 ООО «Лофтскулл». Все права защищены
+                    <a class="admin" href="/Admin">&copy;</a> 2015 ООО «Лофтскулл». Все права защищены
                 </span>
             </p>
         </div>

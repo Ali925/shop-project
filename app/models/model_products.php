@@ -9,6 +9,14 @@ class Model_Products extends Model{
         return \ORM::for_table($this->table)->find_many();
     }
 
+    public function get_xmldata(){
+
+        return \ORM::for_table($this->table)
+            ->select_many(array('category' => 'categories.title'), "products.link", "products.id", "products.title", "products.mark", "products.description", "products.price", "products.count")
+            ->join('categories', array('products.id_catalog', '=', 'categories.id'))
+            ->find_many();
+    }
+
     public function get_incart($user) {
         return \ORM::for_table('cart')->where("id_user", $user)->find_many();
     }
@@ -29,6 +37,10 @@ class Model_Products extends Model{
             ->find_many();
 
 
+    }
+
+    public function get_one_category($id) {
+        return \ORM::for_table('categories')->find_one($id);
     }
 
     public function get_categories(){
@@ -122,5 +134,25 @@ class Model_Products extends Model{
 
     }
 
+    public function get_orders(){
+        return \ORM::for_table("orders")->find_many();
+    }
+
+    public function get_order($id){
+        return \ORM::for_table("orders")->find_one($id);
+    }
+
+    public function get_order_property(){
+        return \ORM::for_table("order_property")->find_many();
+    }
+
+//получаем подробности конкретного заказа
+    public function get_one_order_property($id){
+        return \ORM::for_table("order_property")
+            ->where("order_property.id_order", $id)
+            ->find_one();
+    }
 
 }
+
+?>

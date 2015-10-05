@@ -26,7 +26,10 @@ class Route
 
         if(!empty(array_slice($routes, 3))){
             $params = array_slice($routes, 3);
-        }
+        } elseif(isset($_REQUEST)) {
+            
+                $params = $_REQUEST;
+            }
 
         // добавляем префиксы
         $model_name = 'Model_' . $controller_name;

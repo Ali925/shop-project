@@ -69,6 +69,7 @@ class Model_Cabin extends Model
             $order_property->save();
        }
 
+
        public function empty_cart($user){
 
              return \ORM::for_table('cart')

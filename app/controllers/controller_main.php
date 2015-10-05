@@ -8,6 +8,7 @@ class Controller_Main extends Controller
             array(
                 'title' => 'Главная страница',
                 'is_photo_slider' => true,
+                'is_carousel' => true,
                 'is_slider' => true,
                 'is_right_sidebar' => true,
                 'is_left_navbar' => true

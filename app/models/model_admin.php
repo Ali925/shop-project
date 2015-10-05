@@ -1,0 +1,129 @@
+<?php
+
+class Model_Admin extends Model{
+
+	public function get_auth_ad($name){
+        return \ORM::for_table("admins")
+            ->where("name", $name)
+            ->find_one();
+    }
+
+    //админ добавляет категорию
+    public function add_Category($title){
+        $category = \ORM::for_table("categories")->create();
+        $category->set('title', $title);
+        $category->save();
+    }
+	//админ удаляет категорию
+    public function delete_Category($id){
+        $category = \ORM::for_table("categories")->find_one($id);
+        $category->delete();
+    }
+	//админ изменяет категорию
+	public function edit_Category($id, $title){
+        $category = \ORM::for_table("categories")->find_one($id);
+        $category->set('title', $title);
+        $category->save();
+	}
+    //админ меняет статус заказа
+    public function edit_Order($array)
+    {
+        $order = \ORM::for_table("orders")->find_one($array['id']);
+        $order->set('status', $array['status']);
+        $order->save();
+    }
+
+    //админ редактирует товар
+    public function edit_Product($product, $categories){
+        $mark = strip_tags($product["mark"]);
+        $title = strip_tags($product["title"]);
+        $description = htmlentities($product["description"]);
+        $count = (int)$product["count"];
+        $price = (int)$product['price'];
+
+        $id_catalog = 1;
+        foreach($categories as $category){
+            if($category['title'] === $product['id_catalog']){
+                $id_catalog = $category['id'];
+                break;
+            }
+        }
+        $link = htmlentities($product['link']);
+
+        $product = \ORM::for_table("products")->find_one($product['id']);
+        $product->set('title', $title);
+        $product->set('mark', $mark);
+        $product->set('count', $count);
+        $product->set('price', $price);
+        $product->set('description', $description);
+        $product->set('id_catalog', $id_catalog);
+        $product->set('link', $link);
+        $product->save();
+    }
+//админ удаляет товар
+    public function delete_Product($id){
+        $product = \ORM::for_table("products")->find_one($id);
+        $product->delete();
+    }
+//админ добавляет товар
+    public function add_Product($product, $categories){
+        if(!is_array($categories)){
+          $ctgrs = \ORM::for_table("categories")->where('title', $categories)->find_one();
+        }
+        $mark = strip_tags($product['mark']);
+        $title = strip_tags($product['title']);
+        $description = htmlentities($product['description']);
+        $count = (int)$product['count'];
+        $price = doubleval($product['price']);
+
+        $id_catalog = 1;
+        if(is_array($categories)){
+            foreach($categories as $category){
+                if($category['title'] === $product['id_catalog']){
+                    $id_catalog = $category['id'];
+                    break;
+                }
+            } 
+        }
+
+        else {
+            $id_catalog = $ctgrs['id'];
+        }
+
+        $product = \ORM::for_table("products")->create();
+        $product->title = $title;
+        $product->mark = $mark;
+        $product->description = $description;
+        $product->count = $count;
+        $product->price = $price;
+        $product->id_catalog = $id_catalog;
+        $product->save();
+    }
+
+    public function get_emails($key){
+        if($key == 1){
+            return \ORM::for_table('admins')->find_many();
+        }
+        elseif($key == 2){
+            return \ORM::for_table("users")
+            ->distinct()
+            ->select_many('users.email', 'users.name', 'users.lastname')
+            ->join("orders", array("users.id","=", "orders.id_user"))
+            ->where_not_equal('is_delete', '1')
+            ->find_many();
+        }
+        elseif ($key == 3) {
+            return \ORM::for_table('users')->where_not_equal('is_delete', '1')->find_many();
+        }
+        elseif ($key == 4) {
+            $time = date("Y-m-d H:i:s", strtotime('-3 months')); 
+            return \ORM::for_table('users')->where_gte('reg_date', $time)->where_not_equal('is_delete', '1')->find_many();
+        }
+        elseif ($key == 5) {
+            return \ORM::for_table('users')->where('is_active', '0')->where_not_equal('is_delete', '1')->find_many();
+        }
+    }
+
+}
+
+?>

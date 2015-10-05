@@ -1,4 +1,20 @@
 <?php
+
+<<< admins:
+
+$salt1= "0f1q/";
+$salt2 = "z@9c";
+
+Maksim - qwerty
+Tural - qazxsw
+
+>>>
+
+================
+
+<<< users:
+
+
 $salt1= "q0r@m";
 $salt2 = "8r#h";
 
