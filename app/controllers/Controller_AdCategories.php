@@ -40,18 +40,24 @@ class Controller_AdCategories extends Controller{
     }
 
     public function action_addCat($array){
-        $title = strip_tags($array['title']);
-        $title = strip_tags($title);
+        $title = filter_var($array['title'], FILTER_SANITIZE_STRING);
+
         $this->model->add_Category($title);
 
         header("location: /AdCategories");
     }
 
     public function action_editCat($array){
-        $id = strip_tags($array['id']);
-        $title = strip_tags($array['title']);
-        $this->model->edit_Category($id, $title);
-        header("location: /AdCategories");
+        $id = filter_var($array['id'], FILTER_VALIDATE_INT);
+        $title = filter_var($array['title'], FILTER_SANITIZE_STRING);
+
+        if($id && $title) {
+            $this->model->edit_Category($id, $title);
+            header("location: /AdCategories");
+        }else{
+//            $message = "<h3>Вы ввели некорректные данные</h3>";
+//            Route::Error($message);
+        }
     }
 
     public function action_delCat($id){

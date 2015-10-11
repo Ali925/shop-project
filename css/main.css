@@ -3179,6 +3179,7 @@ footer {
     height: 30px;
     margin: 5px;
     text-align: center;
+    font-size: inherit;
 }
 .change_user_data{
     text-align: center;

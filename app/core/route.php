@@ -114,4 +114,12 @@ class Route
         header("Status: 404 Not Found");
         header('Location:' . $host . 'Error');
     }
+
+//    static function Error($message){
+//        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+//        header('HTTP/1.1 404 Not Found');
+//        header("Status: 404 Not Found");
+//        header('Location:' . $host . 'Error');
+//        header
+//    }
 }

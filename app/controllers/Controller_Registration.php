@@ -20,7 +20,7 @@ class Controller_Registration extends Controller
     public function action_registration($array){
         $this->model->reg_user($array);
 
-        $this->model->email_activate($array);
+        $this->model->send_email_activate($array);
 
         header("location: /Registration/success");
     }
@@ -38,8 +38,8 @@ class Controller_Registration extends Controller
         if($_SESSION['type'] == "user"){
             $user = $this->model->get_user($_SESSION['id']);
             if((int)$user['is_active'] == 0){
-                $email = strip_tags($user['email']);
-                $date = (string)$user['reg_date'];
+                $email = $user['email'];
+                $date = $user['reg_date'];
                 $security = md5($email.$date);
                 if($security == $hash){
                     \ORM::for_table('users')->find_one($user['id'])->set('is_active', 1)->save();

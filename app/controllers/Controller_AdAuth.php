@@ -18,20 +18,31 @@ class Controller_AdAuth extends Controller{
     public function action_auth($array){
         $salt1= "0f1q/";
         $salt2 = "z@9c";
-        $name = htmlentities($array["name"]);
+        $name = filter_var($array["name"], FILTER_SANITIZE_STRING);
         $pass = md5($salt1.$array["pass"].$salt2);
-        $data = $this->model->get_auth_ad($name);
-        $true_name = $data["name"];
-        $true_password = $data["password"];
-        if($name !== $true_name){
-           header("location: /AdAuth");
-        }elseif($pass !== $true_password){
-            header("location: /AdAuth");
-        }else{
-            $_SESSION["name"] = $data["name"];
-            $_SESSION["type"] = "admin";
+        if($name && $pass) {
+            $data = $this->model->get_auth_ad($name);
+            $true_name = $data["name"];
+            $true_password = $data["password"];
+            if ($name !== $true_name) {
+                header("location: /AdAuth");
+            } elseif ($pass !== $true_password) {
+                header("location: /AdAuth");
+            } else {
+                if ($_SESSION["type"] == "user") {
+                    unset($_SESSION["name"]);
+                    unset($_SESSION["type"]);
+                    unset($_SESSION["id"]);
+                }
 
-            header("location: /Admin");
+                $_SESSION["name"] = $data["name"];
+                $_SESSION["type"] = "admin";
+
+                header("location: /Admin");
+            }
+        }else{
+//            $message = "<h3>Вы ввели некорректные данные</h3>";
+//            Route::Error($message);
         }
     }
 

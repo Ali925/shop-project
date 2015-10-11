@@ -2,6 +2,9 @@
 
 namespace Shop\Model;
 
+define("SALT1", "q0r@m");
+define("SALT2", "8r#h");
+
 abstract class Model
 {
     protected $table = "";
@@ -84,40 +87,76 @@ abstract class Model
 //добавляем в БД нового пользователя
     public function reg_user($array)
     {
-        $salt1 = "q0r@m";
-        $salt2 = "8r#h";
-        $name = strip_tags($array["name"]);
-        $lastname = strip_tags($array["lastname"]);
+        $name = filter_var($array["name"], FILTER_SANITIZE_STRING);
+        $lastname = filter_var($array["lastname"], FILTER_SANITIZE_STRING);
         $birthday = $array["birthday"];
-        $email = strip_tags($array["email"]);
-        $password1 = htmlentities($array["pass1"]);
-        $password2 = htmlentities($array["pass2"]);
+        $email = filter_var($array["email"], FILTER_VALIDATE_EMAIL);
+        $password1 = filter_var($array["pass1"], FILTER_SANITIZE_STRING);
+        $password2 = filter_var($array["pass2"],FILTER_SANITIZE_STRING);
         $is_active = 0;
         $reg_date = (string)date_format(new \DateTime(), 'Y-m-d');
         $last_update = (string)date_format(new \DateTime(), 'Y-m-d');
         $is_delete = 0;
-        if ($password1 !== $password2) {
-            echo <<<HERE
-            <div class='alarm'>
-                <h3>Пароли не совпадают</h3>
-                <a href='/Registration'><button>Попробовать ещё раз</button></a>
-                <a href='/Main'><button>Вернуться на главную</button></a>
-            </div>
-HERE;
-        } else {
-            $password = md5($salt1 . $password1 . $salt2);
+        if($name && $lastname && $email && $password1 && $password2){
+            if ($password1 !== $password2) {
+//                $message = "
+//                    <div class='alarm'>
+//                        <h3>Пароли не совпадают</h3>
+//                        <a href='/Registration'><button>Попробовать ещё раз</button></a>
+//                        <a href='/Main'><button>Вернуться на главную</button></a>
+//                    </div>";
+//                \Route::Error($message);
+            } else {
+                $password = md5(SALT1 . $password1 . SALT2);
 
-            $person = \ORM::for_table("users")->create();
-            $person->name = $name;
-            $person->lastname = $lastname;
-            $person->birthday = $birthday;
-            $person->email = $email;
-            $person->password = $password;
-            $person->is_active = $is_active;
-            $person->reg_date = $reg_date;
-            $person->last_update = $last_update;
-            $person->is_delete = $is_delete;
-            $person->save();
+                $person = \ORM::for_table("users")->create();
+                $person->name = $name;
+                $person->lastname = $lastname;
+                $person->birthday = $birthday;
+                $person->email = $email;
+                $person->password = $password;
+                $person->is_active = $is_active;
+                $person->reg_date = $reg_date;
+                $person->last_update = $last_update;
+                $person->is_delete = $is_delete;
+                $person->save();
+            }
+        }else{
+//            $message = "<h3>Вы ввели некорректные данные</h3>";
+//            \Route::Error($message);
+        }
+    }
+
+//авторизация пользователя
+    public function authorization_user($array, $userData){
+
+        $password = md5(SALT1.$array["pass"].SALT2);
+
+        $true_login = $userData["email"];
+        $true_password = $userData["password"];
+
+        if(!$true_login){
+//            $message = "
+//                <div class='alarm'>
+//                    <h3>Пользователь с данным логином не зарегистрирован</h3>
+//                    <a href='/Authorization'><button>Попробовать ещё раз</button></a>
+//                    <a href='/Main'><button>Вернуться на главную</button></a>
+//                </div>";
+//            \Route::Error($message);
+        }elseif($password !== $true_password){
+//            $message = "
+//                <div class='alarm'>
+//                    <h3>Вы ввели неверный пароль</h3>
+//                    <a href='/Authorization'><button>Попробовать ещё раз</button></a>
+//                    <a href='/Main'><button>Вернуться на главную</button></a>
+//                </div>";
+//            \Route::Error($message);
+        }else{
+            $_SESSION["name"] = $userData["name"];
+            $_SESSION["id"] = $userData["id"];
+            $_SESSION["type"] = "user";
+
+            header("location: /");
         }
     }
 
@@ -140,15 +179,15 @@ HERE;
 //редактируем данные пользователя
     public function update_user($array)
     {
-        $name = strip_tags($array["name"]);
+        $name = filter_var($array["name"], FILTER_SANITIZE_STRING);
         if (!$name) $name = null;
-        $lastname = strip_tags($array["lastname"]);
+        $lastname = filter_var($array["lastname"], FILTER_SANITIZE_STRING);
         if (!$lastname) $lastname = null;
         $birthday = $array["birthday"];
         $date1 = strtotime($birthday);
         $date2 = (strtotime("0000-00-00"));
         if ($date1 == $date2) $birthday = null;
-        $email = strip_tags($array["email"]);
+        $email = filter_var($array["email"], FILTER_VALIDATE_EMAIL);
         if (!$email) $email = null;
         $last_update = (string)date_format(new \DateTime(), 'Y-m-d');
 
@@ -200,30 +239,36 @@ HERE;
 //админ редактирует товар
     public function edit_Product($product, $categories)
     {
-        $mark = strip_tags($product["mark"]);
-        $title = strip_tags($product["title"]);
-        $description = htmlentities($product["description"]);
-        $count = (int)$product["count"];
-        $price = (int)$product['price'];
+        $mark = filter_var($product['mark'], FILTER_SANITIZE_STRING);
+        $title = filter_var($product['title'], FILTER_SANITIZE_STRING);
+        $description = filter_var($product['description'], FILTER_SANITIZE_STRING);
+        $count = intval($product['count']);
+        $price = doubleval($product['price']);
+        $link = filter_var($product['link'], FILTER_SANITIZE_STRING);
 
-        $id_catalog = 1;
-        foreach ($categories as $category) {
-            if ($category['title'] === $product['id_catalog']) {
-                $id_catalog = $category['id'];
-                break;
+        if($mark && $title && $description && $count && $price && $link){
+            $id_catalog = 1;
+            foreach ($categories as $category) {
+                if ($category['title'] === $product['id_catalog']) {
+                    $id_catalog = $category['id'];
+                    break;
+                }
             }
-        }
-        $link = htmlentities($product['link']);
 
-        $product = \ORM::for_table("products")->find_one($product['id']);
-        $product->set('title', $title);
-        $product->set('mark', $mark);
-        $product->set('count', $count);
-        $product->set('price', $price);
-        $product->set('description', $description);
-        $product->set('id_catalog', $id_catalog);
-        $product->set('link', $link);
-        $product->save();
+            $product = \ORM::for_table("products")->find_one($product['id']);
+            $product->set('title', $title);
+            $product->set('mark', $mark);
+            $product->set('count', $count);
+            $product->set('price', $price);
+            $product->set('description', $description);
+            $product->set('id_catalog', $id_catalog);
+            $product->set('link', $link);
+            $product->save();
+        }else{
+//            $message = "<h3>Вы ввели некорректные данные</h3>";
+//
+//            \Route::Error($message);
+        }
     }
 
 //админ удаляет товар
@@ -236,28 +281,35 @@ HERE;
 //админ добавляет товар
     public function add_Product($product, $categories)
     {
-        $mark = strip_tags($product['mark']);
-        $title = strip_tags($product['title']);
-        $description = htmlentities($product['description']);
-        $count = (int)$product['count'];
+        $mark = filter_var($product['mark'], FILTER_SANITIZE_STRING);
+        $title = filter_var($product['title'], FILTER_SANITIZE_STRING);
+        $description = filter_var($product['description'], FILTER_SANITIZE_STRING);
+        $count = intval($product['count']);
         $price = doubleval($product['price']);
 
-        $id_catalog = 1;
-        foreach ($categories as $category) {
-            if ($category['title'] === $product['id_catalog']) {
-                $id_catalog = $category['id'];
-                break;
-            }
-        }
+        if ($mark && $title && $description && $count && $price) {
 
-        $product = \ORM::for_table("products")->create();
-        $product->title = $title;
-        $product->mark = $mark;
-        $product->description = $description;
-        $product->count = $count;
-        $product->price = $price;
-        $product->id_catalog = $id_catalog;
-        $product->save();
+            $id_catalog = 1;
+            foreach ($categories as $category) {
+                if ($category['title'] === $product['id_catalog']) {
+                    $id_catalog = $category['id'];
+                    break;
+                }
+            }
+
+            $product = \ORM::for_table("products")->create();
+            $product->title = $title;
+            $product->mark = $mark;
+            $product->description = $description;
+            $product->count = $count;
+            $product->price = $price;
+            $product->id_catalog = $id_catalog;
+            $product->save();
+        }else{
+            $message = "<h3>Вы ввели некорректные данные</h3>";
+
+            \Route::Error($message);
+        }
     }
 
 //админ меняет статус заказа
@@ -298,16 +350,16 @@ HERE;
         $mail = new \PHPMailer();
         $mail->IsSendmail();
 
-        $salt1 = "q0r@m";
-        $salt2 = "8r#h";
         $newPass = self::generate_pass();
-        $hashNewPass = md5($salt1.$newPass.$salt2);
+        $hashNewPass = md5(SALT1.$newPass.SALT2);
 
         \ORM::for_table('users')->find_one($user['id'])
             ->set("password", $hashNewPass)
             ->save();
 
-        $body = "<br/>Ваш новый пароль: <b>$newPass</b><br/><h3>Запомните Ваш новый пароль и удалите это письмо!</h3>";
+        $body = "<br/>Ваш новый пароль: <b>$newPass</b><br/><h3>Запомните Ваш новый пароль и удалите это письмо!</h3>
+                Для авторизации пройдите по ссылке ниже<br/><br/>
+                 <a href='www.commercetech.tk/Authorization'>www.commercetech.tk</a>";
 
         $mail->AddReplyTo("support@commercetech.tk","First Last");
         $mail->SetFrom('support@commercetech.tk', 'First Last');
@@ -324,37 +376,44 @@ HERE;
         }
     }
 //
-    public function email_activate($array){
-        $name = strip_tags($array["name"]);
-        $lastname = strip_tags($array["lastname"]);
-        $email = strip_tags($array["email"]);
-        $date = new \DateTime();
-        $date = (string)$date;
+    public function send_email_activate($array){
+        $name = filter_var($array["name"], FILTER_SANITIZE_STRING);
+        $lastname = filter_var($array["lastname"],FILTER_SANITIZE_STRING);
+        $email = filter_var($array["email"], FILTER_VALIDATE_EMAIL);
+        $date = (string)date_format(new \DateTime(), 'Y-m-d');;
         $hash = md5($email.$date);
 
-        $body = "<br/>Здравствуйте, $name $lastname!<br/><br/>Вы успешно зарегистрировались на сайте www.commercetech.tk.<br/>
+        if($name && $lastname && $email) {
+            $body = "<br/>Здравствуйте, $name $lastname!<br/><br/>Вы успешно зарегистрировались на сайте www.commercetech.tk.<br/>
                 Вам пришло это письмо для того, чтобы вы смогли подтвердить свой почтовый адрес (он необходим для
                 восстановления доступа к Личному Кабинету в случае утраты пароля).<br/>
                  Для поддтверждения адреса Вам необходимо пройти по ссылке ниже<br/><br/>
-                 <a href='/Registration/activateEmail/$hash'>/Registration/activateEmail/$hash</a>";
+                 <a href='www.commercetech.tk/Registration/activateEmail/$hash'>www.commercetech.tk</a>";
 
-        require_once $_SERVER['DOCUMENT_ROOT']."/php-library/phpmailer/phpmailer/class.phpmailer.php";
+            require_once $_SERVER['DOCUMENT_ROOT'] . "/php-library/phpmailer/phpmailer/class.phpmailer.php";
 
-        $mail = new \PHPMailer();
-        $mail->IsSendmail();
+            $mail = new \PHPMailer();
+            $mail->IsSendmail();
 
-        $mail->AddReplyTo("support@commercetech.tk","First Last");
-        $mail->SetFrom('support@commercetech.tk', 'First Last');
+            $mail->AddReplyTo("support@commercetech.tk", "First Last");
+            $mail->SetFrom('support@commercetech.tk', 'First Last');
 
-        $address = $email;
-        $username = $name." ".$lastname;
+            $address = $email;
+            $username = $name . " " . $lastname;
 
-        $mail->AddAddress($address, $username);
-        $mail->Subject = "Пожалуйста, подтвердите свой email";
-        $mail->MsgHTML($body);
+            $mail->AddAddress($address, $username);
+            $mail->Subject = "Пожалуйста, подтвердите свой email";
+            $mail->MsgHTML($body);
 
-        if(!$mail->Send()) {
-            echo "Произошла ошибка: " . $mail->ErrorInfo;
+            if (!$mail->Send()) {
+//                $message = "Произошла ошибка: " . $mail->ErrorInfo;
+//
+//                \Route::Error($message);
+            }
+        }else{
+//            $message = "<h3>Вы ввели некорректные данные</h3>";
+//
+//            \Route::Error($message);
         }
     }
 //генерация случайного пароля

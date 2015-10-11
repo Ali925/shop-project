@@ -18,36 +18,11 @@ class Controller_Authorization extends Controller
     }
 
     public function action_authorization($array){
-        $salt1= "q0r@m";
-        $salt2 = "8r#h";
-        $email = htmlentities($array["email"]);
-        $password = md5($salt1.$array["pass"].$salt2);
-        $data = $this->model->get_auth_user($email);
-        $true_login = $data["email"];
-        $true_password = $data["password"];
-        if(!$true_login){
-            echo <<<HERE
-            <div class='alarm'>
-                <h3>Пользователь с данным логином не зарегистрирован</h3>
-                <a href='/Authorization'><button>Попробовать ещё раз</button></a>
-                <a href='/Main'><button>Вернуться на главную</button></a>
-            </div>
-HERE;
-        }elseif($password !== $true_password){
-            echo <<<HERE
-            <div class='alarm'>
-                <h3>Вы ввели неверный пароль</h3>
-                <a href='/Authorization'><button>Попробовать ещё раз</button></a>
-                <a href='/Main'><button>Вернуться на главную</button></a>
-            </div>
-HERE;
-        }else{
-            $_SESSION["name"] = $data["name"];
-            $_SESSION["id"] = $data["id"];
-            $_SESSION["type"] = "user";
+        $email = filter_var($array["email"], FILTER_VALIDATE_EMAIL);
 
-            header("location: /");
-        }
+        $userData = $this->model->get_auth_user($email);
+
+        $this->model->authorization_user($array, $userData);
     }
 
     public function action_out(){
