@@ -12,6 +12,7 @@ class Controller_AdOrders extends Controller{
         $this->view->generate("View_AdOrders.php", "View_AdTemp.php",
             array(
                 'title' => 'Заказы',
+                'header' => '',
                 'editForm' => false,
                 'data' => $data,
                 'property' => $property
@@ -23,6 +24,7 @@ class Controller_AdOrders extends Controller{
         $this->view->generate("View_AdOrders.php", "View_AdTemp.php",
             array(
                 'title' => 'Заказы',
+                'header' => 'Изменение статуса заказа',
                 'editForm' => true,
                 'data' => null,
                 'order' => $this->model->get_one($id),
@@ -36,6 +38,7 @@ class Controller_AdOrders extends Controller{
         $this->view->generate("View_AdUsers.php", "View_AdTemp.php",
             array(
                 'title' => 'Заказы',
+                'header' => 'Данные пользователя',
                 'editForm' => false,
                 'data' => $data
             )
@@ -48,6 +51,7 @@ class Controller_AdOrders extends Controller{
         $this->view->generate("View_AdProducts.php", "View_AdTemp.php",
             array(
                 'title' => 'Заказы',
+                'header' => 'Данные товара',
                 'categories' => $categories,
                 'editForm' => false,
                 'data' => $data
