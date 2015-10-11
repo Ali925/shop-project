@@ -31,7 +31,8 @@
                 <?php
                 echo <<<HERE
                     <div class='features_list_wrap'>
-                        <h3>{$title} {$_SESSION['name']}</h3>
+                        <h3>Администратор: {$_SESSION['name']}</h3>
+
                         <a href='/AdAuth/AdOut'><button>Выход</button></a><br/>
                         <a href='/'><button>Главная</button></a>
                         <ul class='admin_list'>
@@ -40,6 +41,7 @@
                             <a href='/AdProducts'><li>Товары</li></a>
                             <a href='/AdOrders'><li>Заказы</li></a>
                         </ul>
+                        <h3>{$title} </h3>
                     </div>
 HERE;
 
