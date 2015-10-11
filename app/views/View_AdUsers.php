@@ -1,59 +1,67 @@
 <div class="features_descript" style="border: none">
-    <div class="feautures_descr_title">
+
     <?php
-
-        echo "<a href='/AdUsers/viewFormAdd'><button>Добавить пользователя</button></a>";
-
+        echo "<h4>{$header}</h4>";
         if($addForm){
             echo <<<HERE
-                    <form action='/AdUsers/addUser' method='post'>
-                    <table class='tableContent'>
-                         <tr>
-                             <th>Имя</th>
-                             <th>Фамилия</th>
-                             <th>Дата Рождения</th>
-                             <th>Email</th>
-                             <th>Пароль</th>
-                             <th>Повторите пароль</th>
-                         </tr>
-                         <tr>
-                                <td><input id="name" name="name" type="text"></td>
-                                <td><input id="lastname" name="lastname" type="text"></td>
-                                <td><input id="birthday" name="birthday" type="date"></td>
-                                <td><input id="email" name="email" type="email"></td>
-                                <td><input id="pass1" name="pass1" type="password"></td>
-                                <td><input id="pass2" name="pass2" type="password"></td>
-                                <td><button type='submit'>Добавить</button></td>
-                         </tr>
-                    </form>
+            <div class='Form'>
+                <form action='/AdUsers/addUser' method='post'>
+                    <div class='dataForm'>
+                        <div class='FormHeaders'>
+                            <span>Имя: </span><br/>
+                            <span>Фамилия: </span><br/>
+                            <span>Дата рождения: </span><br/>
+                            <span>Email: </span><br/>
+                            <span>Пароль: </span><br/>
+                            <span>Повторите пароль: </span><br/>
+                        </div>
+                        <div class='FormData'>
+                            <input id="name" name="name" type="text"><br/>
+                            <input id="lastname" name="lastname" type="text"><br/>
+                            <input id="birthday" name="birthday" type="date"><br/>
+                            <input id="email" name="email" type="email"><br/>
+                            <input id="pass1" name="pass1" type="password"><br/>
+                            <input id="pass2" name="pass2" type="password"><br/>
+                            <button type='submit'>Добавить</button>
+                        </div>
+                    </div>
+                 </form>
+            </div>
 HERE;
         }
 
         if($editForm){
             echo <<<HERE
-                    <form action='/AdUsers/editUser' method='post'>
-                    <table class='tableContent'>
-                <tr>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Дата Рождения</th>
-                    <th>Email</th>
-                </tr>
-                <tr>
-                       <td><input id="name" name="name" type="text" value="{$user['name']}"></td>
-                       <td><input id="lastname" name="lastname" type="text" value="{$user['lastname']}"></td>
-                       <td><input id="birthday" name="birthday" type="date" value="{$user['birthday']}"></td>
-                       <td><input id="email" name="email" type="email" value="{$user['email']}"></td>
-                       <td><button type='submit'>Изменить</button></td>
-                </tr>
-                <input id="id" name="id" style="visibility: hidden" type="text" value="{$user['id']}">
-                    </form>
+                <div class='Form'>
+                <form action='/AdUsers/editUser' method='post'>
+                    <div class='dataForm'>
+                        <div class='FormHeaders'>
+                            <span>ID: </span><br/>
+                            <span>Имя: </span><br/>
+                            <span>Фамилия: </span><br/>
+                            <span>Дата рождения: </span><br/>
+                            <span>Email: </span><br/>
+                        </div>
+                        <div class='FormData'>
+                            <input id="id" name="id" disabled="disabled" value="{$user['id']}"><br/>
+                            <input id="name" name="name" type="text" value="{$user['name']}"><br/>
+                            <input id="lastname" name="lastname" type="text" value="{$user['lastname']}"><br/>
+                            <input id="birthday" name="birthday" type="date" value="{$user['birthday']}"><br/>
+                            <input id="email" name="email" type="email" value="{$user['email']}"><br/>
+                            <button type='submit'>Изменить</button>
+                        </div>
+                    </div>
+                 </form>
+            </div>
 HERE;
         }
         if(!$data){
-            echo "<h3>В таблице нет записей о пользователях<h3>";
+            if(!$editForm && !addForm) {
+                echo "<h3>В таблице нет записей о пользователях<h3>";
+            }
         }else {
             echo <<<HERE
+                <a href='/AdUsers/viewFormAdd'><button>Добавить пользователя</button></a>
                 <table class='tableContent'>
                     <tr>
                         <th>ID</th>
@@ -104,7 +112,7 @@ HERE;
                 echo "<td><a href='/AdUsers/delUser/{$value['id']}'><button>Удалить</button></a></td>";
 
                 if (!$value['is_active']) {
-                    echo "<td><a href='/AdUsers/actUser/{$value['id']}'><button>Активировать</button></a></td></tr>";
+                    echo "<td><a href='/AdUsers/actUser/{$value['id']}'><button>Активировать email</button></a></td></tr>";
                 } else {
                     echo "</tr>";
                 }
@@ -113,5 +121,5 @@ HERE;
         echo "</table>";
     }
     ?>
-    </div>
+
 </div>

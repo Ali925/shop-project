@@ -10,6 +10,7 @@ class Controller_AdUsers extends Controller{
         $this->view->generate("View_AdUsers.php", "View_AdTemp.php",
             array(
                 'title' => 'Пользователи',
+                'header' => '',
                 'addForm' => false,
                 'editForm' => false,
                 'data' => $this->model->get_all()
@@ -20,9 +21,10 @@ class Controller_AdUsers extends Controller{
         $this->view->generate("View_AdUsers.php", "View_AdTemp.php",
             array(
                 'title' => 'Пользователи',
+                'header' => 'Добавление нового пользователя',
                 'addForm' => true,
                 'editForm' => false,
-                'data' => $this->model->get_all()
+                'data' => null
             )
         );
     }
@@ -30,10 +32,11 @@ class Controller_AdUsers extends Controller{
         $this->view->generate("View_AdUsers.php", "View_AdTemp.php",
             array(
                 'title' => 'Пользователи',
+                'header' => 'Редактирование пользователя',
                 'addForm' => false,
                 'editForm' => true,
-                'data' => null,
-                'user' => $this->model->get_one($id)
+                'user' => $this->model->get_one($id),
+                'data' => null
             )
         );
     }
