@@ -10,20 +10,21 @@ class Controller_AdCategories extends Controller{
         $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
             array(
                 'title' => 'Категории',
-                'form' => false,
-                'formEdit' => false,
+                'header' => '',
+                'addForm' => false,
+                'editForm' => false,
                 'data' => $this->model->get_all()
             )
         );
     }
-
     public function action_viewFormAdd(){
         $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
             array(
                 'title' => 'Категории',
-                'form' => true,
-                'formEdit' => false,
-                'data' => $this->model->get_all()
+                'header' => 'Добавление категории',
+                'addForm' => true,
+                'editForm' => false,
+                'data' => null
             )
         );
     }
@@ -31,10 +32,11 @@ class Controller_AdCategories extends Controller{
         $this->view->generate("View_AdCategories.php", "View_AdTemp.php",
             array(
                 'title' => 'Категории',
-                'form' => false,
-                'formEdit' => true,
+                'header' => 'Редактирование категории',
+                'addForm' => false,
+                'editForm' => true,
                 'category' => $this->model->get_one($id),
-                'data' => $this->model->get_all()
+                'data' => null
             )
         );
     }
