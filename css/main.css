@@ -753,7 +753,7 @@ div.search_submit {
   clear: both;
 }
 .features_descript {
-  width: 400px;
+  width: 500px;
   float: left;
   border-right: 1px solid #c9cace;
 }
@@ -3353,4 +3353,49 @@ table img{
 }
 .foget_pass{
     font-size: x-small;
+}
+.Form{
+     width: 500px;
+     height: 600px;
+     min-height: 100%;
+ }
+.dataForm{
+    width: 500px;
+    height: auto;
+    min-height: 100%;
+}
+.FormHeaders{
+    display: inline-block;
+    width: 200px;
+    float: left;
+    text-align: right;
+}
+.FormHeaders span{
+    display: block;
+    height: 6px;
+    margin-top: 10px;
+}
+.FormData {
+    display: inline-block;
+    width: 250px;
+    float: left;
+    clear: none;
+}
+.FormData input{
+    width: 250px;
+    height: 20px;
+    margin: 5px;
+    text-align: center;
+}
+.FormData select{
+    width: 250px;
+    height: 25px;
+    margin: 5px;
+    text-align: center;
+}
+.FormData button{
+    display: block;
+    width: 150px;
+    height: 30px;
+    margin: 20px auto;
 }
