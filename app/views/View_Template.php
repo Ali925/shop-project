@@ -28,18 +28,23 @@
     <div class = "maincontent">
         <div class="container">
 
-            <?php if(!isset($_SESSION["name"])): ?>
-                <div class="auth">
-                    <a href="/Authorization">Войти</a> /
-                    <a href="/Registration">Зарегистрироваться</a>
-                </div>
-            <?php endif; ?>
-            <?php if(isset($_SESSION["name"])): ?>
+            <?php if($_SESSION["type"] == "user"): ?>
                 <form method="post" action="/Authorization/out">
                 <div class="login">Здравствуйте, <a href='/Users'><?php echo $_SESSION["name"]; ?></a>
                     <button>Выйти</button></div>
                 </form>
             <?php endif; ?>
+            <?php if($_SESSION["type"] == "admin"): ?>
+                <div class="auth">
+                    <span>Администратор</span>
+                </div>
+            <?php endif; ?>
+            <?php if(!isset($_SESSION["type"])): ?>
+                <div class="auth">
+                    <a href="/Authorization">Войти</a> /
+                    <a href="/Registration">Зарегистрироваться</a>
+                </div>
+            <?php endif;?>
 
             <?php require_once '_chunks/header.php'; ?>
 
