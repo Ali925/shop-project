@@ -10,6 +10,7 @@ class Controller_AdProducts extends Controller{
         $this->view->generate("View_AdProducts.php", "View_AdTemp.php",
             array(
                 'title' => 'Товары',
+                'header' => '',
                 'addForm' => false,
                 'editForm' => false,
                 'data' => $this->model->get_all(),
@@ -22,9 +23,10 @@ class Controller_AdProducts extends Controller{
         $this->view->generate("View_AdProducts.php", "View_AdTemp.php",
             array(
                 'title' => 'Товары',
+                'header' => 'Добавление нового товара',
                 'addForm' => true,
                 'editForm' => false,
-                'data' => $this->model->get_all(),
+                'data' => null,
                 'categories' => $this->model->get_categories()
             )
         );
@@ -34,6 +36,7 @@ class Controller_AdProducts extends Controller{
         $this->view->generate("View_AdProducts.php", "View_AdTemp.php",
             array(
                 'title' => 'Товары',
+                'header' => 'Редактирование товара',
                 'addForm' => false,
                 'editForm' => true,
                 'data' => null,
