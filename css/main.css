@@ -3399,3 +3399,22 @@ table img{
     height: 30px;
     margin: 20px auto;
 }
+textarea.productDescr{
+    margin: 5px;
+    width: 350px;
+    height: 150px;
+    resize: none;
+    overflow-y: scroll;
+}
+span.productDescr{
+    height: 137px;
+    margin: 5px;
+}
+.productPhoto{
+    max-height: 150px;
+    max-width: 150px;
+}
+.productPhoto img{
+    height: 150px;
+    width: 150px;
+}
