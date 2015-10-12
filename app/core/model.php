@@ -426,6 +426,7 @@ HERE;
         }
 
         $mail = new \PHPMailer();
+        $mail->CharSet = 'utf-8';
         $mail->IsSendmail();
 
         $newPass = self::generate_pass();
@@ -435,25 +436,28 @@ HERE;
             ->set("password", $hashNewPass)
             ->save();
 
-        $body = "<br/>Ваш новый пароль: <b>$newPass</b><br/><h3>Запомните Ваш новый пароль и удалите это письмо!</h3>
+        $body = "<br/>Ваш новый пароль: <b>$newPass</b><br/>
+                <h3>Запомните Ваш новый пароль и удалите это письмо!</h3>
                 Для авторизации пройдите по ссылке ниже<br/><br/>
                  <a href='www.commercetech.tk/Authorization'>www.commercetech.tk</a>";
 
-        $mail->AddReplyTo("support@commercetech.tk","First Last");
-        $mail->SetFrom('support@commercetech.tk', 'First Last');
+        $mail->AddReplyTo("m.a.ponomarenko@yandex.ru", "Maksim Ponomarenko");
+        $mail->SetFrom("m.a.ponomarenko@yandex.ru", "Maksim Ponomarenko");
 
         $address = $array['email'];
         $username = $array['name']." ".$array['lastname'];
 
         $mail->AddAddress($address, $username);
-        $mail->Subject    = "Восстановление пароля на Commercetech.tk";
+        $mail->Subject = "Восстановление пароля на Commercetech.tk";
         $mail->MsgHTML($body);
 
         if(!$mail->Send()) {
-            echo "Произошла ошибка: " . $mail->ErrorInfo;
+//                $message = "Произошла ошибка: " . $mail->ErrorInfo;
+//
+//                \Route::Error($message);
         }
     }
-//
+//Посылаем пользователю письмо для подтверждения почтового ящика
     public function send_email_activate($array){
         $name = filter_var($array["name"], FILTER_SANITIZE_STRING);
         $lastname = filter_var($array["lastname"],FILTER_SANITIZE_STRING);
@@ -471,10 +475,11 @@ HERE;
             require_once $_SERVER['DOCUMENT_ROOT'] . "/php-library/phpmailer/phpmailer/class.phpmailer.php";
 
             $mail = new \PHPMailer();
+            $mail->CharSet = 'utf-8';
             $mail->IsSendmail();
 
-            $mail->AddReplyTo("support@commercetech.tk", "First Last");
-            $mail->SetFrom('support@commercetech.tk', 'First Last');
+            $mail->AddReplyTo("m.a.ponomarenko@yandex.ru", "Maksim Ponomarenko");
+            $mail->SetFrom("m.a.ponomarenko@yandex.ru", "Maksim Ponomarenko");
 
             $address = $email;
             $username = $name . " " . $lastname;
