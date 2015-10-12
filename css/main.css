@@ -3176,7 +3176,8 @@ footer {
 }
 .authorize button, .registrate button, .change_user_data button{
     width: 150px;
-    height: 30px;
+    min-height: 30px;
+    height: auto;
     margin: 5px;
     text-align: center;
     font-size: inherit;
