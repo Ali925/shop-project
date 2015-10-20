@@ -27,7 +27,8 @@
                                 <input id="pass1" name="pass1" type="password"><br/>
                                 <input id="pass2" name="pass2" type="password"><br/>
                             </div>
-                                <button type="submit">Зарегистрироваться</button>
+
+                            <button type="submit">Зарегистрироваться</button>
 
                         </form>
 HERE;

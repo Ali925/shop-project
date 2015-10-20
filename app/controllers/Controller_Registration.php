@@ -44,16 +44,18 @@ class Controller_Registration extends Controller
                 if($security == $hash){
                     \ORM::for_table('users')->find_one($user['id'])->set('is_active', 1)->save();
 
-                    echo "<h3>Почтовый адрес успешно подтверждён!</h3>";
+                    $message = "Почтовый адрес успешно подтверждён!";
+                    header("location: /Error/info/{$message}");
                 }else{
-                    echo "<h3>Почтовый адрес не подтверждён, обратитесь в техподдержку!</h3>";
+                    $message = "Почтовый адрес не подтверждён, обратитесь в техподдержку!";
+                    header("location: /Error/error/{$message}");
                 }
             }else{
                 header('location: /');
             }
         }elseif($_SESSION['type'] != "admin" && $_SESSION['type'] != "user"){
-            echo "<h3>Для подтверждения почтового ящика, Вам необходимо <a href='/Authorization'>авторизоваться</a></h3>";
-
+            $message = "Для подтверждения почтового ящика, Вам необходимо <a href='/Authorization'>авторизоваться</a>";
+            header("location: /Error/error/{$message}");
         }
     }
 }

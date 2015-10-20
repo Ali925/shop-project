@@ -3200,20 +3200,33 @@ footer {
     word-wrap: break-word;
 }
 /*стили для блока с ошибками/предупреждениями*/
-/*.alarm{*/
-    /*width: 100%;*/
-    /*height: auto;*/
-    /*margin: 0 auto;*/
-    /*text-align: center;*/
-/*}*/
-/*.alarm a button{*/
-    /*width: 350px;*/
-    /*height: 30px;*/
-    /*padding: 5px;*/
-    /*margin: 10px;*/
-    /*background-color: #eee;*/
-    /*border-radius: 5px;*/
-/*}*/
+.alarm{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.alarm h3{
+    color: black;
+    display: inline-block;
+    width: 600px;
+    height: auto;
+    word-break: break-word;
+}
+.alarm a button{
+    width: 350px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: normal;
+    border: 1px solid black;
+}
 .product_wrap{
     width: 660px;
     height: auto;

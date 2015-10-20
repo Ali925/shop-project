@@ -57,8 +57,8 @@ class Controller_AdCategories extends Controller{
             $this->model->edit_Category($id, $title);
             header("location: /AdCategories");
         }else{
-//            $message = "<h3>Вы ввели некорректные данные</h3>";
-//            Route::Error($message);
+            $message = "Введены неверные данные";
+            header("location: /Error/aderror/{$message}");
         }
     }
 

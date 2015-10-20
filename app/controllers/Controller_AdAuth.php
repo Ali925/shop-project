@@ -12,7 +12,7 @@ class Controller_AdAuth extends Controller{
 
                 )
             );
-    }
+        }
     }
 //Авторизация для админа
     public function action_auth($array){
@@ -41,8 +41,8 @@ class Controller_AdAuth extends Controller{
                 header("location: /Admin");
             }
         }else{
-//            $message = "<h3>Вы ввели некорректные данные</h3>";
-//            Route::Error($message);
+            $message = "Введены неверные данные";
+            header("location: /Error/aderror/{$message}");
         }
     }
 
@@ -54,4 +54,5 @@ class Controller_AdAuth extends Controller{
         session_destroy();
         header("location: /");
     }
+
 }

@@ -99,13 +99,8 @@ abstract class Model
         $is_delete = 0;
         if($name && $lastname && $email && $password1 && $password2){
             if ($password1 !== $password2) {
-//                $message = "
-//                    <div class='alarm'>
-//                        <h3>Пароли не совпадают</h3>
-//                        <a href='/Registration'><button>Попробовать ещё раз</button></a>
-//                        <a href='/Main'><button>Вернуться на главную</button></a>
-//                    </div>";
-//                \Route::Error($message);
+                $message = "Пароли не совпадают!";
+                header("location: /Error/error/{$message}");
             } else {
                 $password = md5(SALT1 . $password1 . SALT2);
 
@@ -122,8 +117,8 @@ abstract class Model
                 $person->save();
             }
         }else{
-//            $message = "<h3>Вы ввели некорректные данные</h3>";
-//            \Route::Error($message);
+            $message = "Вы ввели некорректные данные";
+            header("location: /Error/error/{$message}");
         }
     }
 
@@ -136,21 +131,11 @@ abstract class Model
         $true_password = $userData["password"];
 
         if(!$true_login){
-//            $message = "
-//                <div class='alarm'>
-//                    <h3>Пользователь с данным логином не зарегистрирован</h3>
-//                    <a href='/Authorization'><button>Попробовать ещё раз</button></a>
-//                    <a href='/Main'><button>Вернуться на главную</button></a>
-//                </div>";
-//            \Route::Error($message);
+            $message = "Пользователь с данным логином не зарегистрирован";
+            header("location: /Error/error/{$message}");
         }elseif($password !== $true_password){
-//            $message = "
-//                <div class='alarm'>
-//                    <h3>Вы ввели неверный пароль</h3>
-//                    <a href='/Authorization'><button>Попробовать ещё раз</button></a>
-//                    <a href='/Main'><button>Вернуться на главную</button></a>
-//                </div>";
-//            \Route::Error($message);
+            $message = "Вы ввели неверный пароль";
+            header("location: /Error/error/{$message}");
         }else{
             $_SESSION["name"] = $userData["name"];
             $_SESSION["id"] = $userData["id"];
@@ -255,19 +240,16 @@ abstract class Model
             $file_ext = $file_ext[count($file_ext)-1];
 
             if($_FILES['link']['size'] >= 2048000){
-    //             $message = "Размер файла не должен превышать 2МБ";
-    //
-    //             Route::Erorr($message);
+                $message = "Размер файла не должен превышать 2МБ";
+                header("location: /Error/error/{$message}");
             }elseif($_FILES['link']['size'] >= 0 && $_FILES['link']['size'] <= 2048000){
                 if($file_ext != "jpg" && $file_ext != "jpeg" && $file_ext != "png"){
-    //             $message = "Файл должен иметь одно из следующих расширений: '.jpg', '.jpeg', '.png'!";
-    //
-    //             Route::Erorr($message);
+                    $message = "Файл должен иметь одно из следующих расширений: '.jpg', '.jpeg', '.png'!";
+                    header("location: /Error/error/{$message}");
                 }
                 if(!move_uploaded_file($file_temp, $path_to_file.$file)) {
-    //             $message = "Не удалось загрузить файл";
-    //
-    //             Route::Erorr($message);
+                    $message = "Не удалось загрузить файл";
+                    header("location: /Error/error/{$message}");
                 }else{
                     if(file_exists($path_to_file.$old_file)) {
                         unlink($path_to_file . $old_file);
@@ -298,9 +280,8 @@ abstract class Model
             }
             $product->save();
         } else {
-//            $message = "<h3>Вы ввели некорректные данные</h3>";
-//
-//            \Route::Error($message);
+            $message = "Вы ввели некорректные данные";
+            header("location: /Error/error/{$message}");
         }
     }
 
@@ -330,21 +311,18 @@ abstract class Model
         $file_ext = $file_ext[count($file_ext)-1];
 
         if($_FILES['link']['size'] >= 2048000){
-//             $message = "Размер файла не должен превышать 2МБ";
-//
-//             Route::Erorr($message);
-         }elseif($_FILES['link']['size'] >= 0 && $_FILES['link']['size'] <= 2048000){
+            $message = "Размер файла не должен превышать 2МБ";
+            header("location: /Error/error/{$message}");
+        }elseif($_FILES['link']['size'] >= 0 && $_FILES['link']['size'] <= 2048000){
             if($file_ext != "jpg" && $file_ext != "jpeg" && $file_ext != "png"){
-//             $message = "Файл должен иметь одно из следующих расширений: '.jpg', '.jpeg', '.png'!";
-//
-//             Route::Erorr($message);
+                $message = "Файл должен иметь одно из следующих расширений: '.jpg', '.jpeg', '.png'!";
+                header("location: /Error/error/{$message}");
             }
             if(!move_uploaded_file($file_temp, $path_to_file.$file)) {
-//             $message = "Не удалось загрузить файл";
-//
-//             Route::Erorr($message);
+                $message = "Не удалось загрузить файл";
+                header("location: /Error/error/{$message}");
             }
-         }
+        }
 
         if ($mark && $title && $description && $count && $price) {
 
@@ -384,9 +362,8 @@ abstract class Model
                 $item->save();
             }
         }else{
-//            $message = "<h3>Вы ввели некорректные данные</h3>";
-//
-//            \Route::Error($message);
+            $message = "Вы ввели некорректные данные";
+            header("location: /Error/error/{$message}");
         }
     }
 
@@ -409,19 +386,13 @@ abstract class Model
             ->find_one();
 
         if(!$user){
-            echo <<<HERE
-                <h3>Пользователь с указанными Вами данными не зарегистрирован</h3>
-                <a href='/Authorization/createNewPassword'><button>Попробовать ещё раз</button></a>
-                <a href='/Contacts'><button>Связаться с нами</button></a>
-HERE;
+            $message = "Пользователь с указанными Вами данными не зарегистрирован";
+            header("location: /Error/error/{$message}");
             exit;
         }
         if(!$user['is_active']){
-            echo <<<HERE
-                <h3>К сожалению, ваш email не подтверждён. Свяжитесь с нами для восстановления доступа к Личному Кабинету</h3>
-                <a href='/'><button>Отмена</button></a>
-                <a href='/Contacts'><button>Связаться с нами</button></a>
-HERE;
+                $message = "К сожалению, ваш email не подтверждён. Свяжитесь с нами для восстановления доступа к Личному Кабинету";
+                header("location: /Error/error/{$message}");
             exit;
         }
 
@@ -452,9 +423,8 @@ HERE;
         $mail->MsgHTML($body);
 
         if(!$mail->Send()) {
-//                $message = "Произошла ошибка: " . $mail->ErrorInfo;
-//
-//                \Route::Error($message);
+            $message = "Произошла ошибка. Письмо не отправлено!";
+            header("location: /Error/error/{$message}");
         }
     }
 //Посылаем пользователю письмо для подтверждения почтового ящика
@@ -489,14 +459,12 @@ HERE;
             $mail->MsgHTML($body);
 
             if (!$mail->Send()) {
-//                $message = "Произошла ошибка: " . $mail->ErrorInfo;
-//
-//                \Route::Error($message);
+                $message = "Произошла ошибка. Письмо не отправлено!";
+                header("location: /Error/error/{$message}");
             }
         }else{
-//            $message = "<h3>Вы ввели некорректные данные</h3>";
-//
-//            \Route::Error($message);
+            $message = "Вы ввели некорректные данные";
+            header("location: /Error/error/{$message}");
         }
     }
 //генерация случайного пароля
