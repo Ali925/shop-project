@@ -1,5 +1,5 @@
 #shop-project
-Установка и запуск
+Установка
 
 1. git clone https://github.com/Ali925/shop-project
 2. cd shop-project
