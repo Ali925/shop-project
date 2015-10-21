@@ -1,9 +1,7 @@
-# shop-project
-Loftschool PHP Homework-4 (team working)
+#shop-project
+Установка и запуск
 
-<<<<<<< HEAD
-Установка
-
-php composer.phar install
-=======
->>>>>>> 057dde1f4748beed884385f95fd74a27c9f10523
+1. git clone https://github.com/Ali925/shop-project
+2. cd shop-project
+3. curl -sS https://getcomposer.org/installer | php
+4. php composer.phar install
