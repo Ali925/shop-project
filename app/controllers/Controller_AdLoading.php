@@ -9,8 +9,8 @@ class Controller_AdLoading extends Controller{
         $this->modelAdmin = new Model_Admin;   
     }
 
-	public function action_index(){
-	$data = $this->modelProducts->get_xmldata();
+    public function action_index(){
+    $data = $this->modelProducts->get_xmldata();
     $dom = new DOMDocument('1.0', 'UTF-8');
     $dom->formatOutput = true;
     $dom->preserveWhiteSpace = false;
@@ -34,62 +34,57 @@ class Controller_AdLoading extends Controller{
 
     
             
-     $item_row  =  $dom->createElement('title', $product['title']);
+     $item_row  =  $dom->createElement('title', htmlentities($product['title']));
      $item->appendChild($item_row);
-     $item_row  =  $dom->createElement('mark', $product['mark']);
+     $item_row  =  $dom->createElement('mark', htmlentities($product['mark']));
      $item->appendChild($item_row);
      $item_row  =  $dom->createElement('count', $product['count']);
      $item->appendChild($item_row);
-     $item_row  =  $dom->createElement('price', $product['price']);
+     $item_row  =  $dom->createElement('price', htmlentities($product['price']));
      $item->appendChild($item_row);
-     $item_row  =  $dom->createElement('description', $product['description']);
+     $item_row  =  $dom->createElement('description', htmlentities($product['description']));
      $item->appendChild($item_row);
-     $item_row  =  $dom->createElement('category', $product['category']);
+     $item_row  =  $dom->createElement('category', htmlentities($product['category']));
      $item->appendChild($item_row);
-     $item_row  =  $dom->createElement('image', $product['link']);
+     $item_row  =  $dom->createElement('image', htmlentities($product['link']));
      $item->appendChild($item_row);
      
     $choosenTable->appendChild($item);
 
 }
-	$dom->save('XMLdata/data.xml');
-	header('Content-Description: File Transfer');
+    $dom->save('XMLdata/data.xml');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="'.basename("products.xml").'"');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize('XMLdata/data.xml'));
 
     readfile('XMLdata/data.xml');
 
-	}
+    }
 
-	public function action_upload(){
+    public function action_upload(){
 
-		if(isset($_FILES['file'])){
-			$products = array(array());
-			$i = 0;
-			$data = simplexml_load_file($_FILES["file"]["tmp_name"]);
-			foreach ($data as $key => $value) {
-				if($key == 'title'){
-					$i++;
-				}
-				$products[$i][$key] = $value;
-			}
-			for ($k=1; $k <= $i; $k++) { 
-				$this->modelAdmin->add_Product($products[$k], $products[$k]['category']);
-			}
-		}
+        if(isset($_FILES['file'])){
+            $products = array(array());
+            $i = 0;
+            $data = simplexml_load_file($_FILES["file"]["tmp_name"]);
+            foreach ($data as $key => $value) {
+                if($key == 'title'){
+                    $i++;
+                }
+                $products[$i][$key] = $value;
+            }
+            for ($k=1; $k <= $i; $k++) { 
+                $this->modelAdmin->add_Product($products[$k], $products[$k]['category']);
+            }
+        }
 
-		$this->view->generate("adloading_view.php", "adtemp_view.php",
+        $this->view->generate("adloading_view.php", "adtemp_view.php",
             array(
                 'title' => 'Выгрузка товаров',
                 'msg' => $i
             )
         );
 
-	}
-		
-}	
+    }
+        
+}   
    

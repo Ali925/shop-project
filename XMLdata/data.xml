@@ -8,7 +8,7 @@
       <price>540.99</price>
       <description>Intel® Core™ i3-2120 (3,30 ГГц, 2 ядра), 2 ГБ DDR3 SDRAM, 500 ГБ (SATA, 7200 об/мин), DVD SATA SuperMulti writer, Intel HD Graphics, Realtek RTL8171E Gigabit Ethernet, 10 портов USB 2.0</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/1.jpg</image>
+      <image>1.jpg</image>
     </product>
     <product id="2">
       <title>Компьютер HP 500B</title>
@@ -17,7 +17,7 @@
       <price>675.99</price>
       <description>HP S2031A (20-дюймов, 1600 x 900), Intel® Pentium® E5800 3,20 ГГц, 4 ГБ DDR3 SDRAM, 500 ГБ (SATA, 7200 об/мин), DVD-привод SATA SuperMulti LightScribe, Intel Graphics Media Accelerator 4500MHD, Realtek RTL8103EL 10/100 Ethernet, 6 портов USB 2.0, устройство чтения карт памяти 22 в 1</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/2.jpg</image>
+      <image>2.jpg</image>
     </product>
     <product id="3">
       <title>Компьютер HP P3130M</title>
@@ -26,7 +26,7 @@
       <price>810.99</price>
       <description>HP S2031A (20-дюймов, 1600 x 900), Intel Core i3-550 3.2 ГГц, 4 ГБ DDR3 SDRAM, 320 ГБ (SATA, 7200 об/мин), DVD-привод SATA SuperMulti LightScribe, Intel Graphics Media Accelerator 4500MHD, Realtek 8111DL Gigabit Ethernet, 8 портов USB 2.0, устройство чтения карт памяти 22 в 1</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/3.jpg</image>
+      <image>3.jpg</image>
     </product>
     <product id="4">
       <title>Компьютер Sony VAIO Tap 20</title>
@@ -35,7 +35,7 @@
       <price>1350.99</price>
       <description>ПК-моноблок, 20 дюймов, 1600 x 900 пкс, Intel® Core™ i5-3337U (1.8-2.7 ГГц с Turbo Boost, 2 ядра) , 4 ГБ DDR3 SDRAM, 750 Гб (SATA, 5400 об/мин), Intel HD 4000, 1.3 МПкс Exmor® HD, 10/100/1000, 2 порта USB 3.0, SD, SD HC, MMC, MS, MS Pro</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/4.jpg</image>
+      <image>4.jpg</image>
     </product>
     <product id="5">
       <title>Компьютер ASUS ET2323I</title>
@@ -44,7 +44,7 @@
       <price>880.99</price>
       <description>Процессор Intel Core i7-5500U (Broadwell), производительная видеокарта NVIDIA GeForce 840M и приличное количество оперативной памяти - 16 Гбайт.</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/5.jpg</image>
+      <image>5.jpg</image>
     </product>
     <product id="6">
       <title>Компьютер HP P3130M</title>
@@ -53,7 +53,7 @@
       <price>1485.99</price>
       <description>Intel Core i7 2.93 ГГц, 6 Гб DDR3, 750 ГБ (SATA, 7200 об/мин), DVD-привод SATA SuperMulti LightScribe, Nvidia GeForce GT 420, 2 Гб, Gigabit Ethernet, 8 портов USB 2.0</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/6.jpg</image>
+      <image>6.jpg</image>
     </product>
     <product id="7">
       <title>Компьютер Apple iMac ME086</title>
@@ -62,7 +62,7 @@
       <price>1836.99</price>
       <description>ПК-моноблок, 21,5-дюйма, 1920x1080 пкс, Intel Core i5 2.7 ГГц, 8 ГБ DDR3 SDRAM (2 модуля SO-DIMM по 4 ГБ), 1Тб (SATA, 5400 об/мин), Intel Iris Pro Graphics, Камера FaceTime HD, 10/100/1000BASE-T (Gigabit), 4 порта USB 3.0, Разъём для карт SDXC</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/7.jpg</image>
+      <image>7.jpg</image>
     </product>
     <product id="8">
       <title>Компьютер Apple iMac MD095</title>
@@ -71,7 +71,7 @@
       <price>2430.99</price>
       <description>ПК-моноблок, 27-дюймов, 2560x1440 пкс, Intel® Core™ i5 2.9ГГц (3.60 ГГц с Turbo Boost) , 8 ГБ DDR3 SDRAM (2 модуля SO-DIMM по 4 ГБ), 1Тб (SATA, 7200 об/мин), NVIDIA GeForce GT 660M, 512Mb памяти GDDR5, Камера FaceTime HD, 10/100/1000BASE-T (Gigabit), 4 порта USB 3.0, Разъём для карт SDXC</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/8.jpg</image>
+      <image>8.jpg</image>
     </product>
     <product id="9">
       <title>Компьютер Apple iMac ME088</title>
@@ -80,7 +80,7 @@
       <price>2565.99</price>
       <description>ПК-моноблок, 27-дюймов, 2560x1440 пкс, Intel® Core™ i5 3.2ГГц (3.60 ГГц с Turbo Boost) , 8 ГБ DDR3 SDRAM (2 модуля SO-DIMM по 4 ГБ), 1Тб (SATA, 7200 об/мин), NVIDIA GeForce GT 775MX, 1Gb памяти GDDR5, Камера FaceTime HD, 10/100/1000BASE-T (Gigabit), 4 порта USB 3.0, Разъём для карт SDXC</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/9.jpg</image>
+      <image>9.jpg</image>
     </product>
     <product id="10">
       <title>Компьютер Apple iMac ME089</title>
@@ -89,7 +89,7 @@
       <price>2795.99</price>
       <description>ПК-моноблок, 27-дюймов, 2560x1440 пкс, Intel® Core™ i5 3.4ГГц (3.8 ГГц с Turbo Boost) , 8 ГБ DDR3 SDRAM (2 модуля SO-DIMM по 4 ГБ), 1Тб (SATA, 7200 об/мин), NVIDIA GeForce GT 775MX, 2Gb памяти GDDR5, Камера FaceTime HD, 10/100/1000BASE-T (Gigabit), 4 порта USB 3.0, Разъём для карт SDXC</description>
       <category>Компьютеры</category>
-      <image>/img/content/items/10.jpg</image>
+      <image>10.jpg</image>
     </product>
     <product id="11">
       <title>Notebook Dell Inspiron 3531</title>
@@ -98,7 +98,7 @@
       <price>299.99</price>
       <description>15.6 дюймов, 1366 x 768, Intel® Celeron®, N2830, 2.16 Ггц, 4Gb, 500Gb, Интегрированная Intel, HD Graphics, Вебкамера 0.3 Мпкс, 10/100 Mbit, WiFi (802.11b/g/n), Bluetooth 4.0, SD, SDHC, SDXC, 2xUSB 2.0, 1xHDMI, Windows 8.1 (64-bit), 38.1 x 25.9 x 2.54 см, 2.6 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/11.jpg</image>
+      <image>11.jpg</image>
     </product>
     <product id="12">
       <title>Notebook ASUS X200M</title>
@@ -107,7 +107,7 @@
       <price>389.99</price>
       <description>11.6 дюймов сенсорный MultiTouch, 1366 x 768, Intel® Bay Trail-M, N2830, 2.16 Ггц, 4Gb, 500Gb, Интегрированная Intel, HD Graphics, Вебкамера 720p HD, WiFi (802.11b/g/n), SD, MMC, 2xUSB 2.0, 1xUSB 3.0, 1xHDMI, 1xVGA(D-SUB), Windows 8.1 (64-bit), 1.4 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/12.jpg</image>
+      <image>12.jpg</image>
     </product>
     <product id="13">
       <title>Notebook Lenovo G580</title>
@@ -117,7 +117,7 @@
       <description>15.6 дюймов, 1366 x 768, Intel® Pentium® dual-core, B960, 2.2 Ггц, 4Gb, 500Gb, DVD Super Multi Drive (Double Layer), Внешняя nVidia, GeForce® GT 710M, 1Gb, Вебкамера 0.3 Мпкс, 10/100 Mbit, WiFi (802.11b/g/n), Bluetooth 2.1 , SD, SDHC, SDHD, MMC, MS Pro, MS, XD, 2xUSB 3.0, 1xUSB 2.0, 1xHDMI, 1xVGA(D-SUB), FreeDOS, 2.6 кг
 </description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/13.jpg</image>
+      <image>13.jpg</image>
     </product>
     <product id="14">
       <title>Notebook Acer Aspire E1-570G</title>
@@ -127,7 +127,7 @@
       <description>15.6 дюймов, 1366 x 768, Intel® Core™ i3, 3217U, 1.8 Ггц, 4Gb, 500Gb, DVDRW SuperMulti c Labelflash, Внешняя nVidia, GeForce® GT 720M, 1Gb, Вебкамера 720p HD, 10/100/1000 Mbit, WiFi (802.11b/g/n), Bluetooth 4.0, SD, MMC, MS Pro, MS, 3xUSB 2.0, 1xHDMI, 1xe-SATA, 1xVGA(D-SUB), FreeDOS, 38.2 x 25.3 x 2.3 см, 2.3 кг
 </description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/14.jpg</image>
+      <image>14.jpg</image>
     </product>
     <product id="15">
       <title>Notebook Samsung NP300E5X</title>
@@ -137,7 +137,7 @@
       <description>15.6 дюймов, 1366 x 768, Intel® Core™ i3, 3110M, 2.4 Ггц, 4Gb, 500Gb, Интегрированная Intel, HD Graphics 4000, до 1696Мб, Вебкамера 1.3 Мпкс, 10/100 Mbit, WiFi (802.11a/b/g), Bluetooth 2.1 , SD, SDHC, SDXC, 3xUSB 2.0, 1 x micro HDMI, 1xVGA(D-SUB), FreeDOS, 381 x 255 x 37 мм, 2.5 кг
 </description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/15.jpg</image>
+      <image>15.jpg</image>
     </product>
     <product id="16">
       <title>Notebook HP ProBook 4540s </title>
@@ -146,7 +146,7 @@
       <price>756.99</price>
       <description>15.6 дюймов, 1366 x 768, Intel® Core™ i3, 3110M, 2.4 Ггц, 4Gb, 320Gb, DVDRW SuperMulti c Labelflash, Интегрированная Intel, HD Graphics 4000, до 1696Мб, Вебкамера 720p HD, 10/100/1000 Mbit, WiFi (802.11b/g/n), SD, MMC, MS Pro, MS, 2xUSB 2.0, 2xUSB 3.0, 1xHDMI, 1xe-SATA, 1xVGA(D-SUB), Windows 8 (64-bit), 37.5 x 25.6 x 2.8 см, 2.35 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/16.jpg</image>
+      <image>16.jpg</image>
     </product>
     <product id="17">
       <title>Notebook Toshiba Satellite U845W</title>
@@ -156,7 +156,7 @@
       <description>14.4 дюймов, 1792 x 768, Intel® Core™ i7, 3517U, 1.9 Ггц ( 3.0 Ггц Turbo Boost), 6Gb, 256Гб SSD, Интегрированная Intel, HD Graphics 4000, до 1696Мб, Вебкамера 0.3 Мпкс, 10/100 Mbit, WiFi (802.11a/b/g/n), Bluetooth 4.0, 3xUSB 3.0, 1xHDMI, Windows 7 Home Premium (64 bit), 34.2 x 23.4 x 2.3 см , 2.39 кг
 </description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/17.jpg</image>
+      <image>17.jpg</image>
     </product>
     <product id="18">
       <title>Notebook Sony VAIO VPC-EA36FX/L</title>
@@ -165,7 +165,7 @@
       <price>945.99</price>
       <description>14 дюймов, 1366 x 768, Intel® Core™ i3, 370M, 2.4 Ггц, 4Gb, 500Gb, Blu-ray DVD+/-RW, Интегрированная Intel, HD Graphics, Вебкамера 0.3 Мпкс, 10/100/1000 Mbit, WiFi (802.11a/b/g/n), Bluetooth 2.1 + EDR, SD, MMC, MS Pro, MS, 3xUSB 2.0, 1xHDMI, 1xe-SATA, 1xVGA(D-SUB), Windows 7 Home Premium (64 bit)</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/18.jpg</image>
+      <image>18.jpg</image>
     </product>
     <product id="19">
       <title>Notebook Dell 15Z-4801SLV</title>
@@ -174,7 +174,7 @@
       <price>1029.99</price>
       <description>15.6 дюймов, 1366 x 768, Intel® Core™ i7, 3537U, 2 Ггц ( 3.1 Ггц Turbo Boost), 8Gb, 500Gb, 32Гб SSD, DVD+-RW/+-R DL/RAM, Интегрированная Intel, HD Graphics 4000, до 1696Мб, Вебкамера 1 Мпкс (HD), 10/100/1000 Mbit, WiFi (802.11b/g/n), Bluetooth 4.0, SD, SDHC, SDXC, 4xUSB 3.0, 1xHDMI, Windows 8 (64-bit), 2.18 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/19.jpg</image>
+      <image>19.jpg</image>
     </product>
     <product id="20">
       <title>Notebook Toshiba Satellite L50-A666</title>
@@ -183,7 +183,7 @@
       <price>1148.99</price>
       <description>15.6 дюймов, 1366 x 768, Intel® Core™ i7, 4700MQ, 2.4 ГГц ( 3.4 Ггц Turbo Boost), 8Gb, 1000Gb, DVD+-RW/+-R DL/RAM, Внешняя nVidia, GeForce® GT 740M, 2Gb, Вебкамера 0.9 Мпкс, 10/100 Mbit, WiFi (802.11b/g/n), Bluetooth 4.0, SD, miniSD, microSD, SDHC, SDXC, MMC, 2xUSB 3.0, 1xUSB 2.0, 1xHDMI, 1xe-SATA, 1xVGA(D-SUB), FreeDOS, 38 x 3.3 x 24 см, 2.3 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/20.jpg</image>
+      <image>20.jpg</image>
     </product>
     <product id="21">
       <title>Notebook Sony SVF15A16CXB</title>
@@ -192,7 +192,7 @@
       <price>1283.99</price>
       <description>15.5 дюймов сенсорный MultiTouch, 1920 x 1080, Intel® Core™ i7, 3537U, 2 Ггц ( 3.1 Ггц Turbo Boost), 8Gb, 1000Gb, 8Гб SSD, DVD+-RW/+-R DL/RAM, Интегрированная Intel, HD Graphics 4000, до 1696Мб, Вебкамера 1.3 Мпкс, 10/100/1000 Mbit, WiFi (802.11a/b/g/n), Bluetooth 4.0, SD, miniSD, microSD, SDHC, SDXC, MMC, 3xUSB 2.0, 1xUSB 3.0, 1xHDMI, 1xe-SATA, 1xVGA(D-SUB), Windows 8 (64-bit), 34.1 x 24.5 x 2.24 см, 2.3 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/21.jpg</image>
+      <image>21.jpg</image>
     </product>
     <product id="22">
       <title>Notebook Apple MacBook Pro (MD101LL/A)</title>
@@ -201,7 +201,7 @@
       <price>1403.99</price>
       <description>13.3 дюйма, 1280 x 800, Intel® Core™ i5, 2.5 ГГц ( 3.1 Ггц Turbo Boost), 4Gb, 500Gb, Superdrive (8x, (DVD±R DL/DVD±RW/ CD-RW)), Интегрированная Intel, HD Graphics 4000, 384 МБ , Вебкамера FaceTime (1.3 Мпкс), 10/100/1000 Mbit, WiFi (802.11a/b/g), Bluetooth 4.0, SD, SDHC, SDXC, 2xUSB 3.0, 1xIEE1394 (FireWire), 1 x Thunderbolt, OS X Lion, 32.5 x 2.41 x 22.7 см, 2.04 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/22.jpg</image>
+      <image>22.jpg</image>
     </product>
     <product id="23">
       <title>Notebook ASUS G750JS-RS71</title>
@@ -210,7 +210,7 @@
       <price>1539.99</price>
       <description>17.3 дюймов, 1920 x 1080, Intel® Core™ i7, 4700HQ, 2.4 ГГц ( 3.4 Ггц Turbo Boost), 12Gb, 750Gb, DVDRW SuperMulti c Labelflash, Внешняя nVidia, GeForce® GTX 870M, 3Гб GDDR5, Вебкамера 1.3 Мпкс, 10/100/1000 Mbit, WiFi (802.11b/g/n), Bluetooth 4.0, SD, MMC, 4xUSB 3.0, 1xHDMI, 1xMini DisplayPort, 1xVGA(D-SUB), 1 x Thunderbolt, Windows 8.1 (64-bit), 41 x 31.8 x 1.7 см, 4.4 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/23.jpg</image>
+      <image>23.jpg</image>
     </product>
     <product id="24">
       <title>Notebook Toshiba Qosmio (X75-A7180)</title>
@@ -219,7 +219,7 @@
       <price>1859.99</price>
       <description>17.3 дюймов, 1920 x 1080, Intel® Core™ i7, 4700MQ, 2.4 ГГц ( 3.4 Ггц Turbo Boost), 16Gb, 1000Gb (2x500Gb), Blu-ray DVD+/-RW, Интегрированная nVidia, GeForce® GTX 770M, 3Гб GDDR5, Вебкамера 1080p HD (30 fps), 10/100/1000 Mbit, WiFi (802.11a/b/g/n/ac), Bluetooth 4.0, Intel WiDi, SD, SDHC, SDXC, 4xUSB 3.0, 1xHDMI, 1xVGA(D-SUB), Windows 8.1 (64-bit), 41.91 x 27.18 x 4.3 см, 3.4 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/24.jpg</image>
+      <image>24.jpg</image>
     </product>
     <product id="25">
       <title>Notebook Apple MacBook Pro 13" Retina ME865</title>
@@ -228,7 +228,7 @@
       <price>2025.99</price>
       <description>13.3 дюйма, 2560 x 1600, Intel® Core™ i5, 2.4 Ггц ( 2.9 Ггц Turbo Boost), 8Gb, 256Гб SSD , Интегрированная Intel, Intel Iris Pro Graphics, Вебкамера 1 Мпкс (HD), 10/100/1000 Mbit, WiFi (802.11a/b/g/n), Bluetooth 4.0, SD, MMC, 2xUSB 3.0, 1xHDMI, 2 x Thunderbolt, OS X Mavericks, 31.4 x 21.9 x 1.9 см, 1.61 кг</description>
       <category>Ноутбуки</category>
-      <image>/img/content/items/25.jpg</image>
+      <image>25.jpg</image>
     </product>
     <product id="26">
       <title>Смартфон Nokia XL Dual</title>
@@ -237,7 +237,7 @@
       <price>212</price>
       <description>Android 4.1 (Jelly Bean), Nokia X platform 1.0 UI, Черный, Qualcomm MSM8225 Snapdragon S4 Play Cortex-A5, 1 ГГц, 4 Гб, 5-дюймовый, MultiTouch сенсорный экран, IPS LCD, 480 x 800 пкс, microUSB, WiFi (802.11b/g/n), Bluetooth 3.0, A2DP, A-GPS, GLONASS , Камера 5 Мпкс, 800 × 480 пкс, FM радио, microSD (до 32 Гб), Li-ION аккумулятор (2000 мАч), 141.4 x 77.7 x 10.9 мм, 190 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/26.jpg</image>
+      <image>26.jpg</image>
     </product>
     <product id="27">
       <title>Смартфон Samsung Galaxy Grand Prime Duos</title>
@@ -246,7 +246,7 @@
       <price>249</price>
       <description>Android 4.4 (KitKat), TouchWiz UI, Белый, Qualcomm Snapdragon 410, 1.2 ГГц, 8 Гб, 5-дюймовый, MultiTouch сенсорный экран, TFT , 540 X 960 пкс, microUSB, WiFi (802.11b/g/n), Bluetooth 4.0, A2DP, A-GPS, GLONASS , Камера 8 Мпкс, HD видео (1080p), FM радио, microSD (до 64 Гб), Li-Po аккумулятор (2600 мАч) , 144.8 x 72.1 x 8.6 мм, 156 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/27.jpg</image>
+      <image>27.jpg</image>
     </product>
     <product id="28">
       <title>Смартфон Sony Xperia M2</title>
@@ -255,7 +255,7 @@
       <price>319</price>
       <description>Android 4.3 (Jelly Bean), Sony Timescape UI, Черный, Qualcomm MSM8226 Snapdragon 400, 1.2 ГГц, 8 Гб, 4.8-дюймовый, MultiTouch сенсорный экран, TFT , 540 X 960 пкс, microUSB, Wi-Fi (802.11a/b/g/n), Bluetooth 4.0, A2DP, A-GPS, GLONASS , Камера 8 Мпкс, HD видео (1080p), FM радио (поддержка RDS), DLNA, microSD (до 32 Гб), Li-ION аккумулятор (2300 мАч), 139.7 x 71.1 x 8.6 мм, 148 г</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/28.jpg</image>
+      <image>28.jpg</image>
     </product>
     <product id="29">
       <title>Смартфон HTC 8X Windows Phone</title>
@@ -264,7 +264,7 @@
       <price>357</price>
       <description>Windows Phone 8, HTC Sense, Черный, Qualcomm MSM8960 Snapdragon, 1.5 ГГц, 16 Гб, 4.3-дюймовый, MultiTouch сенсорный экран, Super LCD2, 720 x 1280 пкс, microUSB, Wi-Fi (802.11a/b/g/n), Bluetooth 2.1 + EDR, A2DP, A-GPS, GLONASS , Камера 8 Мпкс, HD видео (1080p), Li-ION аккумулятор (1800 мАч), 66.2 x 132.35 x 10.12 мм, 130 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/29.jpg</image>
+      <image>29.jpg</image>
     </product>
     <product id="30">
       <title>Смартфон Samsung Galaxy S4</title>
@@ -273,7 +273,7 @@
       <price>399</price>
       <description>Android 4.2 (Jelly Bean), TouchWiz UI, Черный, Qualcomm APQ8064T Snapdragon 600, 1.9 ГГц, 16 Гб, 5-дюймовый, MultiTouch сенсорный экран, Super AMOLED, 1920 x 1080 пкс, microUSB, Wi-Fi (802.11 a/b/g/n/ac), Bluetooth 4.0, A2DP, A-GPS, GLONASS , Камера 13 Мпкс, HD видео (1080p), DLNA, HDMI (MHL), microSD (до 64 Гб), Li-ION аккумулятор (2600 мАч), 136.6 x 69.8 x 7.9 мм, 130 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/30.jpg</image>
+      <image>30.jpg</image>
     </product>
     <product id="31">
       <title>Смартфон LG Optimus G2 D802</title>
@@ -282,7 +282,7 @@
       <price>446</price>
       <description>Android 4.2 (Jelly Bean), Черный, Qualcomm MSM8974 Snapdragon 800, 2.2 ГГц, 32 Гб, 5.2-дюймовый, MultiTouch сенсорный экран, FULL HD IPS, 1920 x 1080 пкс, microUSB, Wi-Fi (802.11 a/b/g/n/ac), Bluetooth 4.0, A2DP, A-GPS, GLONASS , Камера 13 Мпкс, HD видео (1080p), FM радио (поддержка RDS), DLNA, Li-ION аккумулятор (3000 мАч), 138.5 x 70.9 x 8.9 мм, 143 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/31.jpg</image>
+      <image>31.jpg</image>
     </product>
     <product id="32">
       <title>Смартфон BlackBerry Bold 9900</title>
@@ -291,7 +291,7 @@
       <price>451</price>
       <description>BlackBerry OS 7, Белый, 1.2 ГГц, 8 Гб, 2.8-дюймовый, MultiTouch сенсорный экран, TFT , 480 x 640 пкс, microUSB, Встроенная QWERTY-клавиатура, Wi-Fi (802.11a/b/g/n), Bluetooth 2.1 + EDR, A2DP, GPS + A-GPS , Камера 5 Мпкс, HD видео (720p), microSD HC, microSD , Li-ION аккумулятор (1230 мАч), 66 x 115 x 10.5 мм, 133 г</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/32.jpg</image>
+      <image>32.jpg</image>
     </product>
     <product id="33">
       <title>Смартфон HTC One Dual SIM</title>
@@ -300,7 +300,7 @@
       <price>762</price>
       <description>Android 4.1 (Jelly Bean), HTC Sense UI v5, Черный, Qualcomm APQ8064T Snapdragon 600, 1.7 ГГц, 32 Гб, 4.7-дюймовый, MultiTouch сенсорный экран, Super LCD3, 1920 x 1080 пкс, microUSB, microHDMI, Wi-Fi (802.11 a/ac/b/g/n), Bluetooth 4.0, A2DP, A-GPS, GLONASS , Камера 4 Мпкс ( 2.0 микрометра, размер сенсора 1/3'), HD видео (1080p), FM радио (поддержка RDS), DLNA, HDMI (MHL), microSD (до 64 Гб), Li-Po аккумулятор (2300 мАч) , 137.4 x 68.2 x 9.3 мм, 156 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/33.jpg</image>
+      <image>33.jpg</image>
     </product>
     <product id="34">
       <title>Смартфон Samsung Galaxy S6 SM-G920</title>
@@ -309,7 +309,7 @@
       <price>799</price>
       <description/>
       <category>Смартфоны</category>
-      <image>/img/content/items/34.jpg</image>
+      <image>34.jpg</image>
     </product>
     <product id="35">
       <title>Смартфон Apple iPhone 6 16 Gb</title>
@@ -318,7 +318,7 @@
       <price>899</price>
       <description>iOS 8, Золотой, Apple A8, 1.4 ГГц, 16 Гб, 4.7-дюймовый, MultiTouch сенсорный экран, IPS LCD, 750 x 1334 пкс, порт Lightning, Wi-Fi (802.11 a/b/g/n/ac), Bluetooth 4.0 LE, A2DP, A-GPS, GLONASS , Камера 8 Мпкс, Full HD видео (1080p) 60 кадр/сек, HD видео (720p) 240 кадр/сек, 138.1 x 67 x 6.9 мм, 129 г.</description>
       <category>Смартфоны</category>
-      <image>/img/content/items/35.jpg</image>
+      <image>35.jpg</image>
     </product>
     <product id="36">
       <title>Планшетный компьютер ASUS MeMo Pad 7</title>
@@ -327,7 +327,7 @@
       <price>109.99</price>
       <description>7 дюймов, IPS, мультитач, 1280 x 800, Intel Atom, 1.2 ГГц, ZenUI, Android, 4.3, 1Гб, 16 Гб , MicroSD, до 64 Гб, Wi-Fi 802.11 b/g/n, Bluetooth 4.0, ГЛОНАСС, 0.3 МПкс, 2 МПкс, встроенный аккумулятор Li-polymer 3910мАч</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/36.jpg</image>
+      <image>36.jpg</image>
     </product>
     <product id="37">
       <title>Планшетный компьютер Amazon Kindle Fire HD</title>
@@ -336,7 +336,7 @@
       <price>216.99</price>
       <description>7 дюймов, мультитач, 1280 x 800, Cortex A9, 1.2 ГГц, Android, 4.0 , 1Гб, 16 Гб , Wi-Fi 802.11a/b/g/n, Bluetooth 4.0, 1.3 МПкс</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/37.jpg</image>
+      <image>37.jpg</image>
     </product>
     <product id="38">
       <title>Планшетный компьютер Dell Venue 8 Pro</title>
@@ -345,7 +345,7 @@
       <price>249.99</price>
       <description>8 дюймов, TFT, мультитач, 1280 x 800, Intel Atom, 1.8 ГГц, Windows 8, 2Гб, 32 Гб, microSD до 128 Гб, Wi-Fi 802.11n, Bluetooth 4.0, 1.2 МПкс, 5 МПкс, Док-клавиатура (опционально), встроенный аккумулятор Li-polymer 4830мАч</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/38.jpg</image>
+      <image>38.jpg</image>
     </product>
     <product id="39">
       <title>Планшетный компьютер Samsung Galaxy Tab 4 10.1</title>
@@ -354,7 +354,7 @@
       <price>368.99</price>
       <description>10.1 дюйма, TFT, мультитач, 1280 x 800, Qualcomm Snapdragon 400, 1.2 ГГц, Samsung TouchWiz UX UI, Android, 4.4, 1.5 Гб, 16 Гб , MicroSD, до 64 Гб, Wi-Fi 802.11a/b/g/n, Bluetooth 4.0, GSM 850/900/1800/1900, 3G HSDPA 850/900/1900/2100, micro SIM, A-GPS, ГЛОНАСС, 1.3 МПкс, 3.15 МПкс, встроенный аккумулятор Li-Ion 6800мАч</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/39.jpg</image>
+      <image>39.jpg</image>
     </product>
     <product id="40">
       <title>Планшетный компьютер Apple iPad Air 32Gb</title>
@@ -363,7 +363,7 @@
       <price>418.99</price>
       <description>9.7 дюймов, IPS, мультитач, 2048 x 1536, Apple A7, 1.3 ГГц, iOS, 7, 1Гб, 32 Гб, Wi-Fi 802.11a/b/g/n, Bluetooth 4.0, A-GPS, ГЛОНАСС, 1.2 МПкс, 5 МПкс, встроенный аккумулятор Li-Polymer 8820мАч</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/40.jpg</image>
+      <image>40.jpg</image>
     </product>
     <product id="41">
       <title>Планшетный компьютер Acer Iconia Tab W3-810</title>
@@ -372,7 +372,7 @@
       <price>540.99</price>
       <description>8.1 дюймов, TFT, мультитач, 1280 x 800, Intel Atom, 1.5 ГГц, Windows 8, 2Гб, 32 Гб, SDHC, до 64 Гб, Wi-Fi 802.11n, Bluetooth 4.0, 2 МПкс, 2 МПкс, Док-клавиатура (опционально), встроенный аккумулятор Li-polymer 6800мАч</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/41.jpg</image>
+      <image>41.jpg</image>
     </product>
     <product id="42">
       <title>Планшетный компьютер Sony Xperia Tablet Z</title>
@@ -382,7 +382,7 @@
       <description>10.1 дюйма, TFT, мультитач, 1920 x 1200, Qualcomm , 1.5 ГГц, Android, 4.1, 2Гб, 16 Гб , MicroSD, до 64 Гб, Wi-Fi 802.11a/b/g/n, Bluetooth 4.0, 4G LTE, 3G, EDGE, HSDPA, HSUPA, GPRS, GSM900/1800/1900, micro SIM, A-GPS, 2.2 МПкс, 8.1 МПкс , встроенный аккумулятор Li-Polymer 6000 мАч
 Испытайте все лучшее от Sony в новом планшете</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/42.jpg</image>
+      <image>42.jpg</image>
     </product>
     <product id="43">
       <title>Планшетный компьютер Lenovo IdeaPad Miix</title>
@@ -391,7 +391,7 @@
       <price>675.99</price>
       <description>10.1 дюйма, TFT, мультитач, 1366 x 768, Intel Atom, 1.8 ГГц, Windows 8, 2Гб, 64 Гб, microSD, Wi-Fi 802.11 b/g/n, Bluetooth 4.0, есть, 3G, GPRS, EDGE, micro SIM, A-GPS, ГЛОНАСС, 1 МПкс, Док-клавиатура, встроенный аккумулятор Li-polymer 6800мАч</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/43.jpg</image>
+      <image>43.jpg</image>
     </product>
     <product id="44">
       <title>Планшетный компьютер Samsung GALAXY Note 10.1</title>
@@ -401,7 +401,7 @@
       <description>10.1 дюйма, сенсорный, 2560 x 1600, Qualcomm Snapdragon, 1.9 ГГц + 1.3 ГГц, Samsung TouchWiz UI, Android, 4.3, 3 Гб, 32 Гб, MicroSD, до 64 Гб, Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 4.0, есть, 3G, GPRS, EDGE, micro SIM, A-GPS, ГЛОНАСС, 2 МПкс, 8 МПкс , встроенный аккумулятор Li-Polymer 8220мАч
 Всё в твоих руках</description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/44.jpg</image>
+      <image>44.jpg</image>
     </product>
     <product id="45">
       <title>Планшетный компьютер Apple iPad Air 2 (Wi-Fi + 4G) 64 Gb</title>
@@ -411,7 +411,7 @@
       <description>9.7 дюймов, IPS, мультитач, Apple A8X, 1.5 ГГц, iOS, 2Гб, 64 Гб, Wi-Fi 802.11 a/b/g/n/ac, Bluetooth 4.0, GSM 850/900/1800/1900, HSDPA 850/900/1700/1900/2100, 4G 700/800/850/900/1800/1900/2100/2600, nano SIM, 1.2 МПкс, 8 МПкс , встроенный LiPo аккумулятор (27.3 ватт/час)
 </description>
       <category>Планшетные компьютеры</category>
-      <image>/img/content/items/45.jpg</image>
+      <image>45.jpg</image>
     </product>
     <product id="46">
       <title>Электронная Книга Sony PRS-T3S</title>
@@ -420,7 +420,7 @@
       <price>109.99</price>
       <description>6-дюймов, сенсорный, E Ink® Pearl , 758 x 1024, TXT, PDF, fb2, ePub, SD, SDHC, Wi-Fi 802.11n, поддержка русского языка</description>
       <category>Электронные книги</category>
-      <image>/img/content/items/46.jpg</image>
+      <image>46.jpg</image>
     </product>
     <product id="47">
       <title>Электронная Книга Sony Reader Wi-Fi PRS-T2</title>
@@ -429,7 +429,7 @@
       <price>216.99</price>
       <description>6-дюймов, сенсорный, E Ink® Pearl , 800 x 600, TXT, PDF, fb2, ePub, SD, SDHC, Wi-Fi, поддержка русского языка</description>
       <category>Электронные книги</category>
-      <image>/img/content/items/47.jpg</image>
+      <image>47.jpg</image>
     </product>
     <product id="48">
       <title>Электронная Книга Sony PRS-T3</title>
@@ -439,7 +439,7 @@
       <description>6-дюймов, сенсорный, E Ink® Pearl , 758 x 1024, TXT, PDF, fb2, ePub, SD, SDHC, Wi-Fi 802.11n, поддержка русского языка
 </description>
       <category>Электронные книги</category>
-      <image>/img/content/items/48.jpg</image>
+      <image>48.jpg</image>
     </product>
     <product id="49">
       <title>Электронная книга PocketBook 515</title>
@@ -449,7 +449,7 @@
       <description>Linux, 5"/600x800 пикс., 5 " E-INK Pearl, Монохромный дисплей, Встроенная память (ROM) 4 ГБ (В*Ш*Г) 143*100*8 мм, 131 г
 </description>
       <category>Электронные книги</category>
-      <image>/img/content/items/49.jpg</image>
+      <image>49.jpg</image>
     </product>
     <product id="50">
       <title>Электронная книга Bookeen Cybook Muse FrontLight </title>
@@ -458,7 +458,7 @@
       <price>119.99</price>
       <description>Linux, 6"/758х1024 пикс., E-INK Pearl HD, Монохромный дисплей, 4 ГБ, microSD, microSDHC, 1900 мАч, 155*116*8 мм, 190 г</description>
       <category>Электронные книги</category>
-      <image>/img/content/items/50.jpg</image>
+      <image>50.jpg</image>
     </product>
     <product id="51">
       <title>Планшет Wacom Bamboo Pad Wireless CTH300K </title>
@@ -467,7 +467,7 @@
       <price>122.99</price>
       <description>4-Finger Multi-Touch, Wireless Kit, 508 линий на дюйм, 14.14 x 16.65 x 1.57 см</description>
       <category>Планшеты</category>
-      <image>/img/content/items/51.jpg</image>
+      <image>51.jpg</image>
     </product>
     <product id="52">
       <title>Планшет Wacom Intuos5 S Touch </title>
@@ -476,7 +476,7 @@
       <price>378.99</price>
       <description>Новый Intuos5 мог бы впечатлить своим ультра-тонким дизайном, но всё внимание пользователя будет устремлено туда, где зарождается творческая работа: на экран. Ведь этот планшет вновь выводит творчество на новый качественный уровень, позволяя полностью сконцентрироваться на процессе работы.</description>
       <category>Планшеты</category>
-      <image>/img/content/items/52.jpg</image>
+      <image>52.jpg</image>
     </product>
     <product id="53">
       <title>Планшет Wacom Cintiq 13HD </title>
@@ -485,7 +485,7 @@
       <price>1553.99</price>
       <description>Cintiq 13HD — это интерактивный перьевой дисплей, позволяющий творить прямо на 13,3-дюймовом HD-дисплее</description>
       <category>Планшеты</category>
-      <image>/img/content/items/53.jpg</image>
+      <image>53.jpg</image>
     </product>
     <product id="54">
       <title>Планшет Wacom Cintiq 22HD touch </title>
@@ -494,7 +494,7 @@
       <price>3645.99</price>
       <description>Расширьте диапазон чувств – проникнитесь точностью цифрового изображения, создаваемого с помощью Cintiq 22HD touch</description>
       <category>Планшеты</category>
-      <image>/img/content/items/54.jpg</image>
+      <image>54.jpg</image>
     </product>
     <product id="55">
       <title>Планшет Wacom Cintiq 24HD touch </title>
@@ -503,7 +503,7 @@
       <price>4050.99</price>
       <description>Cintiq 24HD touch: яркие цвета в одно касание</description>
       <category>Планшеты</category>
-      <image>/img/content/items/55.jpg</image>
+      <image>55.jpg</image>
     </product>
     <product id="56">
       <title>Цифровой плеер Apple iPod nano 7G 16Gb</title>
@@ -512,7 +512,7 @@
       <price>216.99</price>
       <description>16Гб, 2.5-дюймов Multi-Touch , 240x432, AAC, HE-AAC, MP3, MP3 VBR, Audible, Apple Lossless, AIFF, WAV, FM радио</description>
       <category>Цифровые плееры</category>
-      <image>/img/content/items/56.jpg</image>
+      <image>56.jpg</image>
     </product>
     <product id="57">
       <title>Цифровой плеер FIIO X3 Music Player</title>
@@ -521,7 +521,7 @@
       <price>270.99</price>
       <description>8Гб (+ слот для microSD/TF Card (до 128 Гб)), 2.4-дюймов LCD, 320x240, MP3, WMA, OGG, AAC, FLAC, APE, WAV</description>
       <category>Цифровые плееры</category>
-      <image>/img/content/items/57.jpg</image>
+      <image>57.jpg</image>
     </product>
     <product id="58">
       <title>Цифровой плеер Apple iPod touch 5G 32Gb</title>
@@ -530,7 +530,7 @@
       <price>358.99</price>
       <description>4 дюйма Multi-Touch , 1136x640, 1.2 Мпкс, 5 Мпикс, с возм. записи видео 1080p , AAC, HE-AAC, MP3, MP3 VBR, Audible, Apple Lossless, AIFF, WAV, Видео H.264, 640х480 пикселей, видео MPEG-4, разрешение 640x480 пикселей, стереозвук в формате .m4v, .mp4 и .mov, Wi-Fi 802.11n, Bluetooth 4.0</description>
       <category>Цифровые плееры</category>
-      <image>/img/content/items/58.jpg</image>
+      <image>58.jpg</image>
     </product>
     <product id="59">
       <title>Цифровой плеер FIIO X5 Digital Music Player</title>
@@ -539,7 +539,7 @@
       <price>446.99</price>
       <description>Fiio OS, Черный, Ingenics 4760B, 2.4-дюймов LCD, 400x360, MP3, WMA, OGG, AAC, FLAC, APE, Apple Lossless, WAV</description>
       <category>Цифровые плееры</category>
-      <image>/img/content/items/59.jpg</image>
+      <image>59.jpg</image>
     </product>
     <product id="60">
       <title>Игровая консоль Sony PS VITA Wi-Fi 3G</title>
@@ -548,7 +548,7 @@
       <price>338.99</price>
       <description>3G, Wi-Fi 802.11n, Bluetooth 2.1 + EDR</description>
       <category>Игровые приставки</category>
-      <image>/img/content/items/60.jpg</image>
+      <image>60.jpg</image>
     </product>
     <product id="61">
       <title>Игровая консоль Sony Playstation 3 (Slim 500Gb)</title>
@@ -557,7 +557,7 @@
       <price>405.99</price>
       <description>Playstation 3 Slim, 3.60, Черный, 500Gb, 10/100/1000 Mbit, Wi-Fi IEEE 802.11 b/g, Bluetooth 2.1 + EDR, 480i, 480p, 720p, 1080i, 1080p; 1 x HDMI (HDMI); 2 x AV Multi Out; 1 x цифровой оптический Digital Out (Optical)</description>
       <category>Игровые приставки</category>
-      <image>/img/content/items/61.jpg</image>
+      <image>61.jpg</image>
     </product>
     <product id="62">
       <title>Игровая консоль Microsoft XBOX 360</title>
@@ -566,7 +566,7 @@
       <price>513.99</price>
       <description>Kinect XBOX 360 Slim, Черный, 250GB, 10/100/1000 Mbit, Wi-Fi IEEE 802.11 b/g, 720p (1280x720 пикс), 1080i (1920x1080 пикс), 1080p (1920x1080 пикс)</description>
       <category>Игровые приставки</category>
-      <image>/img/content/items/62.jpg</image>
+      <image>62.jpg</image>
     </product>
     <product id="63">
       <title>Игровая консоль Sony PlayStation 4</title>
@@ -575,7 +575,7 @@
       <price>569.99</price>
       <description>500Gb, 10/100/1000 Mbit, Wi-Fi IEEE 802.11 b/g/n, Bluetooth 2.1 + EDR, HDMI, цифровой выход (оптический)</description>
       <category>Игровые приставки</category>
-      <image>/img/content/items/63.jpg</image>
+      <image>63.jpg</image>
     </product>
     <product id="64">
       <title>Игровая консоль Microsoft XBOX 360S</title>
@@ -584,7 +584,7 @@
       <price>621.99</price>
       <description>XBOX 360 Slim, Черный, 250GB, 10/100/1000 Mbit, Wi-Fi IEEE 802.11 b/g, 720p (1280x720 пикс), 1080i (1920x1080 пикс), 1080p (1920x1080 пикс)</description>
       <category>Игровые приставки</category>
-      <image>/img/content/items/64.jpg</image>
+      <image>64.jpg</image>
     </product>
     <product id="65">
       <title>Игровая консоль Microsoft Xbox One</title>
@@ -593,7 +593,7 @@
       <price>810.99</price>
       <description>500Gb, 10/100/1000 Mbit, Wi-Fi IEEE 802.11 a/b/g/n/ac, 2 x HDMI (вход и выход)</description>
       <category>Игровые приставки</category>
-      <image>/img/content/items/65.jpg</image>
+      <image>65.jpg</image>
     </product>
     <product id="66">
       <title>Наушники A4Tech HS-7P </title>
@@ -602,7 +602,7 @@
       <price>15.99</price>
       <description>Удобное оголовье и мягкие амбушюры гарнитуры A4Tech HS-7P обеспечивают абсолютный комфорт при длительном прослушивании музыки, переговорах и многочасовых играх. </description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/66.jpg</image>
+      <image>66.jpg</image>
     </product>
     <product id="67">
       <title>Наушники Sony MH410 </title>
@@ -611,7 +611,7 @@
       <price>21.99</price>
       <description>Откройте для себя мини-гарнитуру MH410. Она изготовлена с использованием прецизионных акустических компонентов, гарантирующих качественный стереозвук. К гарнитуре прилагаются удобные наушники. Они отлично сидят.</description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/67.jpg</image>
+      <image>67.jpg</image>
     </product>
     <product id="68">
       <title>Наушники Apple EarPods MD827FE/A </title>
@@ -620,7 +620,7 @@
       <price>45.99</price>
       <description>Ухо каждого человека уникально — так же, как и отпечатки пальцев. Поэтому наушники-капли подходят не всем. При разработке новых наушников дизайнеры и инженеры Apple решили взять за основу не конструкцию динамика, а устройство человеческого уха. Они опробовали более ста прототипов дизайна, в тестировании которых приняли участие сотни людей. Основная задача состояла в том, чтобы создать удобные наушники, которые будут легко размещаться в ушах и не выпадать. При этом требовалось сохранить высокое качество звука. В результате появились революционные наушники Apple EarPods. Таких вы ещё не видели. И не слышали.</description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/68.jpg</image>
+      <image>68.jpg</image>
     </product>
     <product id="69">
       <title>Гарнитура Jabra SPORT Corded</title>
@@ -629,7 +629,7 @@
       <price>81.99</price>
       <description>Высокое качество звука и непревзойденный комфорт - специально для занятий спортом </description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/69.jpg</image>
+      <image>69.jpg</image>
     </product>
     <product id="70">
       <title>Наушники Aerial7 TANK SHADE </title>
@@ -638,7 +638,7 @@
       <price>110.99</price>
       <description>Хотите окунуться в громоподобные басы и кристально чистый звук, которые увлекут вас в новые высоты? Послушайте TANK! Эти головные наушники оснащены массивными амбушюрами и мягким оголовьем с регулируемыми чашками для удобной фиксации на голове. Также предусмотрены два типа шнуров – один витой, а другой с встроенным микрофоном. </description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/70.jpg</image>
+      <image>70.jpg</image>
     </product>
     <product id="71">
       <title>Наушники Beats by Dr. Dre Diddybeats</title>
@@ -647,7 +647,7 @@
       <price>122.99</price>
       <description>Обернутые с внешней стороны кожей, а так же спортивной полированной крышкой, Diddybeats — это изящный аксессуар для любого случая.</description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/71.jpg</image>
+      <image>71.jpg</image>
     </product>
     <product id="72">
       <title>Наушники Sennheiser PX 685i White</title>
@@ -656,7 +656,7 @@
       <price>129.99</price>
       <description>Гибкое регулируемое оголовье гарнитуры PX 685i SPORTS обеспечивает идеальную настройку и комфорт при посадке наушников. </description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/72.jpg</image>
+      <image>72.jpg</image>
     </product>
     <product id="73">
       <title>Наушники JBL Synchros S300 I Black </title>
@@ -666,7 +666,7 @@
       <description>Компактные наушники с революционным звуком теперь и в вашей жизни. Новая модель JBL Synchros S300 имеет совершенно новый, неклассический дизайн. Легкие и прочные наушники S300 имеют стальной ободок и кожаные амбушюры, что делает их комфортными для многочасового прослушивания звука профессионального качества.
 </description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/73.jpg</image>
+      <image>73.jpg</image>
     </product>
     <product id="74">
       <title>Наушники Bose Sound True Black </title>
@@ -675,7 +675,7 @@
       <price>338.99</price>
       <description>Новое поколение охватывающих наушников BOSE приобрело яркие расцветки. Теперь гарнитура и пульт управления – стандартная комплектация. Новая модель сохранила свои главные преимущества – великолепное звучание, комфорт и надежность.</description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/74.jpg</image>
+      <image>74.jpg</image>
     </product>
     <product id="75">
       <title>Наушники Beats by Dr. Dre New Studio</title>
@@ -684,7 +684,7 @@
       <price>473.99</price>
       <description>Точный звук, адаптивное шумоподавление и 20-часовой аккумулятор.</description>
       <category>Проводные гарнитуры</category>
-      <image>/img/content/items/75.jpg</image>
+      <image>75.jpg</image>
     </product>
     <product id="76">
       <title>Часы Samsung Gear Fit (SM-R350) </title>
@@ -693,7 +693,7 @@
       <price>229.99</price>
       <description>Samsung Gear Fit - первое интеллектуальное носимое устройство с изогнутым Super AMOLED-дисплеем, созданное специально для занятий фитнесом и спортом.</description>
       <category>Электронные часы</category>
-      <image>/img/content/items/76.jpg</image>
+      <image>76.jpg</image>
     </product>
     <product id="77">
       <title>Часы Sony SmartWatch 2 SW2</title>
@@ -702,7 +702,7 @@
       <price>243.99</price>
       <description>Первый в мире наручный дисплей SmartWatch на базе ОС Android с функцией одного касания NFC</description>
       <category>Электронные часы</category>
-      <image>/img/content/items/77.jpg</image>
+      <image>77.jpg</image>
     </product>
     <product id="78">
       <title>Часы Samsung GALAXY Gear (SM-V700)</title>
@@ -711,7 +711,7 @@
       <price>248.99</price>
       <description>Высококачественный ремешок часов Samsung GALAXY Gear комфортно сидит на руке. В них предусмотрен квадратный сенсорный дисплей, позволяющий быстро посмотреть время, входящие сообщения, управлять воспроизведением музыки и другими функциями. На выбор доступны различные цвета, среди которых найдется тот, который лучше подойдет вашему стилю. Рамка дисплея на элегантных часах Samsung GALAXY Gear сделана из нержавеющей стали, подчеркивающей роскошный вид.</description>
       <category>Электронные часы</category>
-      <image>/img/content/items/78.jpg</image>
+      <image>78.jpg</image>
     </product>
     <product id="79">
       <title>Часы Pebble Steel (401SLR)</title>
@@ -720,7 +720,7 @@
       <price>338.99</price>
       <description>Pebble Steel – это новая Premium-версия уникальных часов, ярко отражающих тенденции развития современных высоких технологий.</description>
       <category>Электронные часы</category>
-      <image>/img/content/items/79.jpg</image>
+      <image>79.jpg</image>
     </product>
     <product id="80">
       <title>Часы Apple Watch 38mm</title>
@@ -729,7 +729,7 @@
       <price>1309.99</price>
       <description>Watch OS, Apple S1, 512 Мб, 1.33-дюймовый IPS LCD дисплей (272x340), 343 ppi, 8 Гб, Bluetooth 4.0, NFC, WiFi, До 18 часов в активном режиме, до 72 часов в режиме ожидания</description>
       <category>Электронные часы</category>
-      <image>/img/content/items/80.jpg</image>
+      <image>80.jpg</image>
     </product>
   </products>
 </shop>

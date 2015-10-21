@@ -15,23 +15,34 @@ class Controller_AdAuth extends Controller{
     }
     }
 //Авторизация для админа
-    public function action_auth(){
+    public function action_auth($array){
         $salt1= "0f1q/";
         $salt2 = "z@9c";
-        $name = htmlentities($_POST["name"]);
-        $pass = md5($salt1.$_POST["pass"].$salt2);
-        $data = $this->model->get_auth_ad($name);
-        $true_name = $data["name"];
-        $true_password = $data["password"];
-        if($name !== $true_name){
-           header("location: /products");
-        }elseif($pass !== $true_password){
-            header("location: /");
-        }else{
-            $_SESSION["name"] = $data["name"];
-            $_SESSION["type"] = "admin";
+        $name = filter_var($array["name"], FILTER_SANITIZE_STRING);
+        $pass = md5($salt1.$array["pass"].$salt2);
+        if($name && $pass) {
+            $data = $this->model->get_auth_ad($name);
+            $true_name = $data["name"];
+            $true_password = $data["password"];
+            if ($name !== $true_name) {
+                header("location: /AdAuth");
+            } elseif ($pass !== $true_password) {
+                header("location: /AdAuth");
+            } else {
+                if ($_SESSION["type"] == "user") {
+                    unset($_SESSION["name"]);
+                    unset($_SESSION["type"]);
+                    unset($_SESSION["id"]);
+                }
 
-            header("location: /Admin");
+                $_SESSION["name"] = $data["name"];
+                $_SESSION["type"] = "admin";
+                header("location: /Admin");
+            }
+        }else{
+                $message = "Введены неверные данные";
+            header("location: /Error/aderror/{$message}");
+
         }
     }
 

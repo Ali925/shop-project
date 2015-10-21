@@ -24,7 +24,7 @@ class Route
             $action_name = $routes[2];
         }
 
-        if(!empty(array_slice($routes, 3))){
+        if(!empty($routes[3])){
             $params = array_slice($routes, 3);
         } elseif(isset($_REQUEST)) {
             

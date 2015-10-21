@@ -12,8 +12,9 @@ class Controller_AdCategories extends Controller{
         $this->view->generate("adcategories_view.php", "adtemp_view.php",
             array(
                 'title' => 'Категории',
-                'form' => false,
-                'formEdit' => false,
+                 'header' => '',
+                'addForm' => false,
+                'editForm' => false,
                 'data' => $this->modelProducts->get_categories()
             )
         );
@@ -23,9 +24,10 @@ class Controller_AdCategories extends Controller{
         $this->view->generate("adcategories_view.php", "adtemp_view.php",
             array(
                 'title' => 'Категории',
-                'form' => true,
-                'formEdit' => false,
-                'data' => $this->modelProducts->get_categories()
+                'header' => 'Добавление категории',
+                'addForm' => true,
+                'editForm' => false,
+                'data' => null
             )
         );
     }
@@ -33,28 +35,34 @@ class Controller_AdCategories extends Controller{
         $this->view->generate("adcategories_view.php", "adtemp_view.php",
             array(
                 'title' => 'Категории',
-                'form' => false,
-                'formEdit' => true,
+                'header' => 'Редактирование категории',
+                'addForm' => false,
+                'editForm' => true,
                 'category' => $this->modelProducts->get_one_category($id),
-                'data' => $this->modelProducts->get_categories()
+                'data' => null
             )
         );
     }
 
     public function action_addCat($array){
 
-        $title = strip_tags($array['title']);
-        $title = strip_tags($title);
+        $title = filter_var($array['title'], FILTER_SANITIZE_STRING);
         $this->modelAdmin->add_Category($title);
         header("location: /AdCategories");
     }
 
     public function action_editCat($array){
-        $id = strip_tags($array['id']);
-        $title = strip_tags($array['title']);
-        echo $id . " - " . $title;
-        $this->modelAdmin->edit_Category($id, $title);
-        header("location: /AdCategories");
+         $id = filter_var($array['id'], FILTER_VALIDATE_INT);
+        $title = filter_var($array['title'], FILTER_SANITIZE_STRING);
+
+        if($id && $title) {
+            $this->modelAdmin->edit_Category($id, $title);
+            header("location: /AdCategories");
+        }else{
+           $message = "Введены неверные данные";
+            header("location: /Error/aderror/{$message}");
+
+        }
     }
 
     public function action_delCat($id){

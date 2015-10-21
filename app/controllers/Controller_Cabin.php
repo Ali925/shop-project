@@ -1,10 +1,11 @@
 <?php
-//Контроллер для работы с каталогом
+include_once "app/models/model_user.php";
 class Controller_Cabin extends Controller
 {
     public function __construct(){
         parent::__construct();
         $this->model = new Model_Cabin();
+        $this->modelUser = new Model_User();
     }
 
     function action_index(){    
@@ -42,15 +43,32 @@ class Controller_Cabin extends Controller
 
     function action_order(){
 
-        $this->view->generate('order.php', 'template_view.php',
+        $user = $this->modelUser->get_user($_SESSION['user_id']);
+        if($user['is_active']){
+            $this->view->generate('order.php', 'template_view.php',
+                array(
+                    'title' => 'Оформление заказа',
+                    'is_photo_slider' => false,
+                    'is_slider' => false,
+                    'is_right_sidebar' => false,
+                    'is_left_navbar' => false
+                )
+            );
+        }   
+        else {
+            $products = $this->model->get_all($_SESSION['user_id']);
+        $this->view->generate('cabin_view.php', 'template_view.php',
             array(
-                'title' => 'Оформление заказа',
+                'title' => 'Моя корзина',
+                'products' => $products,
                 'is_photo_slider' => false,
                 'is_slider' => false,
                 'is_right_sidebar' => false,
-                'is_left_navbar' => false
+                'is_left_navbar' => false,
+                'notactive' => true
             )
         );
+        }
     }
 
     function action_payment($user){
@@ -68,6 +86,7 @@ class Controller_Cabin extends Controller
             $count = $_SESSION['post_array']["quantity_".$id_product];
             
             $this->model->order_property($id_product, $price, $count);
+
         }
 
         $this->model->empty_cart($user);

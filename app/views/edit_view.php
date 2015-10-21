@@ -33,13 +33,12 @@
                 <input id="lastname" name="lastname" type="text"><br/>
                 <input id="birthday" name="birthday" type="date" ><br/>
                 <input id="email" name="email" type="email"><br/>
-                <a href="#">Активировать Email</a>
+                <a href="/Edit/activate/<?php echo $user['id']; ?>">Активировать Email</a>
 
             </div>
                 <input id="id" name="id" style="visibility: hidden" type="text" value="<?php echo $user['id'];?>"><br/>
                 <button type="submit">Изменить данные</button>
             </form>
-
         </div>
     </div>
 </div>

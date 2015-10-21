@@ -8,7 +8,8 @@ class Controller_About extends Controller{
                 'is_photo_slider' => false,
                 'is_slider' => false,
                 'is_right_sidebar' => false,
-                'is_left_navbar' => true
+                'is_left_navbar' => true,
+                'is_carousel' => true
             )
         );
     }

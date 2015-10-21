@@ -1030,6 +1030,10 @@ div.search_submit {
 .upload-form{
   margin-top: 30px;
 }
+
+.admail-form div{
+  margin-bottom: 30px;
+}
 /* --------- features ---------*/
 .content_area_left {
   width: 645px;
@@ -3494,18 +3498,22 @@ footer {
 }
 .registrate button, .change_user_data button{
     width: 180px;
-    height: 30px;
+    min-height: 30px;
+    height: auto;
     margin: 5px;
     text-align: center;
     position: absolute;
   left: 720px;
   top: 540px;
+  font-size: inherit;
 }
 .authorize button{
   width: 100px;
-    height: 30px;
+    min-height: 30px;
+    height: auto;
     margin: 5px;
     text-align: center;
+    font-size: inherit;
 }
 .change_user_data{
     text-align: center;
@@ -3525,20 +3533,33 @@ footer {
     word-wrap: break-word;
 }
 /*стили для блока с ошибками/предупреждениями*/
-/*.alarm{*/
-    /*width: 100%;*/
-    /*height: auto;*/
-    /*margin: 0 auto;*/
-    /*text-align: center;*/
-/*}*/
-/*.alarm a button{*/
-    /*width: 350px;*/
-    /*height: 30px;*/
-    /*padding: 5px;*/
-    /*margin: 10px;*/
-    /*background-color: #eee;*/
-    /*border-radius: 5px;*/
-/*}*/
+.alarm{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.alarm h3{
+    color: black;
+    display: inline-block;
+    width: 600px;
+    height: auto;
+    word-break: break-word;
+}
+.alarm a button{
+    width: 350px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: normal;
+    border: 1px solid black;
+}
 .product_wrap{
     width: 660px;
     height: auto;
@@ -3578,6 +3599,11 @@ footer {
     width: 250px;
     margin: 20px;
 }
+
+.product_buy, .product_more{
+    text-decoration: none;
+}
+
 .product_buy button, .product_more button{
     margin-right: 20px;
     width: 100px;
@@ -3682,4 +3708,71 @@ hr{
 table img{
     max-height: 70px;
     max-width: 70px;
+}
+.foget_pass{
+    font-size: x-small;
+}
+.Form{
+     width: 500px;
+     height: 600px;
+     min-height: 100%;
+ }
+.dataForm{
+    width: 500px;
+    height: auto;
+    min-height: 100%;
+}
+.FormHeaders{
+    display: inline-block;
+    width: 200px;
+    float: left;
+    text-align: right;
+}
+.FormHeaders span{
+    display: block;
+    height: 6px;
+    margin-top: 10px;
+}
+.FormData {
+    display: inline-block;
+    width: 250px;
+    float: left;
+    clear: none;
+}
+.FormData input{
+    width: 250px;
+    height: 20px;
+    margin: 5px;
+    text-align: center;
+}
+.FormData select{
+    width: 250px;
+    height: 25px;
+    margin: 5px;
+    text-align: center;
+}
+.FormData button{
+    display: block;
+    width: 150px;
+    height: 30px;
+    margin: 20px auto;
+}
+textarea.productDescr{
+    margin: 5px;
+    width: 350px;
+    height: 150px;
+    resize: none;
+    overflow-y: scroll;
+}
+span.productDescr{
+    height: 137px;
+    margin: 5px;
+}
+.productPhoto{
+    max-height: 150px;
+    max-width: 150px;
+}
+.productPhoto img{
+    height: 150px;
+    width: 150px;
 }

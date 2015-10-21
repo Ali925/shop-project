@@ -1,5 +1,5 @@
 <?php if($form): ?>
-<form action="/AdMail/send" method="POST">
+<form action="/AdMail/send" method="POST" class="admail-form">
 	<div><label for="name">Кому: </label>
 	<select name="name" id="name">
 		<option value="1">Админам</option>

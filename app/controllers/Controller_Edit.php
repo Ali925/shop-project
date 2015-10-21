@@ -24,5 +24,18 @@ class Controller_Edit extends Controller{
 
         header("location: /Users");
     }
+
+    function action_activate($id){
+        $id = (int)$id[0];
+        $this->model->email_activate($id);
+
+    
+     $this->view->generate('registration_view.php', 'template_view.php',
+            array(
+                'title' => 'Активация пароля',
+                'success' => true
+            )
+        );
+ }
 }
 ?>

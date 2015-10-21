@@ -5,7 +5,7 @@ class Model_Cabin extends Model
 {   
         protected $table= "users";
 
-		public function add($user, $id) {
+        public function add($user, $id) {
             $product = \ORM::for_table('cart')->create();
             $product->id_user = $user;
             $product->id_product = $id;
@@ -50,10 +50,10 @@ class Model_Cabin extends Model
 
        public function order($user) {
 
-            $order = \ORM::for_table('orders')->create();
+            $order = ORM::for_table('orders')->create();
+            $order->id = NULL;
             $order->id_user = $user;
             $order->status = "В обработке";
-            $order->date_order = date("Y-m-d H:i:s");
             $order->save();
        }
 
@@ -67,6 +67,7 @@ class Model_Cabin extends Model
             $order_property->price = $price;
             $order_property->count = $count;
             $order_property->save();
+
        }
 
 
@@ -115,7 +116,7 @@ class Model_Cabin extends Model
 
        }
 
-	
+    
 }
 
 ?>

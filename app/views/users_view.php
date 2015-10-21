@@ -4,6 +4,7 @@
 
     </div>
     <a href="/Edit">Изменить данные</a>
+    <a href="/users/newpass" class="newpass-link">Изменить пароль</a>
     <div class="features_list_wrap">
 
         <div class="user_info_span">

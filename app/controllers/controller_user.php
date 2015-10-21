@@ -2,35 +2,35 @@
 
 class Controller_User extends Controller {
 
-	public function __construct(){
+    public function __construct(){
         parent::__construct();
         $this->model = new Model_User();
-    }	
+    }   
 
     public function action_index() {
 
-    	$this->view->generate("registration_view.php", "template_view.php",
+        $this->view->generate("registration_view.php", "template_view.php",
             array(
                 "title" => "Регистрация нового пользователя",
-                'is_photo_slider' => false,
-                'is_slider' => false,
-                'is_right_sidebar' => false,
-                'is_left_navbar' =>false
+                "formReg" => true,
+                "success" => false
             )
         );
 
     }
 
-    public function action_registration(){
+    public function action_registration($array){
 
         $this->model->reg_user($array);
 
-        header("location: /Authorization");
+        $this->model->email_activate($array);
+
+        header("location: /user/successreg");
    }
 
-   	public function action_auth(){		
+    public function action_auth(){      
 
-   		if(isset($_POST['email'])){
+        if(isset($_POST['email'])){
 
         $salt1= "q0r@m";
         $salt2 = "8r#h";
@@ -40,24 +40,18 @@ class Controller_User extends Controller {
         $true_login = $data["email"];
         $true_password = $data["password"];
         if(!$true_login){
-            echo <<<HERE
-            <div class='alarm'>
-                <h3>Пользователь с данным логином не зарегистрирован!</h3>
-            </div>
-HERE;
+            $message = "Пользователь с данным логином не зарегистрирован";
+            header("location: /Error/error/{$message}");
         }elseif($password !== $true_password){
-            echo <<<HERE
-            <div class='alarm'>
-                <h3>Вы ввели неверный пароль!</h3>
-            </div>
-HERE;
+            $message = "Вы ввели неверный пароль";
+            header("location: /Error/error/{$message}");
         }else{
             $_SESSION["authorized"] = true;
             $_SESSION["name"] = $data["name"];
             $_SESSION["login"] = $data["email"];
             $_SESSION["id"] = $data["id"];
             $_SESSION["type"] = "user";
-            $email = $_SESSION['login'];
+            $email = filter_var($data["email"], FILTER_VALIDATE_EMAIL);
             $row = \ORM::for_table('users')->where("email", $email)->find_one();
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['item_count'] = $this->model->get_count($_SESSION['user_id']);
@@ -68,10 +62,9 @@ HERE;
         $this->view->generate("authorization_view.php", "template_view.php",
             array(
                 "title" => "Авторизация пользователя",
-                'is_photo_slider' => false,
-                'is_slider' => false,
-                'is_right_sidebar' => false,
-                'is_left_navbar' => false
+                "formAuth" => true,
+                "formNewPass" => false,
+                "success" => false
             )
         );
     }
@@ -89,7 +82,64 @@ HERE;
         header("location: /");
     }
 
+     public function action_fogetPass(){
+        $this->view->generate("authorization_view.php", "template_view.php",
+            array(
+                "title" => "Восстановление пароля",
+                "formAuth" => false,
+                "formNewPass" => true,
+                "success" => false
+            )
+        );
+    }
+    public function action_createNewPassword($array){
+        $this->model->create_new_pass($array);
+        header("location: /user/successauth");
+    }
 
+    public function action_successauth(){
+        $this->view->generate("authorization_view.php", "template_view.php",
+            array(
+                "formAuth" => false,
+                "formNewPass" => false,
+                "success" => true
+            )
+        );
+    }
+
+    public function action_successreg(){
+        $this->view->generate("registration_view.php", "template_view.php",
+            array(
+                "formReg" => false,
+                "success" => true
+            )
+        );
+    }
+
+    public function action_activateEmail($hash){
+            $hash=$hash[0];
+        if($_SESSION['type'] == "user"){
+            $user = $this->model->get_user($_SESSION['id']);
+            if((int)$user['is_active'] == 0){
+                $email = $user['email'] ;
+                $date = $user['reg_date'];
+                $security = md5($email.$date);
+                if($security == $hash){
+                    $this->model->activate_User($_SESSION['id']);
+                    $message = "Почтовый адрес успешно подтверждён!";
+                    header("location: /Error/info/{$message}");
+                }else{
+                    $message = "Почтовый адрес не подтверждён, обратитесь в техподдержку!";
+                    header("location: /Error/error/{$message}");
+                }
+            }else{
+                header('location: /');
+            }
+        }elseif($_SESSION['type'] != "admin" && $_SESSION['type'] != "user"){
+            $message = "Для подтверждения почтового ящика, Вам необходимо <a href='/user/auth'>авторизоваться</a>";
+            header("location: /Error/error/{$message}");
+        }
+    }
 
 }    
 
